@@ -1,26 +1,120 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Fonts */
+  --font-sans: var(--font-noto-sans), "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-serif: var(--font-noto-serif), "Hiragino Mincho ProN", serif;
+  --font-en: var(--font-cormorant), Georgia, serif;
+
+  /* Color palette — warm cream & neutral */
+  --color-cream-50: #fdfaf5;
+  --color-cream-100: #faf4e8;
+  --color-cream-200: #f5e9d0;
+  --color-cream-300: #ecddb8;
+
+  --color-sand-100: #f0e8d8;
+  --color-sand-200: #e5d8c0;
+  --color-sand-300: #d4c4a4;
+  --color-sand-400: #c0ad88;
+
+  /* Muted brown accent */
+  --color-brown-300: #b8956a;
+  --color-brown-400: #a07850;
+  --color-brown-500: #8b6340;
+  --color-brown-600: #6e4e30;
+  --color-brown-700: #503820;
+
+  /* Greige */
+  --color-greige-300: #b8b4a8;
+  --color-greige-400: #9e9a8e;
+  --color-greige-500: #848078;
+
+  /* Muted sage green */
+  --color-sage-100: #e8ede6;
+  --color-sage-200: #d0dace;
+  --color-sage-300: #b0bfac;
+  --color-sage-400: #8fa08a;
+  --color-sage-500: #6e8068;
+
+  /* Text neutrals */
+  --color-stone-700: #44403c;
+  --color-stone-800: #2c2824;
+  --color-stone-900: #1c1814;
+
+  /* Spacing extras */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
+
+  /* Max-widths */
+  --container-8xl: 88rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ---- Base ---- */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream-50);
+  color: var(--color-stone-800);
+  font-family: var(--font-sans);
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
 }
+
+::selection {
+  background-color: #e5d8c0;
+  color: #2c2824;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #faf4e8; }
+::-webkit-scrollbar-thumb { background: #c0ad88; border-radius: 3px; }
+
+/* ---- Prose helper ---- */
+.prose-marisa p {
+  margin-bottom: 1.5rem;
+  line-height: 2;
+  color: #44403c;
+}
+.prose-marisa h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c2824;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5d8c0;
+  letter-spacing: 0.03em;
+}
+.prose-marisa h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #2c2824;
+}
+.prose-marisa ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+.prose-marisa ul li {
+  padding-left: 1.25rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+  color: #44403c;
+}
+.prose-marisa ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 5px;
+  height: 5px;
+  background-color: #a07850;
+  border-radius: 50%;
+}
+
