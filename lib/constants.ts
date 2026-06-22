@@ -20,7 +20,7 @@ export const SHOP_INFO = {
   instagramUrl: INSTAGRAM_URL,
   googleMapUrl: 'https://maps.google.com/?q=千葉県君津市杢師3-20-10',
   googleMapEmbedUrl:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.0!2d139.9015!3d35.3274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDE5JzM4LjYiTiAxMznCsDU0JzA1LjQiRQ!5e0!3m2!1sja!2sjp!4v1000000000000!5m2!1sja!2sjp',
+    'https://maps.google.com/maps?q=%E5%8D%83%E8%91%89%E7%9C%8C%E5%90%9B%E6%B4%A5%E5%B8%82%E6%9D%A2%E5%B8%AB3-20-10&hl=ja&z=16&ie=UTF8&iwloc=&output=embed',
 } as const
 
 export const NAV_ITEMS = [

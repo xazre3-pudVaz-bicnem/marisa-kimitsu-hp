@@ -396,9 +396,17 @@ export default function TopPage() {
                 詳しいアクセスを見る →
               </Link>
             </div>
-            <div className="aspect-video bg-sand-200 flex items-center justify-center text-greige-400 text-sm">
-              {/* TODO: Replace with actual Google Maps embed */}
-              地図を表示します
+            <div className="aspect-video w-full">
+              <iframe
+                src={SHOP_INFO.googleMapEmbedUrl}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="MARISA 君津店 地図"
+              />
             </div>
           </div>
         </div>
