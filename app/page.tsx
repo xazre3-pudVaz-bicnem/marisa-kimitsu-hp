@@ -4,6 +4,7 @@ import Image from 'next/image'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
 import { HPB_URL, BMERIT_URL, INSTAGRAM_URL, SHOP_INFO } from '@/lib/constants'
+import { getAllPosts, formatDate, CATEGORY_NAMES } from '@/lib/blog'
 
 export const metadata: Metadata = {
   title: '君津のもみほぐし・マッサージ｜MARISA 君津店',
@@ -134,6 +135,7 @@ const testimonials = [
 ]
 
 export default function TopPage() {
+  const latestPosts = getAllPosts().slice(0, 3)
   return (
     <>
       <script
@@ -478,19 +480,44 @@ export default function TopPage() {
       {/* ===== Blog latest ===== */}
       <section className="py-24 lg:py-32 bg-sand-100">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Blog" ja="ブログ新着" />
-          <p className="mt-2 text-sm text-stone-700">
-            君津のマッサージ・もみほぐしに関する情報を発信しています。
-          </p>
-          <div className="mt-8 border border-sand-200 p-8 text-center text-greige-400 text-sm">
-            ブログ記事はWordPressと連携して表示されます。
+          <div className="flex items-end justify-between mb-10">
+            <SectionHeader en="Blog" ja="ブログ新着" />
             <Link
               href="/blog"
-              className="block mt-3 text-brown-400 text-xs tracking-widest hover:text-brown-500"
+              className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500 shrink-0"
             >
-              ブログ一覧を見る →
+              すべての記事を見る →
             </Link>
           </div>
+          {latestPosts.length === 0 ? (
+            <div className="border border-sand-200 bg-cream-50 p-8 text-center text-greige-400 text-sm">
+              記事は順次更新予定です。
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {latestPosts.map((post) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className="group border border-sand-200 bg-cream-50 hover:border-brown-300 transition-colors"
+                >
+                  <div className="bg-sand-200 aspect-video flex items-center justify-center">
+                    <span className="font-en text-xs tracking-widest text-greige-400 uppercase">
+                      {CATEGORY_NAMES[post.category] || 'Blog'}
+                    </span>
+                  </div>
+                  <div className="p-5">
+                    <span className="text-[10px] text-greige-400 tracking-wide">
+                      {formatDate(post.date)}
+                    </span>
+                    <p className="mt-2 text-sm font-medium text-stone-800 leading-snug tracking-wide group-hover:text-brown-500 transition-colors line-clamp-3">
+                      {post.title}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
