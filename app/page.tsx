@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL, INSTAGRAM_URL, SHOP_INFO } from '@/lib/constants'
+import { HPB_URL, BMERIT_URL, INSTAGRAM_URL, SHOP_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: '君津のもみほぐし・マッサージ｜MARISA 君津店',
@@ -61,44 +61,44 @@ const features = [
 const menus = [
   {
     name: 'もみほぐし 45分',
-    price: '¥3,500〜',
+    price: '¥3,900',
     desc: '首・肩・背中・腰を中心に、疲れが溜まった部位を丁寧にほぐします。',
     href: '/menu/body-care',
     badge: '',
   },
   {
-    name: 'もみほぐし 60分',
-    price: '¥4,500〜',
-    desc: '全身の疲れをじっくりとケア。仕事帰りの定番コース。',
+    name: 'もみほぐし 60分（70分計）',
+    price: '¥4,500',
+    desc: 'ほぐし60分＋10分サービス付き。全身の疲れをじっくりとケア。',
     href: '/menu/body-care',
     badge: '人気',
   },
   {
-    name: 'もみほぐし 90分',
-    price: '¥6,500〜',
-    desc: 'ゆっくり時間をかけて、深部の疲れまでしっかりケア。',
+    name: 'もみほぐし 90分（100分計）',
+    price: '¥6,400',
+    desc: 'ほぐし90分＋10分サービス付き。深部の疲れまでしっかりケア。',
     href: '/menu/body-care',
     badge: '',
   },
   {
     name: 'ヘッドセット 60分',
-    price: '¥5,000〜',
+    price: '¥5,400',
     desc: 'もみほぐし＋ヘッドケアのセット。頭・首・肩をまとめてケア。',
     href: '/menu/set',
     badge: 'おすすめ',
   },
   {
     name: 'ヘッドセット 90分',
-    price: '¥7,000〜',
+    price: '¥6,700',
     desc: 'もみほぐし＋ヘッドの贅沢な組み合わせ。休日の自分へのご褒美に。',
     href: '/menu/set',
     badge: '',
   },
   {
-    name: '足つぼセット',
-    price: '¥5,500〜',
+    name: '足つぼセット 60分',
+    price: '¥5,500',
     desc: 'もみほぐし＋足つぼ。立ち仕事や足のむくみが気になる方に。',
-    href: '/menu/foot',
+    href: '/menu/set',
     badge: '',
   },
 ]
@@ -492,13 +492,12 @@ export default function TopPage() {
           <p className="font-en text-xs tracking-widest text-sand-300 uppercase mb-4">Reservation</p>
           <h2 className="text-2xl lg:text-3xl font-light tracking-wide mb-6">ご予約はこちらから</h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
-            夜0時まで営業中・当日予約OK。
-            <br />
-            お電話・ネット予約・Instagramからもご相談いただけます。
+            夜0時まで営業中・当日予約OK。<br />
+            WEB予約・ホットペッパー・Instagramからもご相談いただけます。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <ReserveButton href={HPB_URL} label="ホットペッパーで予約" variant="light" size="lg" />
-            <ReserveButton href={INSTAGRAM_URL} label="Instagramを見る" variant="outline" size="lg" />
+            <ReserveButton href={BMERIT_URL} label="WEB予約（公式）" variant="light" size="lg" />
+            <ReserveButton href={HPB_URL} label="ホットペッパーで予約" variant="outline" size="lg" />
           </div>
         </div>
       </section>

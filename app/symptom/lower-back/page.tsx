@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL } from '@/lib/constants'
+import { HPB_URL, BMERIT_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: '君津の腰のつらさ・腰まわりのケア｜MARISA 君津店',
@@ -235,7 +235,7 @@ export default function LowerBackPage() {
             en="Menus"
             ja="腰まわりのケアにおすすめのメニュー"
           />
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <div className="border border-sand-200 bg-cream-50 p-6">
               <p className="text-xs tracking-widest text-brown-400 mb-2">Body Care</p>
               <h3 className="text-sm font-medium text-stone-800 mb-2">もみほぐし 60分</h3>
@@ -250,6 +250,14 @@ export default function LowerBackPage() {
               <p className="text-sm text-stone-700 leading-loose mb-4">腰だけでなく全身をじっくりほぐしたい方に。疲れが深い方・慢性化している方に向いています。</p>
               <Link href="/menu/body-care" className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500">
                 コース詳細を見る →
+              </Link>
+            </div>
+            <div className="border border-sand-200 bg-cream-50 p-6">
+              <p className="text-xs tracking-widest text-brown-400 mb-2">Acupuncture</p>
+              <h3 className="text-sm font-medium text-stone-800 mb-2">鍼灸メニュー</h3>
+              <p className="text-sm text-stone-700 leading-loose mb-4">腰・背中の気になる部位に鍼のアプローチを加えるメニュー。もみほぐし＋鍼のセットもあります。</p>
+              <Link href="/menu/acupuncture" className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500">
+                鍼灸メニューを見る →
               </Link>
             </div>
           </div>
@@ -345,8 +353,8 @@ export default function LowerBackPage() {
             君津で腰まわりのケアをお探しの方は、ぜひMARISAにお越しください。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />
-            <ReserveButton href="/menu/body-care" label="もみほぐしのメニューを見る" variant="outline" size="lg" />
+            <ReserveButton href={BMERIT_URL} label="WEB予約（公式）" variant="light" size="lg" />
+            <ReserveButton href={HPB_URL} label="ホットペッパーで予約" variant="outline" size="lg" />
           </div>
         </div>
       </section>

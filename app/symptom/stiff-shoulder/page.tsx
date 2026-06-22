@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL } from '@/lib/constants'
+import { HPB_URL, BMERIT_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: '君津の肩こりケア・もみほぐし｜MARISA 君津店',
@@ -244,6 +244,7 @@ export default function StiffShoulderPage() {
             {[
               { label: 'もみほぐし', href: '/menu/body-care' },
               { label: 'ヘッドセットコース', href: '/menu/set' },
+              { label: '鍼灸メニュー', href: '/menu/acupuncture' },
               { label: '首こりのお悩みへ', href: '/symptom/neck' },
               { label: '君津でマッサージをお探しの方', href: '/area/kimitsu' },
             ].map((item) => (
@@ -292,8 +293,8 @@ export default function StiffShoulderPage() {
             君津で肩こりケアをお探しの方は、ぜひMARISAにお越しください。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />
-            <ReserveButton href="/menu/body-care" label="もみほぐしのメニューを見る" variant="outline" size="lg" />
+            <ReserveButton href={BMERIT_URL} label="WEB予約（公式）" variant="light" size="lg" />
+            <ReserveButton href={HPB_URL} label="ホットペッパーで予約" variant="outline" size="lg" />
           </div>
         </div>
       </section>

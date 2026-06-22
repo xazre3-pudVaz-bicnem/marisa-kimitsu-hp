@@ -4,12 +4,13 @@ import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL } from '@/lib/constants'
+import { HPB_URL, BMERIT_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: '君津のもみほぐし・全身ほぐし｜MARISA 君津店',
   description:
-    '千葉県君津市のリラクゼーションサロン「MARISA」のもみほぐし。首・肩・背中・腰・脚の全身ケアに対応。45分¥3,500〜。肩こり・腰のつらさ・全身疲労に。当日予約OK・夜0時まで営業。',
+    '千葉県君津市のリラクゼーションサロン「MARISA」のもみほぐし。首・肩・背中・腰・脚の全身ケアに対応。45分¥3,900〜。肩こり・腰のつらさ・全身疲労に。当日予約OK・夜0時まで営業。',
+  keywords: ['君津 もみほぐし', '君津 マッサージ', '君津 肩こり', '君津 腰痛', '君津 リラクゼーション'],
   alternates: { canonical: '/menu/body-care' },
 }
 
@@ -38,7 +39,7 @@ const faqSchema = {
       name: '60分と90分はどう違いますか？どちらがおすすめですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '60分コースは全身をバランスよくケアするのに適しています。90分コースは各部位をじっくり時間をかけてほぐすことができ、深部の疲れまでしっかりアプローチできます。初めての方や特に疲れが溜まっている方には90分をおすすめしています。',
+        text: '60分コースは全身をバランスよくケアするのに適しています（ほぐし60分＋お好きな部位10分サービスの合計70分）。90分コースは各部位をじっくり時間をかけてほぐすことができ（ほぐし90分＋お好きな部位10分の合計100分）、深部の疲れまでしっかりアプローチできます。初めての方や特に疲れが溜まっている方には90分をおすすめしています。',
       },
     },
     {
@@ -55,20 +56,26 @@ const faqSchema = {
 const courses = [
   {
     name: 'もみほぐし 45分',
-    price: '¥3,500〜',
+    price: '¥3,900',
     desc: '首・肩・背中・腰を中心にケアします。「とにかく短時間でほぐしたい」「肩と腰だけ集中的にほぐしてほしい」という方に最適なコースです。',
     badge: '',
   },
   {
-    name: 'もみほぐし 60分',
-    price: '¥4,500〜',
-    desc: '上半身から下半身まで、全身をバランスよくほぐします。仕事帰りに寄る定番コース。最もご利用が多い時間帯です。',
+    name: 'もみほぐし 60分＋サービス10分',
+    price: '¥4,500',
+    desc: '全身をバランスよくほぐしながら、お好きな部位に10分のサービスタイムが付く定番コース（合計70分）。仕事帰りに寄る定番コース。最もご利用が多い時間帯です。',
     badge: '人気',
   },
   {
-    name: 'もみほぐし 90分',
-    price: '¥6,500〜',
-    desc: '各部位にゆっくり時間をかけてアプローチします。深部の疲れや長年のコリが気になる方、とにかくしっかりほぐしたい方におすすめです。',
+    name: 'もみほぐし 90分＋サービス10分',
+    price: '¥6,400',
+    desc: '各部位にゆっくり時間をかけてアプローチします（合計100分）。深部の疲れや長年のコリが気になる方、とにかくしっかりほぐしたい方におすすめです。',
+    badge: '',
+  },
+  {
+    name: 'もみほぐし 120分',
+    price: '¥8,400',
+    desc: '全身をじっくりほぐせるスペシャルコース。特別な日のご褒美・疲れが溜まりに溜まった方・最高のリラクゼーション体験をご希望の方に。',
     badge: '',
   },
 ]
@@ -77,8 +84,8 @@ const parts = [
   { area: '首・頸部', desc: 'スマートフォンやデスクワークで前傾姿勢が続くと、首の筋肉は常に緊張状態になります。首のコリは頭痛・眼精疲労・肩こりの原因にもつながるため、丁寧にほぐします。' },
   { area: '肩・僧帽筋', desc: '肩こりの多くは僧帽筋（肩の筋肉）の緊張によるものです。血行を促進しながら筋肉の硬さをほぐすことで、肩の重さや張りをやわらげます。' },
   { area: '背中・脊柱起立筋', desc: '背中全体の筋肉をほぐすことで、体の中心部の緊張がゆるみ、全身のだるさや疲れが取れやすくなります。' },
-  { area: '腰・臀部', desc: '長時間の座り仕事や立ち仕事で腰の筋肉は固まりやすい部位です。腰周りを重点的にほぐすことで、腰のつらさや重さを改善します。' },
-  { area: '脚・ふくらはぎ', desc: '足の筋肉は体の末端にあり、血液やリンパの流れが滞りやすい場所です。ふくらはぎや太ももをほぐすことで、足のだるさ・むくみの改善を促します。' },
+  { area: '腰・臀部', desc: '長時間の座り仕事や立ち仕事で腰の筋肉は固まりやすい部位です。腰周りを重点的にほぐすことで、腰のつらさや重さをやわらげます。' },
+  { area: '脚・ふくらはぎ', desc: '足の筋肉は体の末端にあり、血液やリンパの流れが滞りやすい場所です。ふくらはぎや太ももをほぐすことで、足のだるさ・むくみの負担をやわらげます。' },
 ]
 
 const targets = [
@@ -103,7 +110,7 @@ const faqs = [
   },
   {
     q: '60分と90分はどう違いますか？どちらがおすすめですか？',
-    a: '60分コースは全身をバランスよくケアするのに適しています。90分コースは各部位にゆっくり時間をかけてアプローチでき、深部の疲れまでしっかりほぐせます。初めての方や疲れが特に溜まっている方には90分をおすすめしていますが、時間や目的に合わせてお選びください。',
+    a: '60分コースは「ほぐし60分＋お好きな部位10分サービス」の合計70分です。全身をバランスよくケアするのに適しています。90分コースは「ほぐし90分＋お好きな部位10分サービス」の合計100分で、各部位にゆっくり時間をかけてアプローチでき、深部の疲れまでしっかりほぐせます。初めての方や疲れが特に溜まっている方には90分をおすすめしていますが、時間や目的に合わせてお選びください。',
   },
   {
     q: '施術後に気をつけることはありますか？',
@@ -129,7 +136,7 @@ export default function BodyCarePage() {
               もみほぐし
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              君津のリラクゼーションサロン「MARISA」のもみほぐしは、首・肩・背中・腰・脚など、全身の疲れとコリを丁寧にほぐします。デスクワークや立ち仕事で体がつらい方、全身の疲れが抜けない方にご利用いただいています。
+              君津のリラクゼーションサロン「もみほぐし・MARISA」のもみほぐしは、首・肩・背中・腰・脚など、全身の疲れとコリを丁寧にほぐします。デスクワークや立ち仕事で体がつらい方、全身の疲れが抜けない方にご利用いただいています。
             </p>
           </div>
         </div>
@@ -170,7 +177,7 @@ export default function BodyCarePage() {
               施術は専用ベッドで行います。うつ伏せ・仰向けを組み合わせ、全身をバランスよくケアします。施術中は照明を落とし、落ち着いたBGMの中でリラックスしていただけます。日常の忙しさを一時忘れ、体と心をゆっくり回復させる時間を提供します。
             </p>
             <p>
-              コースは45分・60分・90分の3種類から、お時間やお悩みに合わせてお選びいただけます。初めての方には、全身をバランスよくほぐせる60分コースをおすすめしています。
+              コースは45分・60分・90分・120分の4種類から、お時間やお悩みに合わせてお選びいただけます。初めての方には、全身をバランスよくほぐせる60分コースをおすすめしています。
             </p>
           </div>
         </div>
@@ -185,7 +192,7 @@ export default function BodyCarePage() {
             lead="お時間やお悩みに合わせてお選びください。"
             centered
           />
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {courses.map((course) => (
               <div key={course.name} className="bg-cream-50 border border-sand-200 p-7 relative">
                 {course.badge && (
@@ -196,12 +203,12 @@ export default function BodyCarePage() {
                 <h2 className="text-base font-medium text-stone-800 mb-1 tracking-wide">{course.name}</h2>
                 <p className="font-en text-2xl text-brown-400 mb-4 font-light">{course.price}</p>
                 <p className="text-sm text-stone-700 leading-loose mb-6">{course.desc}</p>
-                <ReserveButton href={HPB_URL} label="このコースで予約" size="sm" variant="outline" />
+                <ReserveButton href={BMERIT_URL} label="このコースで予約" size="sm" variant="outline" />
               </div>
             ))}
           </div>
           <p className="mt-6 text-xs text-greige-400 text-center">
-            ※ 表示価格は税込み参考価格です。詳細はホットペッパービューティーの予約ページをご確認ください。
+            ※ 表示価格は税込みです。
           </p>
         </div>
       </section>
@@ -327,6 +334,12 @@ export default function BodyCarePage() {
             >
               足つぼを見る →
             </Link>
+            <Link
+              href="/menu/acupuncture"
+              className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500"
+            >
+              鍼灸メニューを見る →
+            </Link>
           </div>
         </div>
       </section>
@@ -340,11 +353,11 @@ export default function BodyCarePage() {
           </h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業中・当日予約OK。<br />
-            君津でもみほぐしをお探しの方は、ぜひMARISAへ。
+            君津でもみほぐしをお探しの方は、ぜひもみほぐし・MARISAへ。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />
-            <ReserveButton href="/menu" label="メニュー一覧へ戻る" variant="outline" size="lg" />
+            <ReserveButton href={BMERIT_URL} label="WEB予約（公式）" variant="light" size="lg" />
+            <ReserveButton href={HPB_URL} label="ホットペッパーで予約" variant="outline" size="lg" />
           </div>
         </div>
       </section>

@@ -4,12 +4,13 @@ import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL } from '@/lib/constants'
+import { HPB_URL, BMERIT_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: '君津のセットコース（ヘッドセット・足つぼセット）｜MARISA 君津店',
   description:
-    '千葉県君津市「MARISA」のセットコース。もみほぐし＋ヘッドケアの「ヘッドセット」、もみほぐし＋足つぼの「足つぼセット」。60分¥5,000〜。全身ケアをまとめて受けたい方に。',
+    '千葉県君津市「MARISA」のセットコース。もみほぐし＋ヘッドケアの「ヘッドセット」、もみほぐし＋足つぼの「足つぼセット」。60分¥5,400〜。全身ケアをまとめて受けたい方に。',
+  keywords: ['君津 セットコース', '君津 ヘッドセット', '君津 もみほぐし セット', '君津 マッサージ セット'],
   alternates: { canonical: '/menu/set' },
 }
 
@@ -47,19 +48,22 @@ const faqSchema = {
 const headSets = [
   {
     name: 'ヘッドセット 60分',
-    price: '¥5,000〜',
+    detail: 'もみほぐし45分＋ヘッド15分',
+    price: '¥5,400',
     desc: 'もみほぐし＋ヘッドケアを組み合わせた定番セット。首・肩のコリと頭の重さ・眼精疲労をまとめてケアします。仕事帰りに気軽に受けられる時間設定です。',
     badge: 'おすすめ',
   },
   {
     name: 'ヘッドセット 90分',
-    price: '¥7,000〜',
+    detail: 'もみほぐし75分＋ヘッド15分',
+    price: '¥6,700',
     desc: 'もみほぐしとヘッドケアにじっくり時間をかけたコース。全身と頭を余裕をもってケアしたい方に。週末のリフレッシュや疲れが溜まったときに。',
     badge: '',
   },
   {
     name: 'ヘッドセット 120分',
-    price: '¥9,000〜',
+    detail: 'もみほぐし105分＋ヘッド15分',
+    price: '¥8,700',
     desc: 'もみほぐし＋ヘッドケアを最大限に堪能できるプレミアムコース。全身をじっくりほぐしながら頭・眼周りも丁寧にケア。特別な日の自分へのご褒美に。',
     badge: '',
   },
@@ -67,16 +71,25 @@ const headSets = [
 
 const footSets = [
   {
-    name: '足つぼセット 45分',
-    price: '¥4,000〜',
-    desc: 'もみほぐし＋足つぼのコンパクトなセット。短い時間で体と足の疲れをリセットしたい方に。立ち仕事後の気軽なケアに最適です。',
+    name: '足つぼセット 60分',
+    detail: 'もみほぐし30分＋足つぼ30分',
+    price: '¥5,500',
+    desc: 'もみほぐし＋足つぼをゆったりペースで体験できるコース。足のだるさ・むくみ・冷えが気になる方にじっくりアプローチします。',
+    badge: 'おすすめ',
+  },
+  {
+    name: '足つぼセット 90分',
+    detail: 'もみほぐし60分＋足つぼ30分',
+    price: '¥6,900',
+    desc: '全身のもみほぐしに足つぼを加えた満足度の高いセット。上半身・下半身を一度にたっぷりケアしたい方に。',
     badge: '',
   },
   {
-    name: '足つぼセット 60分',
-    price: '¥5,500〜',
-    desc: 'もみほぐし＋足つぼをゆったりペースで体験できるコース。足のだるさ・むくみ・冷えが気になる方にじっくりアプローチします。',
-    badge: 'おすすめ',
+    name: '足つぼセット 120分',
+    detail: 'もみほぐし90分＋足つぼ30分',
+    price: '¥8,900',
+    desc: '最大時間のもみほぐし＋足つぼセット。全身をじっくりほぐしながら足裏の反射区も丁寧にケア。スペシャルなリラクゼーション体験を。',
+    badge: '',
   },
 ]
 
@@ -193,10 +206,11 @@ export default function SetPage() {
                     {course.badge}
                   </span>
                 )}
+                <p className="text-[10px] tracking-widest text-greige-400 mb-1">{course.detail}</p>
                 <h3 className="text-base font-medium text-stone-800 mb-1 tracking-wide">{course.name}</h3>
                 <p className="font-en text-2xl text-brown-400 mb-4 font-light">{course.price}</p>
                 <p className="text-sm text-stone-700 leading-loose mb-6">{course.desc}</p>
-                <ReserveButton href={HPB_URL} label="このコースで予約" size="sm" variant="outline" />
+                <ReserveButton href={BMERIT_URL} label="このコースで予約" size="sm" variant="outline" />
               </div>
             ))}
           </div>
@@ -213,7 +227,7 @@ export default function SetPage() {
               もみほぐし＋足つぼの組み合わせ。立ち仕事の疲れ・足のだるさ・むくみ・冷えが気になる方にじっくりアプローチします。
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {footSets.map((course) => (
               <div key={course.name} className="bg-cream-50 border border-sand-200 p-7 relative">
                 {course.badge && (
@@ -221,15 +235,16 @@ export default function SetPage() {
                     {course.badge}
                   </span>
                 )}
+                <p className="text-[10px] tracking-widest text-greige-400 mb-1">{course.detail}</p>
                 <h3 className="text-base font-medium text-stone-800 mb-1 tracking-wide">{course.name}</h3>
                 <p className="font-en text-2xl text-brown-400 mb-4 font-light">{course.price}</p>
                 <p className="text-sm text-stone-700 leading-loose mb-6">{course.desc}</p>
-                <ReserveButton href={HPB_URL} label="このコースで予約" size="sm" variant="outline" />
+                <ReserveButton href={BMERIT_URL} label="このコースで予約" size="sm" variant="outline" />
               </div>
             ))}
           </div>
           <p className="mt-6 text-xs text-greige-400">
-            ※ 表示価格は税込み参考価格です。詳細はホットペッパービューティーの予約ページをご確認ください。
+            ※ 表示価格は税込みです。
           </p>
         </div>
       </section>
@@ -316,11 +331,11 @@ export default function SetPage() {
           </h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業中・当日予約OK。<br />
-            ホットペッパービューティーからかんたんにご予約いただけます。
+            君津でセットコースをお探しの方は、ぜひもみほぐし・MARISAへ。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />
-            <ReserveButton href="/menu" label="メニュー一覧へ戻る" variant="outline" size="lg" />
+            <ReserveButton href={BMERIT_URL} label="WEB予約（公式）" variant="light" size="lg" />
+            <ReserveButton href={HPB_URL} label="ホットペッパーで予約" variant="outline" size="lg" />
           </div>
         </div>
       </section>

@@ -11,6 +11,8 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${SITE_URL}/menu/head`, priority: 0.8, changeFrequency: 'monthly' },
   { url: `${SITE_URL}/menu/foot`, priority: 0.8, changeFrequency: 'monthly' },
   { url: `${SITE_URL}/menu/set`, priority: 0.8, changeFrequency: 'monthly' },
+  { url: `${SITE_URL}/menu/acupuncture`, priority: 0.9, changeFrequency: 'monthly' },
+  { url: `${SITE_URL}/menu/beauty-acupuncture`, priority: 0.9, changeFrequency: 'monthly' },
   // Symptom pages
   { url: `${SITE_URL}/symptom`, priority: 0.7, changeFrequency: 'monthly' },
   { url: `${SITE_URL}/symptom/stiff-shoulder`, priority: 0.8, changeFrequency: 'monthly' },

@@ -4,12 +4,13 @@ import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL } from '@/lib/constants'
+import { HPB_URL, BMERIT_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: '君津の足つぼ・リフレクソロジー｜MARISA 君津店',
   description:
-    '千葉県君津市「MARISA」の足つぼ・リフレクソロジーメニュー。立ち仕事の足の疲れ・むくみ・冷え性の方に。足つぼセット45分¥4,000〜。当日予約OK・夜0時まで営業。',
+    '千葉県君津市「MARISA」の足つぼ・リフレクソロジーメニュー。立ち仕事の足の疲れ・むくみ・冷え性の方に。足つぼコース30分¥3,800〜。当日予約OK・夜0時まで営業。',
+  keywords: ['君津 足つぼ', '君津 リフレクソロジー', '君津 足のむくみ', '君津 冷え性 マッサージ'],
   alternates: { canonical: '/menu/foot' },
 }
 
@@ -38,7 +39,7 @@ const faqSchema = {
       name: 'むくみや冷え性にも効果がありますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '足裏・ふくらはぎの血行やリンパの流れを促進することで、足のむくみや冷えが改善されやすくなることが多いです。ただし医療行為ではないため、症状が重い場合は医療機関にもご相談ください。',
+        text: '足裏・ふくらはぎの血行やリンパの流れを促進することで、足のむくみや冷えをやわらげるサポートになることが多いです。ただし医療行為ではないため、症状が重い場合は医療機関にもご相談ください。',
       },
     },
     {
@@ -56,7 +57,7 @@ const reflexAreas = [
   { zone: '足裏全体', effect: '体の各臓器・器官に対応した反射区を刺激することで、全身の血行促進と機能の活性化が期待できます。' },
   { zone: '足の指', effect: '頭部・頸部・目・耳などに対応した反射区です。首のこわばりや目の疲れ感が気になる方にも施術を行います。' },
   { zone: 'かかと周辺', effect: '骨盤・腸・坐骨に対応した反射区が集中しています。腰のつらさや骨盤周りの重さが気になる方に効果的です。' },
-  { zone: 'ふくらはぎ', effect: '脚の後面にある筋肉で、「第二の心臓」とも呼ばれます。ふくらはぎをほぐすことで血液の循環が促され、足のだるさ・むくみの改善につながります。' },
+  { zone: 'ふくらはぎ', effect: '脚の後面にある筋肉で、「第二の心臓」とも呼ばれます。ふくらはぎをほぐすことで血液の循環が促され、足のだるさ・むくみの負担をやわらげます。' },
 ]
 
 const targets = [
@@ -75,11 +76,11 @@ const faqs = [
   },
   {
     q: '足つぼとリフレクソロジーの違いは何ですか？',
-    a: '足つぼは東洋医学の経絡・ツボの考え方に基づく施術で、ツボへの刺激を通じて体の不調を整えるアプローチです。リフレクソロジーは西洋式で、足裏の反射区（体の各部位と対応した場所）を刺激することで全身のバランスを整えます。当店ではこれらを組み合わせた施術を行い、足全体と体全体へのアプローチを同時に行っています。',
+    a: '足つぼは東洋医学の経絡・ツボの考え方に基づく施術で、ツボへの刺激を通じて体のバランスを整えるアプローチです。リフレクソロジーは西洋式で、足裏の反射区（体の各部位と対応した場所）を刺激することで全身のバランスを整えます。当店ではこれらを組み合わせた施術を行い、足全体と体全体へのアプローチを同時に行っています。',
   },
   {
     q: 'むくみや冷え性にも効果がありますか？',
-    a: '足裏・ふくらはぎの筋肉をほぐし、血行やリンパの流れを促進することで、足のむくみや冷えが改善されやすくなることが多いです。特に夕方になると足がパンパンになる方、仕事中に足先が冷える方からは「施術後に足が軽くなった」「翌朝むくみが気にならなかった」とのご感想をいただいています。ただし医療行為ではないため、症状が重い場合は医療機関にもご相談ください。',
+    a: '足裏・ふくらはぎの筋肉をほぐし、血行やリンパの流れを促進することで、足のむくみや冷えをやわらげるサポートになることが多いです。特に夕方になると足がパンパンになる方、仕事中に足先が冷える方からは「施術後に足が軽くなった」とのお声をいただいています。ただし医療行為ではないため、症状が重い場合は医療機関にもご相談ください。',
   },
   {
     q: 'もみほぐしと足つぼを組み合わせるメリットは何ですか？',
@@ -105,7 +106,7 @@ export default function FootPage() {
               足つぼ・リフレクソロジー
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              立ち仕事やデスクワークで足がだるい、夕方になるとむくみやすい、足先が冷えやすいという方に。MARISAの足つぼ・リフレクソロジーは、足裏の反射区を刺激し、体全体の疲れを奥から解消します。
+              立ち仕事やデスクワークで足がだるい、夕方になるとむくみやすい、足先が冷えやすいという方に。MARISAの足つぼ・リフレクソロジーは、足裏の反射区を刺激し、体全体の疲れを奥からほぐします。
             </p>
           </div>
         </div>
@@ -137,57 +138,57 @@ export default function FootPage() {
               足裏には体の各臓器・器官と対応した「反射区」と呼ばれる場所が集中しています。これらの反射区を適切な圧で刺激することで、全身の血行やリンパの流れを促進し、体全体の疲れをやわらげるのが足つぼ・リフレクソロジーの施術です。
             </p>
             <p>
-              「足が体全体の鏡」と言われるように、足裏の状態はその人の体の状態を反映しているとも考えられています。固く張っている部分、触れると痛みを感じる部分は、対応する体の部位に疲れや滞りがある可能性があります。丁寧に施術することで、全身のめぐりが促されます。
+              「足が体全体の鏡」と言われるように、足裏の状態はその人の体の状態を反映しているとも考えられています。固く張っている部分、触れると刺激を感じる部分は、対応する体の部位に疲れや滞りがある可能性があります。丁寧に施術することで、全身のめぐりが促されます。
             </p>
             <p>
-              MARISA 君津店では、足裏だけでなくふくらはぎや足首周辺も含めた施術を行っています。特にふくらはぎは「第二の心臓」とも呼ばれ、この部分の筋肉が動くことで血液が心臓に向かって押し上げられます。ふくらはぎを丁寧にほぐすことで、足全体の血行とリンパの流れが大きく改善します。
+              MARISA 君津店では、足裏だけでなくふくらはぎや足首周辺も含めた施術を行っています。特にふくらはぎは「第二の心臓」とも呼ばれ、この部分の筋肉が動くことで血液が心臓に向かって押し上げられます。ふくらはぎを丁寧にほぐすことで、足全体の血行とリンパの流れが大きく整います。
             </p>
             <p>
-              足つぼ単体のメニューはございませんが、もみほぐしと組み合わせた「足つぼセット」（45分・60分）をご用意しています。体全体の疲れをとりながら、足元からしっかりリフレッシュしていただけます。
+              足つぼコース（30分・60分）はもちろん、もみほぐしと組み合わせた「足つぼセット」（60分・90分・120分）もご用意しています。体全体の疲れをとりながら、足元からしっかりリフレッシュしていただけます。
             </p>
           </div>
         </div>
       </section>
 
-      {/* ===== Course ===== */}
+      {/* ===== Courses ===== */}
       <section className="py-16 lg:py-24 bg-cream-100">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Courses"
-            ja="足つぼセットのコース"
-            lead="もみほぐしと足つぼを組み合わせたセットコースです。"
+            ja="足つぼコース"
+            lead="お時間やご要望に合わせてお選びください。"
             centered
           />
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
             <div className="bg-cream-50 border border-sand-200 p-7">
-              <h2 className="text-base font-medium text-stone-800 mb-1 tracking-wide">足つぼセット 45分</h2>
-              <p className="font-en text-2xl text-brown-400 mb-4 font-light">¥4,000〜</p>
+              <h2 className="text-base font-medium text-stone-800 mb-1 tracking-wide">足つぼコース 30分</h2>
+              <p className="font-en text-2xl text-brown-400 mb-4 font-light">¥3,800</p>
               <p className="text-sm text-stone-700 leading-loose mb-6">
-                もみほぐし＋足つぼのコンパクトなセット。短時間で体と足の疲れをリフレッシュしたい方に。
+                足裏の反射区を短時間で集中ケア。仕事帰りの気軽なリフレッシュや、他メニューとのオプション的な利用にも。
               </p>
-              <ReserveButton href={HPB_URL} label="このコースで予約" size="sm" variant="outline" />
+              <ReserveButton href={BMERIT_URL} label="このコースで予約" size="sm" variant="outline" />
             </div>
             <div className="bg-cream-50 border border-brown-300 p-7 relative">
               <span className="absolute top-4 right-4 text-[10px] tracking-widest bg-brown-400 text-cream-50 px-2.5 py-1">
                 おすすめ
               </span>
-              <h2 className="text-base font-medium text-stone-800 mb-1 tracking-wide">足つぼセット 60分</h2>
-              <p className="font-en text-2xl text-brown-400 mb-4 font-light">¥5,500〜</p>
+              <h2 className="text-base font-medium text-stone-800 mb-1 tracking-wide">足つぼコース 60分</h2>
+              <p className="font-en text-2xl text-brown-400 mb-4 font-light">¥5,500</p>
               <p className="text-sm text-stone-700 leading-loose mb-6">
-                もみほぐし＋足つぼをゆったりとしたペースで。足のだるさ・むくみ・冷えが気になる方に最適。
+                足裏・ふくらはぎをゆったりとしたペースで丁寧にケア。足のだるさ・むくみ・冷えが気になる方に最適。
               </p>
-              <ReserveButton href={HPB_URL} label="このコースで予約" size="sm" variant="outline" />
+              <ReserveButton href={BMERIT_URL} label="このコースで予約" size="sm" variant="outline" />
             </div>
           </div>
           <p className="mt-6 text-xs text-greige-400 text-center">
-            ※ 表示価格は税込み参考価格です。詳細はホットペッパービューティーの予約ページをご確認ください。
+            ※ 表示価格は税込みです。
           </p>
           <div className="mt-8 text-center">
             <Link
               href="/menu/set"
               className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500"
             >
-              セットコース一覧を見る →
+              もみほぐし＋足つぼのセットコースを見る →
             </Link>
           </div>
         </div>
@@ -246,15 +247,21 @@ export default function FootPage() {
               足つぼ・リフレクソロジーは、もみほぐしと組み合わせることで効果がさらに高まります。もみほぐしで体全体の筋肉の緊張をほぐし、足つぼで足裏の反射区を刺激して全身の血行を整えることで、施術後の体の軽さをより実感していただけます。
             </p>
             <p>
-              「肩こりもあるし、足のだるさも気になる」という方に多くご利用いただいているのが「足つぼセット 60分」です。上半身の疲れと下半身の疲れを一度の施術でまとめてケアできるため、忙しい方や施術頻度が少ない方にも好評です。
+              「肩こりもあるし、足のだるさも気になる」という方に多くご利用いただいているのが足つぼセットコース（60分・90分・120分）です。上半身の疲れと下半身の疲れを一度の施術でまとめてケアできるため、忙しい方や施術頻度が少ない方にも好評です。
             </p>
           </div>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/menu/body-care"
               className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500"
             >
               もみほぐしの詳細を見る →
+            </Link>
+            <Link
+              href="/menu/set"
+              className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500"
+            >
+              足つぼセットコースを見る →
             </Link>
           </div>
         </div>
@@ -314,11 +321,11 @@ export default function FootPage() {
           </h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業中・当日予約OK。<br />
-            君津で足つぼ・リフレクソロジーをお探しの方は、ぜひMARISAへ。
+            君津で足つぼ・リフレクソロジーをお探しの方は、ぜひもみほぐし・MARISAへ。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />
-            <ReserveButton href="/menu" label="メニュー一覧へ戻る" variant="outline" size="lg" />
+            <ReserveButton href={BMERIT_URL} label="WEB予約（公式）" variant="light" size="lg" />
+            <ReserveButton href={HPB_URL} label="ホットペッパーで予約" variant="outline" size="lg" />
           </div>
         </div>
       </section>

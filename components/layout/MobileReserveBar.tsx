@@ -1,12 +1,12 @@
 import Link from 'next/link'
-import { HPB_URL, INSTAGRAM_URL, PHONE } from '@/lib/constants'
+import { BMERIT_URL, HPB_URL, INSTAGRAM_URL, LINE_URL } from '@/lib/constants'
 
 export default function MobileReserveBar() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-cream-50 border-t border-sand-200 shadow-lg">
       <div className="grid grid-cols-3 divide-x divide-sand-200">
         <Link
-          href={HPB_URL}
+          href={BMERIT_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-0.5 py-3 text-xs text-brown-500 hover:bg-cream-100 transition-colors"
@@ -18,14 +18,16 @@ export default function MobileReserveBar() {
           <span>WEB予約</span>
         </Link>
         <Link
-          href={`tel:${PHONE}`}
+          href={LINE_URL || HPB_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex flex-col items-center gap-0.5 py-3 text-xs text-brown-500 hover:bg-cream-100 transition-colors"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
           </svg>
-          <span>電話する</span>
+          <span>LINE予約</span>
         </Link>
         <Link
           href={INSTAGRAM_URL}

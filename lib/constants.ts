@@ -1,7 +1,9 @@
-export const SITE_NAME = 'MARISA 君津店'
+export const SITE_NAME = 'もみほぐし・MARISA'
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://marisa-kimitsu.com'
 export const HPB_URL = 'https://beauty.hotpepper.jp/kr/slnH000777799/'
+export const BMERIT_URL = 'https://g97mhk-google.b-merit.jp/h6cg93/web/reserve1/'
 export const INSTAGRAM_URL = 'https://www.instagram.com/momihogushi_marisa/'
+export const LINE_URL = process.env.NEXT_PUBLIC_LINE_URL ?? ''
 export const PHONE = '0439-00-0000' // TODO: 実際の電話番号に差し替え
 
 export const SHOP_INFO = {
@@ -13,6 +15,8 @@ export const SHOP_INFO = {
   hours: '10:00〜24:00（最終受付 23:00）',
   phone: PHONE,
   hpbUrl: HPB_URL,
+  bmeritUrl: BMERIT_URL,
+  lineUrl: LINE_URL,
   instagramUrl: INSTAGRAM_URL,
   googleMapUrl: 'https://maps.google.com/?q=千葉県君津市杢師3-20-10',
   googleMapEmbedUrl:
@@ -21,7 +25,18 @@ export const SHOP_INFO = {
 
 export const NAV_ITEMS = [
   { label: '初めての方へ', href: '/first' },
-  { label: 'メニュー・料金', href: '/menu' },
+  {
+    label: 'メニュー・料金',
+    href: '/menu',
+    children: [
+      { label: 'もみほぐし', href: '/menu/body-care' },
+      { label: 'ヘッドケア', href: '/menu/head' },
+      { label: '足つぼ・リフレ', href: '/menu/foot' },
+      { label: 'セットコース', href: '/menu/set' },
+      { label: '鍼灸メニュー', href: '/menu/acupuncture' },
+      { label: '美容鍼', href: '/menu/beauty-acupuncture' },
+    ],
+  },
   {
     label: 'お悩み別',
     href: '/symptom',

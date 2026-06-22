@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { SHOP_INFO, HPB_URL, INSTAGRAM_URL, NAV_ITEMS } from '@/lib/constants'
+import { SHOP_INFO, HPB_URL, INSTAGRAM_URL, BMERIT_URL, LINE_URL, NAV_ITEMS } from '@/lib/constants'
 
 export default function Footer() {
   return (
@@ -31,7 +31,6 @@ export default function Footer() {
                 </Link>
               ))}
               <Link href="/access" className="hover:text-cream-50 transition-colors">アクセス</Link>
-              <Link href="/news" className="hover:text-cream-50 transition-colors">お知らせ</Link>
               <Link href="/reservation" className="hover:text-cream-50 transition-colors">ご予約</Link>
             </nav>
           </div>
@@ -41,12 +40,30 @@ export default function Footer() {
             <p className="text-xs tracking-widest text-greige-400 uppercase mb-5">Reserve</p>
             <div className="space-y-3">
               <Link
-                href={HPB_URL}
+                href={BMERIT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center bg-brown-500 text-cream-50 text-sm py-3 tracking-wider hover:bg-brown-400 transition-colors"
               >
-                ホットペッパーで予約
+                WEB予約（公式）
+              </Link>
+              {LINE_URL && (
+                <Link
+                  href={LINE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center bg-[#06C755] text-cream-50 text-sm py-3 tracking-wider hover:opacity-90 transition-opacity"
+                >
+                  LINEで予約・相談
+                </Link>
+              )}
+              <Link
+                href={HPB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-center border border-greige-500 text-greige-300 text-sm py-3 tracking-wider hover:border-greige-300 hover:text-cream-50 transition-colors"
+              >
+                ホットペッパービューティー
               </Link>
               <Link
                 href={INSTAGRAM_URL}

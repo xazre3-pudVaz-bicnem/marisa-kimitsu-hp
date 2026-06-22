@@ -4,12 +4,13 @@ import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL } from '@/lib/constants'
+import { HPB_URL, BMERIT_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: '君津のヘッドスパ・眼精疲労ケア｜MARISA 君津店',
   description:
-    '千葉県君津市「MARISA」のヘッドケア・眼精疲労ケアメニュー。頭の重さ・目の疲れ・頭皮のコリをほぐします。ヘッドケア30分¥2,500〜。PC・スマホ疲れの方に。当日予約OK・夜0時まで営業。',
+    '千葉県君津市「MARISA」のヘッドケア・眼精疲労ケアメニュー。頭の重さ・目の疲れ・頭皮のコリをほぐします。ヘッドケア15分¥2,000〜。PC・スマホ疲れの方に。当日予約OK・夜0時まで営業。',
+  keywords: ['君津 ヘッドスパ', '君津 ヘッドケア', '君津 眼精疲労', '君津 頭皮 マッサージ'],
   alternates: { canonical: '/menu/head' },
 }
 
@@ -55,7 +56,7 @@ const faqSchema = {
 const targets = [
   { label: 'PC・デスクワークで目が疲れている', detail: '長時間のモニター作業は目の周りの筋肉を酷使します。眼周りの緊張をほぐすことで目の重さをやわらげます。' },
   { label: 'スマートフォンを長時間使用している', detail: 'スマホの小さな画面を見続けると、目・首・肩に集中的な緊張が生じます。頭から首にかけて丁寧にほぐします。' },
-  { label: '頭が重い・ぼーっとする', detail: '頭皮や側頭部の筋肉の緊張が、頭の重さ・ぼんやり感の原因になることがあります。頭皮のコリをほぐすことで血行が改善します。' },
+  { label: '頭が重い・ぼーっとする', detail: '頭皮や側頭部の筋肉の緊張が、頭の重さ・ぼんやり感の原因になることがあります。頭皮のコリをほぐすことで血行がよくなります。' },
   { label: '頭痛が気になる', detail: '緊張型頭痛の多くは首・肩・後頭部の筋肉の硬さが関係しています。医療行為ではありませんが、緊張をほぐすことで症状がやわらぐ場合があります。' },
   { label: '睡眠の質を上げたい', detail: '頭皮・頭部の緊張が解れると副交感神経が優位になり、深い眠りにつきやすくなるといわれています。' },
   { label: '集中力が続かない・頭がすっきりしない', detail: '頭部の血行を促進することで、頭がクリアになりやすくなります。仕事前や作業の合間にもおすすめです。' },
@@ -133,7 +134,7 @@ export default function HeadPage() {
               MARISA 君津店のヘッドケアは、頭皮・側頭筋・後頭下筋群・眼輪筋など、頭部にある筋肉群を丁寧にほぐす施術です。指先や手のひらを使って適度な圧で刺激することで、頭部の血行を促進し、筋肉の緊張をやわらげます。シャンプーや水を使わないドライの施術のため、施術後もそのままお出かけいただけます。
             </p>
             <p>
-              「頭が重い」「目の奥が痛い」「集中できない」「夜なかなか寝付けない」という方に、多くご利用いただいています。ヘッドケア単体（30分）のほか、もみほぐしと組み合わせたヘッドセットコース（60分・90分・120分）もご用意しています。
+              「頭が重い」「目の奥が痛い」「集中できない」「夜なかなか寝付けない」という方に、多くご利用いただいています。ヘッドケア単体（15分・30分）のほか、もみほぐしと組み合わせたヘッドセットコース（60分・90分・120分）もご用意しています。
             </p>
           </div>
         </div>
@@ -147,14 +148,23 @@ export default function HeadPage() {
             ja="ヘッドケアのコース"
             centered
           />
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <div className="bg-cream-50 border border-sand-200 p-7">
-              <h2 className="text-base font-medium text-stone-800 mb-1 tracking-wide">ヘッドケア 30分</h2>
-              <p className="font-en text-2xl text-brown-400 mb-4 font-light">¥2,500〜</p>
+              <h2 className="text-base font-medium text-stone-800 mb-1 tracking-wide">ヘッドケア 15分</h2>
+              <p className="font-en text-2xl text-brown-400 mb-4 font-light">¥2,000</p>
               <p className="text-sm text-stone-700 leading-loose mb-6">
-                頭皮・側頭部・眼周りを集中的にケアする単体コース。仕事の合間や帰宅前にも立ち寄りやすい短時間メニューです。
+                頭皮・側頭部を短時間で集中ケア。仕事の合間や帰宅前のちょっとしたリフレッシュに。
               </p>
-              <ReserveButton href={HPB_URL} label="このコースで予約" size="sm" variant="outline" />
+              <ReserveButton href={BMERIT_URL} label="このコースで予約" size="sm" variant="outline" />
+            </div>
+            <div className="bg-cream-50 border border-brown-300 p-7 relative">
+              <span className="absolute top-4 right-4 text-[10px] tracking-widest bg-brown-400 text-cream-50 px-2.5 py-1">おすすめ</span>
+              <h2 className="text-base font-medium text-stone-800 mb-1 tracking-wide">ヘッドケア 30分</h2>
+              <p className="font-en text-2xl text-brown-400 mb-4 font-light">¥3,000</p>
+              <p className="text-sm text-stone-700 leading-loose mb-6">
+                頭皮・側頭部・眼周りを丁寧にケアする単体コース。仕事の合間や帰宅前に立ち寄りやすい時間設定です。
+              </p>
+              <ReserveButton href={BMERIT_URL} label="このコースで予約" size="sm" variant="outline" />
             </div>
             <div className="bg-sand-100 border border-sand-200 p-7">
               <p className="text-xs tracking-widest text-greige-400 uppercase mb-3">Recommended</p>
@@ -170,6 +180,9 @@ export default function HeadPage() {
               </Link>
             </div>
           </div>
+          <p className="mt-6 text-xs text-greige-400 text-center">
+            ※ 表示価格は税込みです。
+          </p>
         </div>
       </section>
 
@@ -276,11 +289,11 @@ export default function HeadPage() {
           </h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業中・当日予約OK。<br />
-            君津でヘッドケア・眼精疲労ケアをお探しの方は、ぜひMARISAへ。
+            君津でヘッドケア・眼精疲労ケアをお探しの方は、ぜひもみほぐし・MARISAへ。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />
-            <ReserveButton href="/menu" label="メニュー一覧へ戻る" variant="outline" size="lg" />
+            <ReserveButton href={BMERIT_URL} label="WEB予約（公式）" variant="light" size="lg" />
+            <ReserveButton href={HPB_URL} label="ホットペッパーで予約" variant="outline" size="lg" />
           </div>
         </div>
       </section>

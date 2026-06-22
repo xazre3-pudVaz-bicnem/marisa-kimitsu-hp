@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { NAV_ITEMS, HPB_URL } from '@/lib/constants'
+import { NAV_ITEMS, HPB_URL, INSTAGRAM_URL, BMERIT_URL } from '@/lib/constants'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -30,7 +30,7 @@ export default function Header() {
             MARISA
           </span>
           <span className="text-[10px] tracking-widest text-greige-400 font-light">
-            君津もみほぐし
+            もみほぐし・君津店
           </span>
         </Link>
 
@@ -66,13 +66,30 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Reserve button (desktop) */}
-        <Link
-          href="/reservation"
-          className="hidden lg:inline-flex items-center gap-2 bg-brown-500 text-cream-50 text-sm px-5 py-2.5 tracking-wider hover:bg-brown-600 transition-colors"
-        >
-          予約する
-        </Link>
+        {/* Desktop right: Instagram + Reserve */}
+        <div className="hidden lg:flex items-center gap-3">
+          <Link
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-stone-500 hover:text-brown-500 transition-colors p-1"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" strokeWidth={1.5}/>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" strokeWidth={1.5}/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" strokeWidth={2} strokeLinecap="round"/>
+            </svg>
+          </Link>
+          <Link
+            href={BMERIT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-brown-500 text-cream-50 text-sm px-5 py-2.5 tracking-wider hover:bg-brown-600 transition-colors"
+          >
+            WEB予約
+          </Link>
+        </div>
 
         {/* Hamburger (mobile) */}
         <button
@@ -128,11 +145,13 @@ export default function Header() {
               </div>
             ))}
             <Link
-              href="/reservation"
+              href={BMERIT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
               className="mt-4 block text-center bg-brown-500 text-cream-50 py-3 tracking-wider"
             >
-              予約する
+              WEB予約（公式）
             </Link>
             <Link
               href={HPB_URL}
@@ -142,6 +161,15 @@ export default function Header() {
               className="mt-2 block text-center border border-brown-400 text-brown-500 py-3 tracking-wider text-sm"
             >
               ホットペッパーで予約
+            </Link>
+            <Link
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="mt-2 block text-center border border-sand-300 text-stone-600 py-2.5 tracking-wide text-sm"
+            >
+              Instagram
             </Link>
           </nav>
         </div>
