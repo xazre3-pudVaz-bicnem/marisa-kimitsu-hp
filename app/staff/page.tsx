@@ -9,8 +9,8 @@ import { HPB_URL, BMERIT_URL } from '@/lib/constants'
 export const metadata: Metadata = {
   title: '君津のもみほぐしスタッフ紹介｜MARISA 君津店',
   description:
-    '千葉県君津市のリラクゼーションサロン「MARISA」のスタッフ紹介。鍼灸師資格を持つなお、オーナーが在籍。丁寧なカウンセリングと体の状態に合わせた施術で、君津のもみほぐし・鍼灸メニューを提供します。',
-  keywords: ['君津 もみほぐし スタッフ', '君津 鍼灸師', '君津 マッサージ 指名', '君津 リラクゼーション なお'],
+    '千葉県君津市のリラクゼーションサロン「MARISA」のスタッフ紹介。鍼灸師資格を持つなお・オーナー・めいが在籍。丁寧なカウンセリングと体の状態に合わせた施術で、君津のもみほぐし・鍼灸メニューを提供します。',
+  keywords: ['君津 もみほぐし スタッフ', '君津 鍼灸師', '君津 マッサージ 指名', '君津 リラクゼーション なお', '君津 マッサージ 女性'],
   openGraph: {
     title: '君津のもみほぐしスタッフ紹介｜MARISA 君津店',
     description: '鍼灸師資格を持つなお、オーナーが在籍。君津のもみほぐし・鍼灸メニューを丁寧に提供します。',
@@ -28,7 +28,7 @@ const mainStaff = [
     name: 'オーナー',
     role: 'オーナー・セラピスト',
     qualificationBadge: null,
-    specialties: ['もみほぐし', '足つぼ'],
+    specialties: ['もみほぐし', '足つぼ', 'ヘッドケア'],
     message:
       '「来るたびに楽になれる場所」を目指して、日々の施術に取り組んでいます。お客様のお悩みをしっかりお聞きし、体の状態に合わせた丁寧なケアをご提供します。ご不安なことは何でもお気軽にお申し付けください。',
     image: '/0V2A1767_0.JPG',
@@ -45,6 +45,18 @@ const mainStaff = [
     // Final image: /images/staff/nao-head-care.jpg
     image: '/S__15343701.jpg',
     imageAlt: '君津 鍼灸師 もみほぐし MARISA なお ヘッドケア施術風景',
+  },
+  {
+    id: 'mei',
+    name: 'めい',
+    role: 'セラピスト',
+    qualificationBadge: null,
+    specialties: ['もみほぐし', 'ヘッドケア', 'リラクゼーション'],
+    message:
+      'お客様一人ひとりのお疲れに寄り添い、落ち着いて過ごせる施術時間を大切にしています。初めての方にも安心してご利用いただけるよう、力加減や気になる箇所を確認しながら、無理のないケアをご提案いたします。',
+    image: '/images/staff/mei.jpg',
+    imagePending: true,
+    imageAlt: '君津 もみほぐし MARISA めい セラピスト',
   },
 ]
 
@@ -100,6 +112,14 @@ const faqs = [
     q: 'スタッフに話しかけなくても大丈夫ですか？',
     a: 'はい、施術中はリラックスしてお過ごしいただければ結構です。眠ってしまっても大丈夫です。お話が好きな方も苦手な方も、それぞれのスタイルで施術をお受けください。',
   },
+  {
+    q: 'めいさんの施術は予約できますか？',
+    a: 'はい、予約の際にめいをご指名いただけます。ご予約はWEB予約（公式）またはホットペッパービューティーから、スタッフ指定のうえお手続きください。出勤日はホットペッパービューティーの空き状況でご確認いただけます。',
+  },
+  {
+    q: 'ヘッドケアはどのスタッフが対応していますか？',
+    a: 'オーナー・なお・めいの全スタッフがヘッドケアに対応しています。ご予約時にスタッフをご指名いただくことも可能です。',
+  },
 ]
 
 // ---- Page ----
@@ -144,13 +164,22 @@ export default function StaffPage() {
                 {/* Photo */}
                 <div className="w-full lg:w-5/12 flex-shrink-0">
                   <div className="relative aspect-[4/3] overflow-hidden bg-sand-100">
-                    <Image
-                      src={staff.image}
-                      alt={staff.imageAlt}
-                      fill
-                      className="object-cover object-top"
-                      sizes="(max-width: 1024px) 100vw, 40vw"
-                    />
+                    {(staff as { imagePending?: boolean }).imagePending ? (
+                      <div className="w-full h-full flex flex-col items-center justify-center bg-sand-200 text-stone-400">
+                        <svg className="w-12 h-12 mb-3 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <p className="text-xs tracking-widest text-stone-400">写真準備中</p>
+                      </div>
+                    ) : (
+                      <Image
+                        src={staff.image}
+                        alt={staff.imageAlt}
+                        fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 1024px) 100vw, 40vw"
+                      />
+                    )}
                   </div>
                 </div>
 

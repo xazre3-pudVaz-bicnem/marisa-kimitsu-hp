@@ -61,6 +61,7 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${SITE_URL}/area/awa`, lastModified: MONTHLY, priority: 0.7, changeFrequency: 'monthly' },
   { url: `${SITE_URL}/area/tateyama`, lastModified: MONTHLY, priority: 0.7, changeFrequency: 'monthly' },
   { url: `${SITE_URL}/area/minamiboso`, lastModified: MONTHLY, priority: 0.7, changeFrequency: 'monthly' },
+  { url: `${SITE_URL}/area/kamogawa`, lastModified: NOW, priority: 0.7, changeFrequency: 'monthly' },
   // Scene pages
   { url: `${SITE_URL}/scene`, lastModified: MONTHLY, priority: 0.7, changeFrequency: 'monthly' },
   { url: `${SITE_URL}/scene/after-work`, lastModified: MONTHLY, priority: 0.9, changeFrequency: 'monthly' },
@@ -78,6 +79,7 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${SITE_URL}/scene/friends`, lastModified: MONTHLY, priority: 0.6, changeFrequency: 'monthly' },
   { url: `${SITE_URL}/scene/birthday`, lastModified: MONTHLY, priority: 0.6, changeFrequency: 'monthly' },
   { url: `${SITE_URL}/scene/before-sleep`, lastModified: MONTHLY, priority: 0.6, changeFrequency: 'monthly' },
+  { url: `${SITE_URL}/scene/women`, lastModified: NOW, priority: 0.9, changeFrequency: 'monthly' },
   // Guide pages
   { url: `${SITE_URL}/guide`, lastModified: MONTHLY, priority: 0.7, changeFrequency: 'monthly' },
   { url: `${SITE_URL}/guide/what-is-momihogushi`, lastModified: MONTHLY, priority: 0.8, changeFrequency: 'monthly' },
