@@ -6,15 +6,16 @@ import ReserveButton from '@/components/ui/ReserveButton'
 import { HPB_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'ストレス解消・リフレッシュのもみほぐし｜MARISA 君津店',
-  description: '君津でストレス解消・リフレッシュのもみほぐしならMARISA。体をほぐすことがリラクゼーションにつながります。仕事・人間関係・日常疲れで張り詰めた方に。',
-  keywords: ['君津 ストレス解消 マッサージ', '君津 リフレッシュ もみほぐし', '君津 気分転換 リラクゼーション'],
+  title: 'ストレス発散・気持ちの切り替えにもみほぐし｜MARISA 君津店',
+  description: '君津でストレス発散・気分リフレッシュのもみほぐしならMARISA。仕事・日常のストレスを体からほぐす。施術後のすっきり感が気持ちの切り替えに。90〜120分コース・ヘッドセットが人気。',
+  keywords: ['君津 ストレス発散 マッサージ', '君津 気持ち切り替え もみほぐし', '君津 仕事ストレス ケア', '君津 心身リフレッシュ'],
   openGraph: {
-    title: 'ストレス解消・リフレッシュのもみほぐし｜MARISA 君津店',
-    description: '体をほぐすことがリラクゼーションにつながります。君津MARISA。',
+    title: 'ストレス発散・気持ちの切り替えにもみほぐし｜MARISA 君津店',
+    description: '仕事・日常のストレスを体からほぐす。施術後のすっきり感で気持ちが切り替わります。君津MARISA。',
     locale: 'ja_JP',
     type: 'website',
   },
+  twitter: { card: 'summary_large_image' },
   alternates: { canonical: '/scene/stress' },
 }
 
@@ -24,26 +25,42 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'ストレスで体が緊張しているのですが、もみほぐしは効果がありますか？',
+      name: 'ストレスケアにはどのコースが向いていますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'ストレスを感じると筋肉が緊張しやすく、肩や首のこわばりが出やすくなります。もみほぐしで筋肉の緊張をほぐすことで、体がリラックスしやすい状態になります。心と体は繋がっているため、体をほぐすことで気分も軽く感じやすくなるというお声をいただいています。',
+        text: 'たっぷりリセットしたい方には90〜120分のもみほぐしがおすすめです。頭の疲れや緊張が気になる方にはヘッドセット60分もよく選ばれています。まずはご自身の体の疲れがどこに出ているかをお伝えいただければ、スタッフがコースをご提案します。',
       },
     },
     {
       '@type': 'Question',
-      name: '気分が落ち込んでいるときでも利用できますか？',
+      name: '施術後にすっきりしますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、ご利用いただけます。施術中は静かな空間でゆっくりとお過ごしいただけます。何もしゃべらなくても大丈夫ですし、施術に集中していただけます。',
+        text: '「施術後は気持ちも軽くなった気がする」というお声を多くいただいています。体の緊張がほぐれると呼吸が深くなりやすく、体全体がリラックスした状態になります。心と体はつながっているため、体をほぐすことで気分も変化しやすくなります。',
       },
     },
     {
       '@type': 'Question',
-      name: '予約なしでも行けますか？',
+      name: '体が緊張しているときでも受けられますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '当日予約も受け付けております。ただし、ご希望のお時間が埋まっている場合もございますので、事前にホットペッパービューティーから空き状況をご確認の上、ご予約いただくことをおすすめします。',
+        text: 'はい、体が緊張している状態でもご利用いただけます。むしろ、体が緊張しているときこそ、ほぐれる感覚をより実感しやすいです。施術前にお体の状態をお伝えいただければ、その部位に合わせてアプローチします。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'どのくらいの頻度で来ると良いですか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ストレスを強く感じているときは週1〜2回、日常のリフレッシュとしては月2〜3回が目安です。「ストレスが溜まってきたな」と感じたタイミングで来店するパターンも多いです。当日予約も受け付けていますので、気になったときにお気軽にどうぞ。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '施術中はリラックスできますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、施術中は照明を落とした静かな空間でBGMが流れる落ち着いた環境でお過ごしいただけます。何も話さなくてもOKです。施術に集中しながら、プロの手に体を委ねる時間がそれ自体のリラックスにつながります。',
       },
     },
   ],
@@ -62,7 +79,7 @@ export default function SceneStressPage() {
           <Breadcrumb
             items={[
               { label: '地域・シーン別', href: '/area/kimitsu' },
-              { label: 'ストレス解消に' },
+              { label: 'ストレス発散に' },
             ]}
           />
           <div className="mt-4">
@@ -71,7 +88,7 @@ export default function SceneStressPage() {
               ストレスを感じたら、体からリフレッシュ
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              仕事・人間関係・日常のさまざまなストレスで張り詰めてしまったとき、体をほぐすことが心のリフレッシュにもつながります。君津のMARISAで、静かな時間をお過ごしください。
+              仕事・人間関係・日常のさまざまなストレスで張り詰めてしまったとき、体をほぐすことが心のリフレッシュにもつながります。施術後の「すっきり感」で気持ちを切り替える——君津のMARISAで、静かな時間をお過ごしください。
             </p>
           </div>
         </div>
@@ -88,7 +105,7 @@ export default function SceneStressPage() {
               特に肩から首にかけての緊張が続くと、頭が重く感じやすくなったり、目が疲れやすくなったりすることがあります。また、腰や背中が硬くなることで、全身に重だるさを感じやすくなります。
             </p>
             <p>
-              体の緊張がほぐれると、自然と呼吸が深くなりやすく、体全体がリラックスした状態になりやすいです。「施術後は気持ちも軽くなった気がする」というお声をいただくのは、体と心のつながりによるものと考えられます。
+              体の緊張がほぐれると、自然と呼吸が深くなりやすく、体全体がリラックスした状態になりやすいです。「施術後は気持ちも軽くなった気がする」というお声をいただくのは、体と心のつながりによるものです。
             </p>
           </div>
         </div>
@@ -97,24 +114,55 @@ export default function SceneStressPage() {
       <section className="py-16 bg-sand-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader en="Why Momihogushi" ja="もみほぐしがリフレッシュにつながる理由" lead="体からアプローチする気分転換" />
-          <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
-            <p>
-              もみほぐしは、筋肉の緊張を直接ほぐすアプローチです。積み重なった疲れで固まった筋肉をほぐすことで、体が軽く感じやすい状態になります。
-            </p>
-            <p>
-              施術中は静かな空間でうつ伏せになり、プロの手によってゆっくりと体をほぐしていただきます。何も考えずにただ体を委ねる時間は、それ自体が日常のストレスから離れる貴重なひとときになります。
-            </p>
-            <p>
-              「気分転換に何かしたいけれど、何をすればいいかわからない」という方にも、もみほぐしはおすすめです。特別な準備や運動が必要なく、ただ来店して施術を受けるだけで、体と心の負担をやわらげやすくなります。
-            </p>
-            <p>
-              仕事で忙しい日々の中でも、1〜2時間を自分のために使うことが、長期的に見てパフォーマンスの維持にもつながります。頑張りすぎている自分を、定期的にいたわってあげてください。
-            </p>
+          <div className="mt-10 grid gap-5">
+            {[
+              {
+                title: '筋肉の緊張を直接ほぐせる',
+                body: 'もみほぐしは積み重なった疲れで固まった筋肉をほぐすアプローチです。体が軽く感じやすい状態になることで、日常のストレスから離れやすくなります。',
+              },
+              {
+                title: '「何もしない時間」が手に入る',
+                body: '施術中はうつ伏せになり、プロの手に体を委ねるだけです。何も考えなくていい、判断しなくていい——この時間そのものが日常のストレスから離れる貴重なひとときになります。',
+              },
+              {
+                title: '特別な準備が不要',
+                body: '運動や趣味と違い、特別な道具・準備・技術は不要です。「気分転換に何かしたいけど何をすればいいか」という方にも、ただ来店するだけでOKのもみほぐしはハードルが低い選択肢です。',
+              },
+              {
+                title: '長期的なパフォーマンスの維持につながる',
+                body: '忙しい日々の中でも、1〜2時間を自分のために使うことが、長期的に見てパフォーマンスの維持にもつながります。頑張りすぎている自分を、定期的にいたわってあげてください。',
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-cream-50 border border-sand-200 p-6">
+                <p className="font-medium text-stone-800 mb-2 tracking-wide text-sm">{item.title}</p>
+                <p className="text-sm text-stone-700 leading-loose">{item.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="py-16 bg-cream-50">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Recommended" ja="ストレス発散におすすめのコース" lead="たっぷりリセットしたい方に" />
+          <div className="mt-8 space-y-4">
+            <div className="bg-sand-100 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">もみほぐし 90〜120分（たっぷりリセット）</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                ストレスが溜まっているときはたっぷり時間をかけてほぐすのがおすすめです。90〜120分コースで、背中・腰・肩・首・脚と全身をゆっくりほぐすことで、体の重さが取れてすっきりした感覚になりやすくなります。
+              </p>
+            </div>
+            <div className="bg-sand-100 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">ヘッドセット 60分〜</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                仕事や思考で頭が疲れている方、頭の重さや緊張が気になる方に。ヘッドセットは頭・首・肩のセットコースで、頭まわりの緊張をほぐすことでリフレッシュ感が高まります。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-sand-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader en="FAQ" ja="よくある質問" />
           <div className="mt-8 space-y-4">
@@ -137,6 +185,7 @@ export default function SceneStressPage() {
             {[
               { label: '君津でマッサージをお探しの方', href: '/area/kimitsu' },
               { label: 'メニュー・料金', href: '/menu' },
+              { label: '定期メンテナンス', href: '/scene/regular' },
               { label: 'よくある質問', href: '/faq' },
             ].map((l) => (
               <Link

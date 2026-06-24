@@ -6,15 +6,16 @@ import ReserveButton from '@/components/ui/ReserveButton'
 import { HPB_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'プレゼント・記念日のもみほぐし｜MARISA 君津店',
-  description: '君津でマッサージをプレゼントしたいならMARISA。誕生日・母の日・父の日・記念日のサプライズに。ホットペッパービューティーのギフト券活用でペア利用も。',
-  keywords: ['君津 マッサージ プレゼント', '君津 もみほぐし 誕生日', '君津 記念日 リラクゼーション'],
+  title: 'プレゼントに・体験ギフトのもみほぐし｜MARISA 君津店',
+  description: '君津でマッサージをプレゼントしたいならMARISA。誕生日・記念日・母の日・父の日のサプライズに。ホットペッパービューティーのギフト券でペア体験も。当日予約OK・無料駐車場完備。',
+  keywords: ['君津 マッサージ プレゼント', 'もみほぐし ギフト 君津', '体験ギフト マッサージ 君津', '誰かへのプレゼント もみほぐし'],
   openGraph: {
-    title: 'プレゼント・記念日のもみほぐし｜MARISA 君津店',
-    description: '誕生日・母の日・父の日・記念日のサプライズに。君津MARISA。',
+    title: 'プレゼントに・体験ギフトのもみほぐし｜MARISA 君津店',
+    description: '誕生日・記念日・母の日・父の日に体のケアをプレゼント。君津MARISA。',
     locale: 'ja_JP',
     type: 'website',
   },
+  twitter: { card: 'summary_large_image' },
   alternates: { canonical: '/scene/gift' },
 }
 
@@ -24,26 +25,42 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'ホットペッパービューティーのギフト券は使えますか？',
+      name: 'プレゼント用にギフト券はありますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、ホットペッパービューティーのギフト券をご利用いただけます。大切な方へのプレゼントとしてギフト券を贈ることで、好きなタイミングでご来店いただけます。詳細はホットペッパービューティーの公式サービスをご確認ください。',
+        text: 'ホットペッパービューティーのギフト券サービスをご活用いただけます。金額を指定して購入し、贈られた方が自分の都合のよい日時にMARISAへご予約・来店できます。詳細はホットペッパービューティーの公式サービスをご確認ください。',
       },
     },
     {
       '@type': 'Question',
-      name: 'カップル・夫婦でのペア利用はできますか？',
+      name: 'ペアで来店できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、ペアでのご利用も歓迎しております。お席の状況によっては同時間帯での対応も可能です。ご予約の際に「2名で利用したい」旨をお伝えいただくとスムーズです。',
+        text: 'はい、ベッドを3台ご用意していますので、カップルや友人・家族でのペア利用も歓迎しています。ご予約時に「2名で来店予定」とお知らせいただくと、できる限り同じ時間帯でご案内できるよう調整いたします。',
       },
     },
     {
       '@type': 'Question',
-      name: 'プレゼントとして予約する場合、受け取る本人が手続きできますか？',
+      name: '誕生日に特別なサービスはありますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'ホットペッパービューティーのギフト券を贈る場合、受け取った方が自分でご予約・ご来店いただけます。ご不明な点はお気軽にお問い合わせください。',
+        text: 'MARISAはリラクゼーションサロンとして、誕生日の方にも通常のメニューを丁寧にご提供しています。特別な日には90分〜120分のゆったりコースをおすすめしています。ご希望があればスタッフへお気軽にお声がけください。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'プレゼントとして予約する前に相談できますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、お気軽にお問い合わせください。ホットペッパービューティーのメッセージ機能もご活用いただけます。「どのコースがプレゼント向きか」「ペアでの利用方法は」などのご質問にお答えします。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'どんな人へのプレゼントに向いていますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '仕事や育児で体が疲れている方、自分のためにサロンへなかなか行けない方、年齢とともに体の重さが気になってきた方、日頃の感謝を伝えたい大切な方——幅広い方にご活用いただいています。特に40〜60代の親世代へのプレゼントとして喜ばれています。',
       },
     },
   ],
@@ -62,16 +79,16 @@ export default function SceneGiftPage() {
           <Breadcrumb
             items={[
               { label: '地域・シーン別', href: '/area/kimitsu' },
-              { label: 'プレゼント・記念日に' },
+              { label: 'プレゼント・ギフトに' },
             ]}
           />
           <div className="mt-4">
-            <p className="font-en text-xs tracking-widest uppercase text-brown-400 mb-3">Gift & Anniversary</p>
+            <p className="font-en text-xs tracking-widest uppercase text-brown-400 mb-3">Gift & Experience</p>
             <h1 className="text-3xl lg:text-4xl font-light tracking-wide text-stone-800 leading-snug">
-              大切な方へのプレゼントに
+              大切な方へ、体のケアをプレゼント
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              誕生日、母の日、父の日、記念日——いつも頑張っている大切な人に、体のケアをプレゼントしませんか。君津のMARISAは贈り物としてのご利用も大歓迎です。
+              誕生日、記念日、母の日、父の日——いつも頑張っている大切な人に、もみほぐし体験をプレゼントしませんか。形に残るギフトとは違う「体で感じてもらえる特別な贈り物」として、多くの方に選ばれています。
             </p>
           </div>
         </div>
@@ -79,48 +96,77 @@ export default function SceneGiftPage() {
 
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Gift Scenes" ja="プレゼントに喜ばれるシーン" lead="こんな場面でご活用いただいています" />
-          <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
-            <p>
-              「いつも家族のために頑張っているお母さんに」「毎日仕事で疲れているパートナーに」——もみほぐしのプレゼントは、形に残るものとは違う、体で感じてもらえる特別な贈り物です。
-            </p>
-            <p>
-              誕生日サプライズとして、ご夫婦・カップルの記念日に、母の日や父の日の贈り物として、また「お疲れさま」の気持ちを伝えたいときのサプライズとして——さまざまなシーンでご活用いただいています。
-            </p>
-            <p>
-              普段は「自分だけのために時間とお金を使うのは…」と遠慮しがちな方も、プレゼントとして受け取ればとても喜んでいただけます。特に40〜60代のお父さん・お母さん世代は、体のケアへの関心が高まっている反面、自分では予約しにくいという方も多く、プレゼントとして大変喜ばれています。
-            </p>
+          <SectionHeader en="Gift Scenes" ja="こんなシーンでご活用ください" lead="体のケアが喜ばれる理由" />
+          <div className="mt-10 grid gap-5">
+            {[
+              {
+                title: '誕生日のサプライズに',
+                body: '「何をプレゼントしたらいいかわからない」というときに選ばれるのがもみほぐし体験。物ではなく「体がほぐれる時間」を贈ることで、受け取った方がしっかりと実感できるギフトになります。',
+              },
+              {
+                title: 'お世話になった方への感謝に',
+                body: '仕事仲間・恩師・上司・お世話になっている方へ、「いつもありがとう」の気持ちを込めて。体のケアというギフトは「気が利いている」と感じてもらえる選択肢です。',
+              },
+              {
+                title: '母の日・父の日・敬老の日に',
+                body: '自分ではなかなかサロンへ行くきっかけが作れない親世代に、子どもからの贈り物として。「一緒に連れていく」というスタイルも、特別な時間になります。',
+              },
+              {
+                title: 'ペア体験でさらに特別に',
+                body: 'カップルや友人同士で「一緒に体をほぐす時間」を過ごすペア来店も人気です。同じ時間を共有しながらリフレッシュすることで、より特別な記念になります。',
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-sand-100 border border-sand-200 p-6">
+                <p className="font-medium text-stone-800 mb-2 tracking-wide text-sm">{item.title}</p>
+                <p className="text-sm text-stone-700 leading-loose">{item.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="py-16 bg-sand-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Pair Use" ja="ペア利用でのギフト活用" lead="一緒に体をいたわる時間を" />
-          <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
-            <p>
-              「一緒にリフレッシュしよう」と誘ってのペア利用も、素敵なプレゼントの形のひとつです。カップルや夫婦で同じ時間を共有しながら体をほぐすことで、より特別な記念日の思い出になります。
-            </p>
-            <p>
-              MARISAでは複数名でのご来店も対応しております。ご予約時に人数やご希望のメニューをお伝えいただければ、できる限りご希望に沿った形でご用意いたします。
-            </p>
-            <p>
-              人気のペアプランとしては、2名でそれぞれ60分もみほぐしをご利用いただくパターンや、片方がヘッドセット・もう片方が足つぼセットを選ぶなど、お好みに合わせてメニューを組み合わせることもできます。
-            </p>
+          <SectionHeader en="Recommended Courses" ja="プレゼントに人気のコース" lead="特別感があるコースをご提案" />
+          <div className="mt-8 space-y-4">
+            <div className="bg-cream-50 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">もみほぐし 60〜90分</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                プレゼントとして受け取った方が「しっかりほぐしてもらえた」と感じやすい、定番かつ人気のコースです。60分は気軽に受けやすく、90分はより特別感があります。初めての方への贈り物にも安心してお選びいただけます。
+              </p>
+            </div>
+            <div className="bg-cream-50 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">ヘッドセット 60分〜</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                頭・首・肩のセットコースは、デジタル疲れが気になる現代人に喜ばれるギフトです。「普段自分では選ばないコース」を贈るからこそ、体験の新鮮さが加わりより喜ばれます。
+              </p>
+            </div>
+            <div className="bg-cream-50 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">足つぼセット</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                立ち仕事・長距離移動が多い方、足のむくみや疲れが気になる方へのプレゼントに。セットコースは単体より体験の充実感が高く、ギフトとしての満足度も上がります。
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="py-16 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Gift Voucher" ja="ホットペッパービューティーのギフト券" lead="好きなタイミングで使える贈り物" />
-          <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
-            <p>
-              ホットペッパービューティーではギフト券サービスを提供しています。金額を指定して購入したギフト券を贈ることで、受け取った方が自分の好きなタイミングでMARISAに予約・来店できます。
-            </p>
-            <p>
-              「何が欲しいかわからない」「モノよりも体験を贈りたい」という方にも、マッサージギフトは喜ばれる選択肢です。当日の場合も事前予約でも対応していますので、受け取った方のスケジュールに合わせて使っていただけます。
-            </p>
+          <SectionHeader en="How to Gift" ja="プレゼントの贈り方" lead="2つの方法でご活用いただけます" />
+          <div className="mt-8 space-y-6">
+            <div className="border-l-4 border-brown-300 pl-5 py-2">
+              <p className="font-medium text-stone-800 mb-2 text-sm">ホットペッパービューティーのギフト券を贈る</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                ギフト券を購入して贈ることで、受け取った方が自分の都合に合わせて予約・来店できます。「いつ行けるかわからない」という方にも柔軟に対応できる方法です。
+              </p>
+            </div>
+            <div className="border-l-4 border-brown-300 pl-5 py-2">
+              <p className="font-medium text-stone-800 mb-2 text-sm">一緒に来店してペアで体験する</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                「今日一緒に行こう」と誘って、2名でご来店するスタイルも人気です。それぞれのコースを選べるので、お互いに自分に合ったケアを受けながら特別な時間を共有できます。
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -146,7 +192,8 @@ export default function SceneGiftPage() {
           <p className="text-xs tracking-widest text-greige-400 mb-4 uppercase">Related</p>
           <div className="flex flex-wrap gap-3 text-xs">
             {[
-              { label: '君津でマッサージをお探しの方', href: '/area/kimitsu' },
+              { label: '誕生日・記念日に', href: '/scene/birthday' },
+              { label: '友人・グループで', href: '/scene/friends' },
               { label: 'メニュー・料金', href: '/menu' },
               { label: 'よくある質問', href: '/faq' },
             ].map((l) => (

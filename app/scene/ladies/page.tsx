@@ -3,18 +3,19 @@ import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL } from '@/lib/constants'
+import { HPB_URL, BMERIT_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: '女性のお客様へ・もみほぐし・ヘッドケア｜MARISA 君津店',
-  description: '君津の女性向けもみほぐしならMARISA。肩こり・冷え・眼精疲労・むくみのお悩みに。清潔感のある環境・施術着完備。女性に人気のヘッドセット・足つぼセットも。',
-  keywords: ['君津 女性 マッサージ', '君津 レディース もみほぐし', '君津 女性 リラクゼーション'],
+  title: '女性のためのもみほぐし・マッサージ｜MARISA 君津店',
+  description: '君津の女性向けもみほぐしならMARISA。肩こり・冷え・眼精疲労・むくみのお悩みに。女性に人気のヘッドセット・足つぼセット・美容鍼（公式予約限定）も。清潔な施術着完備。',
+  keywords: ['君津 女性 マッサージ', '君津 女性 もみほぐし', '女性 リラクゼーション 君津', '君津 レディース マッサージ'],
   openGraph: {
-    title: '女性のお客様へ・もみほぐし・ヘッドケア｜MARISA 君津店',
-    description: '女性に安心の環境でもみほぐし。君津MARISA。',
+    title: '女性のためのもみほぐし・マッサージ｜MARISA 君津店',
+    description: '女性に安心の環境でもみほぐし。君津MARISA。ヘッドセット・足つぼ・美容鍼も。',
     locale: 'ja_JP',
     type: 'website',
   },
+  twitter: { card: 'summary_large_image' },
   alternates: { canonical: '/scene/ladies' },
 }
 
@@ -24,26 +25,42 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '女性一人でも利用しやすいですか？',
+      name: '女性一人でも来店できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、女性お一人でのご利用も大歓迎です。清潔感のある環境を整えており、施術着もご用意しております。安心してお越しいただけます。',
+        text: 'はい、女性お一人でのご利用も大歓迎です。清潔感のある環境を整えており、施術着もご用意しております。個別スペースで施術を行いますので、周囲を気にせず安心してお過ごしいただけます。',
       },
     },
     {
       '@type': 'Question',
-      name: '冷えやむくみが気になっているのですが、相談できますか？',
+      name: '美容鍼はどんな方に向いていますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '施術前にスタッフへお気軽にお申し付けください。気になる部位や症状をお聞きした上で施術いたします。足のむくみには足つぼセット、全体的なケアにはもみほぐしがおすすめです。',
+        text: '美容鍼は肌の状態をケアしたい方、フェイスラインが気になる方に選ばれています。美容鍼のご予約は公式サイト（B-merit）からのみ承っています。体のもみほぐしとは別のアプローチで、顔まわりのケアをご希望の方にご活用いただいています。',
       },
     },
     {
       '@type': 'Question',
-      name: '施術着は用意してありますか？',
+      name: '着替えはありますか？',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'はい、施術着をご用意しております。お着替えいただいてから施術を受けていただけますので、仕事帰りや外出途中でもお気軽にお越しいただけます。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '女性スタッフはいますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'スタッフの構成はシフトにより異なります。ご希望がある場合はご予約時にお知らせください。できる限りご要望にお応えできるよう対応いたします。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'ペアで来ることはできますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、友人同士・カップル・ご家族でのペア利用も歓迎しています。ベッドを3台ご用意していますので、複数名での同時施術にも対応できる場合があります。ご予約時にお人数をお知らせください。',
       },
     },
   ],
@@ -71,7 +88,7 @@ export default function SceneLadiesPage() {
               女性のお客様に安心していただける環境を
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              女性に多い肩こり・冷え・眼精疲労・むくみのお悩みに、丁寧にアプローチします。清潔感のある環境と施術着完備で、安心してお過ごしいただけます。
+              女性に多い肩こり・冷え・眼精疲労・むくみのお悩みに、丁寧にアプローチします。清潔感のある環境と施術着完備で、一人でも安心してお過ごしいただけます。育児・家事・仕事でお疲れの方の「自分だけの時間」としてご活用ください。
             </p>
           </div>
         </div>
@@ -80,24 +97,70 @@ export default function SceneLadiesPage() {
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader en="Women's Concerns" ja="女性に多いお悩み" lead="こんなつらさを感じていませんか" />
-          <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
-            <p>
-              デスクワークやスマートフォンの使いすぎによる肩こり・首のこわばりは、女性のお客様に非常に多いお悩みです。特に30〜40代の働く女性から多くご相談いただいています。
-            </p>
-            <p>
-              また、冷えによる足のだるさ・むくみも女性に多く見られます。長時間立ち仕事をされている方や、デスクワークで同じ姿勢が続く方は、夕方になると足が重くなりやすくなります。
-            </p>
-            <p>
-              パソコンや細かい作業が続く方には眼精疲労も深刻な悩みです。目の疲れは頭の重さや肩こりとも連動しており、ヘッドケアと組み合わせることで全体的な負担をやわらげやすくなります。
-            </p>
-            <p>
-              育児や家事と仕事を両立している方にとっては、「自分のためだけの時間」がほとんどない、という状況も少なくありません。MARISAでの時間を、自分をいたわる特別なひとときにしていただければと思います。
-            </p>
+          <div className="mt-10 grid gap-5">
+            {[
+              {
+                title: '肩こり・首のこわばり',
+                body: 'デスクワークやスマートフォンの使いすぎによる肩こり・首のこわばりは、女性のお客様に非常に多いお悩みです。特に30〜40代の働く女性から多くご相談いただいています。',
+              },
+              {
+                title: '冷え・足のだるさ・むくみ',
+                body: '冷えによる足のだるさ・むくみも女性に多い悩みです。長時間の立ち仕事やデスクワークで夕方になると足が重くなりやすい方に、足つぼセットが特に喜ばれています。',
+              },
+              {
+                title: '眼精疲労・頭の重さ',
+                body: 'パソコンや細かい作業が続く方には眼精疲労が深刻なお悩みになりがちです。目の疲れは肩こりや頭の重さとも連動しており、ヘッドセットで全体的な負担をやわらげやすくなります。',
+              },
+              {
+                title: '育児・家事疲れ・自分の時間のなさ',
+                body: '育児や家事と仕事を両立している方にとっては、「自分のためだけの時間」がほとんどない、という状況も少なくありません。MARISAでの1〜2時間を、自分をいたわる特別なひとときにしてください。',
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-sand-100 border border-sand-200 p-6">
+                <p className="font-medium text-stone-800 mb-2 tracking-wide text-sm">{item.title}</p>
+                <p className="text-sm text-stone-700 leading-loose">{item.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="py-16 bg-sand-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Popular Menu" ja="女性に人気のメニュー" lead="お悩みに合わせてお選びください" />
+          <div className="mt-8 space-y-4">
+            <div className="bg-cream-50 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">ヘッドセット 60分〜</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                眼精疲労・頭の重さが気になる女性に人気No.1のコースです。もみほぐし＋ヘッドケアのセットで、肩から頭頂部までトータルにアプローチ。「スッキリした」という声を多くいただいています。
+              </p>
+            </div>
+            <div className="bg-cream-50 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">足つぼセット</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                足のむくみ・だるさに悩む女性に好評。足裏へのアプローチで体全体のリラクゼーション感が深まります。立ち仕事後・長時間の外出後にもおすすめです。
+              </p>
+            </div>
+            <div className="bg-cream-50 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">もみほぐし 60分〜</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                全身をバランスよくケアしたい方に。肩・背中・腰・脚をひと通りほぐせる定番コース。育児・家事の疲れが全身に溜まっている方、初めての方にもおすすめです。
+              </p>
+            </div>
+            <div className="bg-cream-50 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">美容鍼（公式サイト予約限定）</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                肌の状態やフェイスラインのケアをご希望の方向けに美容鍼もご提供しています。鍼灸・美容鍼のご予約は公式サイト（B-merit）からのみ承っています。
+              </p>
+              <div className="mt-3">
+                <Link href={BMERIT_URL} className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500" target="_blank" rel="noopener noreferrer">美容鍼の予約はこちら（公式サイト）→</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader en="Environment" ja="安心できる環境" lead="女性が過ごしやすい空間" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
@@ -105,34 +168,11 @@ export default function SceneLadiesPage() {
               MARISAは清潔感を大切にしており、施術スペースは常に清潔な状態を保っています。施術着もご用意しておりますので、仕事帰りや外出途中でもお気軽にお越しいただけます。
             </p>
             <p>
-              施術は個別のスペースで行いますので、他のお客様の目を気にせずリラックスしていただけます。照明を落とした落ち着いた空間で、ゆっくりとお過ごしください。
+              施術は個別のスペースで行いますので、他のお客様の目を気にせずリラックスしていただけます。照明を落とした落ち着いた空間で、BGMが流れる中でゆっくりとお過ごしください。
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-cream-50">
-        <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Popular Menu" ja="女性に人気のメニュー" lead="お悩みに合わせてお選びください" />
-          <div className="mt-8 space-y-4">
-            <div className="border border-sand-200 bg-sand-100 p-6">
-              <p className="font-medium text-stone-800 mb-2 tracking-wide">ヘッドセット 60分 ¥5,000〜</p>
-              <p className="text-sm text-stone-700 leading-loose">
-                眼精疲労・頭の重さが気になる方に人気。もみほぐしとヘッドケアのセットで、肩から頭頂部までトータルにアプローチします。
-              </p>
-            </div>
-            <div className="border border-sand-200 bg-sand-100 p-6">
-              <p className="font-medium text-stone-800 mb-2 tracking-wide">足つぼセット ¥5,500〜</p>
-              <p className="text-sm text-stone-700 leading-loose">
-                足のむくみ・だるさに悩む女性に好評。足裏へのアプローチで体全体のリラクゼーション感が深まります。
-              </p>
-            </div>
-            <div className="border border-sand-200 bg-sand-100 p-6">
-              <p className="font-medium text-stone-800 mb-2 tracking-wide">60分もみほぐし ¥4,500〜</p>
-              <p className="text-sm text-stone-700 leading-loose">
-                全身をバランスよくケアしたい方に。肩・背中・腰・脚をひと通りほぐせる定番コース。初めての方にもおすすめです。
-              </p>
-            </div>
+            <p>
+              一人でのご来店はもちろん、友人やご家族と一緒にご来店いただいてもOKです。それぞれのお悩みや好みに合わせてコースを選べますので、同行の方と異なるコースでもご利用いただけます。
+            </p>
           </div>
         </div>
       </section>
@@ -160,6 +200,7 @@ export default function SceneLadiesPage() {
             {[
               { label: '君津でマッサージをお探しの方', href: '/area/kimitsu' },
               { label: 'メニュー・料金', href: '/menu' },
+              { label: 'プレゼント・ギフトに', href: '/scene/gift' },
               { label: 'よくある質問', href: '/faq' },
             ].map((l) => (
               <Link

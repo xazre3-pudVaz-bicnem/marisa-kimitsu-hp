@@ -6,15 +6,16 @@ import ReserveButton from '@/components/ui/ReserveButton'
 import { HPB_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'シニアの方・年配の方のもみほぐし｜MARISA 君津店',
-  description: '君津でシニア・年配の方向けもみほぐしならMARISA。ゆっくり丁寧な施術・弱め圧対応。慢性的な肩・腰・足の疲れに。子どもや孫とのペア利用も歓迎。',
-  keywords: ['君津 シニア マッサージ', '君津 年配 もみほぐし', '君津 高齢者 リラクゼーション'],
+  title: 'シニア・高齢の方も通えるもみほぐし｜MARISA 君津店',
+  description: '君津でシニア・高齢の方向けもみほぐしならMARISA。圧の強さを細かく調整・丁寧なカウンセリング。45〜60分の短めコースから始められます。無料駐車場完備でアクセス便利。',
+  keywords: ['君津 シニア マッサージ', '君津 高齢者 もみほぐし', '君津 60代 マッサージ', '君津 シニア リラクゼーション'],
   openGraph: {
-    title: 'シニアの方・年配の方のもみほぐし｜MARISA 君津店',
-    description: 'シニアの方も安心してご利用いただける君津MARISA。ゆっくり丁寧な施術。',
+    title: 'シニア・高齢の方も通えるもみほぐし｜MARISA 君津店',
+    description: '君津でシニア・高齢者向けもみほぐしならMARISA。圧調整対応・短めコースから。無料駐車場完備。',
     locale: 'ja_JP',
     type: 'website',
   },
+  twitter: { card: 'summary_large_image' },
   alternates: { canonical: '/scene/seniors' },
 }
 
@@ -24,26 +25,42 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '高齢者でも安心して利用できますか？',
+      name: '高齢でも受けられますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、シニアの方も多くご利用いただいています。施術の強さは弱めに調整することも可能ですので、ご希望を施術前にお伝えください。なお、持病をお持ちの方や体調に不安がある方は、事前にかかりつけの医師にご相談の上でご来店ください。',
+        text: 'はい、シニアの方も多くご利用いただいています。施術前に必ずお体の状態・お悩みをお聞きし、年齢や体の状態に合わせた対応をしております。ただし、持病をお持ちの方や体調に不安がある方は、事前にかかりつけの医師にご相談の上でご来店ください。',
       },
     },
     {
       '@type': 'Question',
-      name: '施術の強さを弱くしてもらえますか？',
+      name: '圧の強さは調整できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、もちろんです。施術前または施術中にスタッフへお気軽にお申し付けください。お客様の体の状態やご希望に合わせて圧の強さを調整いたします。',
+        text: 'はい、もちろんです。弱め・普通・強めとお好みに合わせて調整いたします。シニアの方には弱めに設定することが多いですが、施術中も「痛くないか」「いかがですか」と確認しながら進めますので、いつでもお申し付けください。',
       },
     },
     {
       '@type': 'Question',
-      name: '子どもや孫と一緒に来店できますか？',
+      name: '体に持病があっても大丈夫ですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'ご家族での来店は大歓迎です。お席の空き状況によって同時間帯の施術も対応できる場合があります。ご予約の際にご人数をお知らせください。',
+        text: '骨粗しょう症・循環器疾患などをお持ちの方や、体調に不安のある方は、事前にかかりつけの医師にご相談の上でご来店いただくようお願いしております。お客様の安全を最優先に考えております。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '短めのコースはありますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、45分コースからご利用いただけます。シニアの方は「まず短い時間で様子を見てみたい」という方も多いため、45〜60分の短めコースからお試しいただくことをおすすめしています。慣れてきたら時間を延ばしていただくこともできます。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '車椅子での来店は対応できますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '来店を検討されている方は事前にお電話またはホットペッパービューティーのメッセージ機能でお問い合わせいただけますと、スムーズにご案内できます。店舗の設備状況についてご確認の上でご来店ください。',
       },
     },
   ],
@@ -62,7 +79,7 @@ export default function SceneSeniorsPage() {
           <Breadcrumb
             items={[
               { label: '地域・シーン別', href: '/area/kimitsu' },
-              { label: 'シニアの方へ' },
+              { label: 'シニア・高齢の方へ' },
             ]}
           />
           <div className="mt-4">
@@ -71,7 +88,7 @@ export default function SceneSeniorsPage() {
               シニアの方も安心してご利用いただけます
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              年齢を重ねるごとに増える肩・腰・足の疲れに、丁寧にアプローチします。圧の強さは弱め対応も可能。ゆっくりと体を整えたいシニアの方を歓迎します。
+              年齢を重ねるごとに増える肩・腰・足の疲れに、丁寧にアプローチします。圧の強さは弱め対応も可能。丁寧なカウンセリングと短めのコースから始められる安心設計で、シニアの方を歓迎します。無料駐車場完備でアクセスも便利です。
             </p>
           </div>
         </div>
@@ -88,7 +105,7 @@ export default function SceneSeniorsPage() {
               長年の生活習慣や姿勢の積み重ねで、筋肉が慢性的に緊張した状態になっている方も多くいらっしゃいます。こうした方にはゆっくりと丁寧な施術で、少しずつほぐしていくアプローチが適しています。
             </p>
             <p>
-              「病院に行くほどではないけれど、体が重くてつらい」「薬を使わずに体をケアしたい」という方に、リラクゼーション目的のもみほぐしはご活用いただきやすい選択肢です。
+              「病院に行くほどではないけれど、体が重くてつらい」「薬を使わずに体をケアしたい」という方に、リラクゼーション目的のもみほぐしはご活用いただきやすい選択肢のひとつです。
             </p>
           </div>
         </div>
@@ -96,22 +113,62 @@ export default function SceneSeniorsPage() {
 
       <section className="py-16 bg-sand-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Our Approach" ja="ゆっくり丁寧な施術スタイル" lead="シニアの方に合わせた対応" />
-          <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
-            <p>
-              MARISAでは施術前に必ずお客様のお悩みと体の状態をお聞きします。シニアの方には、全体的な強さを弱めに設定し、丁寧にゆっくりとほぐしていくスタイルを基本としています。
-            </p>
-            <p>
-              施術中も「痛くないか」「強さはいかがか」をご確認しながら進めます。少しでもご不快を感じた場合は遠慮なくお申し付けください。すぐに対応いたします。
-            </p>
-            <p>
-              なお、骨粗しょう症や循環器疾患など持病をお持ちの方、または体調に不安がある場合は、事前にかかりつけの医師にご相談のうえでご来店いただくようお願いしております。お客様の安全を最優先に考えております。
-            </p>
+          <SectionHeader en="Our Approach" ja="シニアの方への対応" lead="ゆっくり丁寧な施術スタイル" />
+          <div className="mt-10 grid gap-5">
+            {[
+              {
+                title: '丁寧なカウンセリング',
+                body: '施術前に必ずお客様のお悩みと体の状態をお聞きします。どの部位がつらいか、圧の強さはどのくらいがよいか、体調はいかがかなどを確認した上で施術を始めます。',
+              },
+              {
+                title: '圧の強さを細かく調整',
+                body: 'シニアの方には、全体的な強さを弱めに設定し、丁寧にゆっくりとほぐしていくスタイルを基本としています。施術中も「痛くないか」「強さはいかがか」を確認しながら進めます。',
+              },
+              {
+                title: '短めのコースから始められる',
+                body: '45分コースからご利用いただけます。初めてのご来店やお体の様子を見ながら始めたい方は、短めのコースからお試しいただき、慣れてきたら時間を増やしていただくことも可能です。',
+              },
+              {
+                title: '無料駐車場でアクセス楽々',
+                body: '店舗前に無料駐車場があります。電車でのアクセスが難しい方も、お車でお気軽にお越しいただけます。君津駅から車で約5分の場所にあります。',
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-cream-50 border border-sand-200 p-6">
+                <p className="font-medium text-stone-800 mb-2 tracking-wide text-sm">{item.title}</p>
+                <p className="text-sm text-stone-700 leading-loose">{item.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <section className="py-16 bg-cream-50">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Recommended" ja="シニアの方におすすめのコース" lead="お体の状態に合わせてお選びください" />
+          <div className="mt-8 space-y-4">
+            <div className="bg-sand-100 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">もみほぐし 45〜60分（短めから始める）</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                初めての方・お体の様子を見ながら始めたい方に。45分は肩・腰などの気になる部位を中心にケアでき、体への負担も少ないコースです。慣れてきたら60分・90分へと時間を伸ばしていただけます。
+              </p>
+            </div>
+            <div className="bg-sand-100 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">足つぼ</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                足の疲れ・重だるさが気になる方に。足裏へのアプローチは体全体のリラクゼーション感にもつながります。立ち仕事が多かった方、足腰に疲れが溜まりやすい方に喜ばれています。
+              </p>
+            </div>
+            <div className="bg-sand-100 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">ヘッドケア</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                頭・首・肩のコリが気になる方に。圧を弱めに設定してもしっかりほぐれると好評の、シニアの方にも人気のメニューです。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-sand-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader en="Family Visit" ja="子どもや孫とのペア利用" lead="世代を超えてリフレッシュを" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
@@ -119,18 +176,18 @@ export default function SceneSeniorsPage() {
               「親孝行にマッサージを連れていきたい」「おばあちゃんへのプレゼントに」と、子どもや孫世代が連れ立ってご来店されるケースも多くあります。
             </p>
             <p>
-              家族で一緒に来店し、それぞれのメニューを選んでリフレッシュする時間は、世代を超えた特別なひとときになります。「今度一緒に行こう」と誘ってみてはいかがでしょうか。
+              家族で一緒に来店し、それぞれのメニューを選んでリフレッシュする時間は、世代を超えた特別なひとときになります。「今度一緒に行こう」と声をかけてみてはいかがでしょうか。
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-sand-100">
+      <section className="py-16 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader en="FAQ" ja="よくある質問" />
           <div className="mt-8 space-y-4">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="border border-sand-200 bg-cream-50 p-6">
+              <div key={i} className="border border-sand-200 bg-sand-100 p-6">
                 <p className="text-sm font-medium text-stone-800 mb-3 tracking-wide">
                   <span className="font-en text-brown-400 mr-2">Q.</span>{item.name}
                 </p>
@@ -141,13 +198,14 @@ export default function SceneSeniorsPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-cream-50">
+      <section className="py-12 bg-sand-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <p className="text-xs tracking-widest text-greige-400 mb-4 uppercase">Related</p>
           <div className="flex flex-wrap gap-3 text-xs">
             {[
               { label: '君津でマッサージをお探しの方', href: '/area/kimitsu' },
               { label: 'メニュー・料金', href: '/menu' },
+              { label: '定期メンテナンス', href: '/scene/regular' },
               { label: 'よくある質問', href: '/faq' },
             ].map((l) => (
               <Link

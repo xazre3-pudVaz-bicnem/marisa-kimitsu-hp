@@ -6,15 +6,16 @@ import ReserveButton from '@/components/ui/ReserveButton'
 import { HPB_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: '夜のリラックスタイムにもみほぐし｜MARISA 君津店',
-  description: '君津で夜遅くまで営業のもみほぐしならMARISA。夜0時まで営業・最終受付23時。仕事帰りや夜のリラックスタイムに。照明を落とした静かな空間で体を整えます。',
-  keywords: ['君津 夜 マッサージ', '君津 夜遅い もみほぐし', '君津 深夜 近く マッサージ'],
+  title: '夜遅くまで営業・深夜のもみほぐし｜MARISA 君津店',
+  description: '君津で夜遅くまで営業のもみほぐしならMARISA。夜0時まで営業・最終受付23時。仕事帰りの遅い時間・22時以降でも来店可能。深夜の疲れをその日のうちにケア。当日予約OK。',
+  keywords: ['君津 夜遅く マッサージ', '君津 深夜 もみほぐし', '君津 夜間 リラクゼーション', '君津 22時以降 マッサージ'],
   openGraph: {
-    title: '夜のリラックスタイムにもみほぐし｜MARISA 君津店',
-    description: '夜0時まで営業。仕事帰りや夜のリラックスタイムに。君津MARISA。',
+    title: '夜遅くまで営業・深夜のもみほぐし｜MARISA 君津店',
+    description: '夜0時まで営業・最終受付23時。仕事帰りの深夜でも来店可能。君津MARISA。',
     locale: 'ja_JP',
     type: 'website',
   },
+  twitter: { card: 'summary_large_image' },
   alternates: { canonical: '/scene/night' },
 }
 
@@ -24,15 +25,23 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '何時まで営業していますか？',
+      name: '何時まで受けられますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'MARISA 君津店は夜0時（24:00）まで営業しております。最終受付は23:00です。年中無休で営業していますので、仕事帰りや夜の時間帯でもお気軽にお越しください。',
+        text: 'MARISA 君津店は夜0時（24:00）まで営業しております。最終受付は23:00です。年中無休で営業していますので、仕事帰りや夜の遅い時間でもお気軽にお越しください。',
       },
     },
     {
       '@type': 'Question',
-      name: '夜遅い時間でも当日予約できますか？',
+      name: '23時に予約してもいいですか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、最終受付が23:00ですので、23時からご予約いただけます。60分コースであれば24時ごろに終了となります。ホットペッパービューティーから空き状況をご確認の上、ご予約いただくとスムーズです。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '夜遅くでも当日予約できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'はい、当日のご予約も受け付けております。ただし、夜の時間帯は混雑することがありますので、ホットペッパービューティーから事前に空き状況をご確認の上、ご予約いただくことをおすすめします。',
@@ -40,10 +49,18 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: '夜に施術を受けると眠れなくなりますか？',
+      name: '深夜料金はありますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '一般的に、もみほぐしによって体がリラックスしやすくなるため、眠りにつきやすくなるというお声をいただいています。ただし、個人差がありますので、施術後の体の状態をご自身で確認しながらお過ごしください。',
+        text: '深夜追加料金の有無は現在のメニュー・料金ページをご確認ください。ホットペッパービューティーの店舗ページにも最新の料金情報を掲載しています。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '翌日の朝が楽になりますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '「夜にほぐしてもらったら翌朝体が軽かった」というお声をいただいています。夜のもみほぐしで一日の疲れをリセットして帰宅することで、翌朝をすっきりした状態で迎えやすくなるというリピーターの方も多くいらっしゃいます。',
       },
     },
   ],
@@ -62,16 +79,16 @@ export default function SceneNightPage() {
           <Breadcrumb
             items={[
               { label: '地域・シーン別', href: '/area/kimitsu' },
-              { label: '夜のご利用に' },
+              { label: '夜遅くでも使える' },
             ]}
           />
           <div className="mt-4">
             <p className="font-en text-xs tracking-widest uppercase text-brown-400 mb-3">Night Relaxation</p>
             <h1 className="text-3xl lg:text-4xl font-light tracking-wide text-stone-800 leading-snug">
-              夜のリラックスタイムに、じっくりほぐして帰る
+              夜0時まで営業。遅い時間でも体をほぐして帰れる
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              MARISAは夜0時まで営業・最終受付23時。仕事帰りの夜や、寝る前のリラックスタイムに立ち寄れるもみほぐしサロンです。
+              最終受付23時、閉店24時のMARISAなら、仕事帰りの遅い時間・22時以降でも来店可能です。深夜の疲れをその日のうちにリセットして帰宅できます。
             </p>
           </div>
         </div>
@@ -79,7 +96,7 @@ export default function SceneNightPage() {
 
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Night Hours" ja="夜0時まで営業している理由" lead="夜こそ体が疲れている" />
+          <SectionHeader en="Night Hours" ja="夜0時まで営業している理由" lead="夜こそ体が一番疲れている" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
               「仕事が終わったら体をほぐしてリセットしたい」「夜の方がゆっくり時間が取れる」——そんなお客様のニーズに応えるために、MARISAは夜0時まで営業しています。
@@ -88,8 +105,59 @@ export default function SceneNightPage() {
               特に夜型の生活スタイルの方や、夜まで働く方にとって、閉店時間の早いサロンは使い勝手が悪くなりがちです。23時受付・24時閉店という営業時間は、多くのお客様に「助かっている」とご好評いただいています。
             </p>
             <p>
-              また、一日の終わりに体が一番疲れているのも事実です。朝よりも夕方・夜の方が筋肉の疲労が蓄積しているため、夜のもみほぐしは体がほぐれやすいという側面もあります。
+              また、一日の終わりに体が一番疲れているのも事実です。朝よりも夕方・夜の方が疲労が蓄積しているため、夜のもみほぐしは体がほぐれやすいという側面もあります。
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-sand-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Why MARISA Night" ja="夜遅い来店に選ばれる理由" lead="こんな方が夜に来店されています" />
+          <div className="mt-10 grid gap-5">
+            {[
+              {
+                title: '仕事帰りに直接来店できる',
+                body: '残業・営業回りで遅くなった日でも、仕事終わりにそのままMARISAへ。施術着完備なので着替えて施術を受けていただけます。スーツ・仕事着のままでOKです。',
+              },
+              {
+                title: '22時・23時でも受付してもらえる',
+                body: '最終受付は23:00です。23時に来店いただいても60分コースはしっかり受けていただけます。「何時まで大丈夫か」という心配がいらない安心感があります。',
+              },
+              {
+                title: '夜の静かな空間でリラックス',
+                body: '夜の時間帯は照明を落とした静かな雰囲気の中でゆっくりお過ごしいただけます。日中の喧騒から離れ、体と気持ちをリセットする時間になります。',
+              },
+              {
+                title: 'その日のうちに疲れをリセット',
+                body: '「疲れを翌日に持ち越したくない」という方に。夜のうちにほぐして帰宅することで、翌朝をすっきりした状態で迎えやすくなります。',
+              },
+            ].map((item, i) => (
+              <div key={i} className="bg-cream-50 border border-sand-200 p-6">
+                <p className="font-medium text-stone-800 mb-2 tracking-wide text-sm">{item.title}</p>
+                <p className="text-sm text-stone-700 leading-loose">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-cream-50">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Recommended Menu" ja="夜の来店におすすめのコース" lead="疲れに合わせてお選びください" />
+          <div className="mt-8 space-y-4">
+            <div className="bg-sand-100 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">もみほぐし 60〜90分</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                一日の疲れをしっかりリセットしたい方に。60分は仕事帰りにちょうどよいボリューム感で、全身をバランスよくほぐせます。90分はじっくり体全体のケアをしたい方におすすめです。
+              </p>
+            </div>
+            <div className="bg-sand-100 border border-sand-200 p-6">
+              <p className="font-medium text-stone-800 mb-2 tracking-wide">ヘッドセット 60分〜</p>
+              <p className="text-sm text-stone-700 leading-loose">
+                仕事で頭が疲れている方・パソコン作業が多い方に。夜のヘッドケアは頭まわりの緊張をほぐし、その後の睡眠のリラックスにもつながりやすいと好評です。
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -99,10 +167,7 @@ export default function SceneNightPage() {
           <SectionHeader en="Night Space" ja="夜の施術の心地よさ" lead="照明を落とした静かな空間" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
-              MARISAの夜の時間帯は、日中よりも静かで落ち着いた雰囲気になります。照明を落としたリラックス空間の中で、BGMが流れる心地よい環境でお過ごしいただけます。
-            </p>
-            <p>
-              「仕事の後は頭が興奮状態で眠れない」という方にも、もみほぐしで体をほぐすことで、自然とリラックスした状態になりやすく、眠りにつきやすいというお声もいただいています。
+              MARISAの夜の時間帯は、日中よりも静かで落ち着いた雰囲気になります。照明を落とした落ち着いた空間の中で、BGMが流れる心地よい環境でお過ごしいただけます。
             </p>
             <p>
               施術後はそのまま帰宅して、ゆっくり入浴・就寝というルーティンを持っているリピーターのお客様も多くいらっしゃいます。夜のもみほぐしを「1日の締めくくり」として定期利用されている方にもおすすめです。
@@ -113,29 +178,10 @@ export default function SceneNightPage() {
 
       <section className="py-16 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="After Work" ja="仕事帰りの夜利用" lead="残業後でも間に合います" />
-          <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
-            <p>
-              残業で帰宅が遅くなった日でも、MARISAなら最終受付23時まで対応しています。23時に来店いただければ、60分のコースでもしっかりほぐして帰れます。
-            </p>
-            <p>
-              仕事帰りのご利用については、仕事帰りのもみほぐしシーンページもご覧ください。
-            </p>
-            <div className="mt-4">
-              <Link href="/scene/after-work" className="inline-flex items-center text-sm text-brown-500 border-b border-brown-300 hover:border-brown-500 transition-colors pb-0.5">
-                仕事帰りのもみほぐし →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-sand-100">
-        <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader en="FAQ" ja="よくある質問" />
           <div className="mt-8 space-y-4">
             {faqSchema.mainEntity.map((item, i) => (
-              <div key={i} className="border border-sand-200 bg-cream-50 p-6">
+              <div key={i} className="border border-sand-200 bg-sand-100 p-6">
                 <p className="text-sm font-medium text-stone-800 mb-3 tracking-wide">
                   <span className="font-en text-brown-400 mr-2">Q.</span>{item.name}
                 </p>
@@ -146,13 +192,14 @@ export default function SceneNightPage() {
         </div>
       </section>
 
-      <section className="py-12 bg-cream-50">
+      <section className="py-12 bg-sand-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <p className="text-xs tracking-widest text-greige-400 mb-4 uppercase">Related</p>
           <div className="flex flex-wrap gap-3 text-xs">
             {[
               { label: '君津でマッサージをお探しの方', href: '/area/kimitsu' },
               { label: 'メニュー・料金', href: '/menu' },
+              { label: '就寝前のケアに', href: '/scene/before-sleep' },
               { label: 'よくある質問', href: '/faq' },
             ].map((l) => (
               <Link
@@ -171,7 +218,7 @@ export default function SceneNightPage() {
         <div className="max-w-3xl mx-auto px-5 lg:px-8 text-center">
           <p className="font-en text-xs tracking-widest text-sand-300 uppercase mb-4">Reservation</p>
           <h2 className="text-2xl lg:text-3xl font-light tracking-wide mb-6">ご予約はこちらから</h2>
-          <p className="text-sm text-sand-300 leading-loose mb-10">夜0時まで営業・当日予約OK・無料駐車場完備。</p>
+          <p className="text-sm text-sand-300 leading-loose mb-10">夜0時まで営業・最終受付23時・当日予約OK・無料駐車場完備。</p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />
             <ReserveButton href="/menu" label="メニューを見る" variant="outline" size="lg" />
