@@ -165,7 +165,14 @@ export default function MenuPage() {
             <p className="font-en text-xs tracking-widest uppercase text-brown-400 mb-2">Acupuncture</p>
             <h2 className="text-2xl font-light text-stone-800 tracking-wide">鍼灸・美容鍼</h2>
             <p className="mt-2 text-sm text-stone-700 leading-loose max-w-2xl">
-              鍼灸師・なおによる鍼灸メニューと美容鍼をご用意しています。もみほぐしと組み合わせたセットメニューもございます。国家資格を持つ鍼灸師が施術します。
+              鍼灸師「なお」による鍼灸メニューと美容鍼をご用意しています。もみほぐしと組み合わせたセットメニューもございます。国家資格を持つ鍼灸師が施術します。
+            </p>
+          </div>
+          <div className="mb-6 border-l-2 border-brown-400 pl-5 py-3 bg-cream-50">
+            <p className="text-xs font-medium text-stone-800 tracking-wide mb-1">公式予約限定のメニューです</p>
+            <p className="text-xs text-stone-700 leading-loose">
+              鍼灸・美容鍼はホットペッパービューティーには掲載しておりません。公式WEB予約またはLINEよりご予約ください。<br />
+              対応時間：金曜 10:00〜22:00 ／ 土曜 10:00〜14:00（その他曜日は要相談）
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -173,7 +180,13 @@ export default function MenuPage() {
               href="/menu/acupuncture"
               className="group bg-cream-50 border border-sand-200 p-8 hover:border-brown-300 transition-colors"
             >
-              <p className="font-en text-[10px] tracking-widest text-brown-400 mb-2">Acupuncture</p>
+              <div className="flex items-start justify-between mb-3">
+                <p className="font-en text-[10px] tracking-widest text-brown-400">Acupuncture</p>
+                <div className="flex gap-1.5 flex-wrap justify-end">
+                  <span className="text-[9px] tracking-widest border border-brown-300 text-brown-400 px-2 py-0.5">公式予約限定</span>
+                  <span className="text-[9px] tracking-widest border border-sand-200 text-greige-400 px-2 py-0.5">金・土中心</span>
+                </div>
+              </div>
               <h3 className="text-lg font-light text-stone-800 tracking-wide mb-3">鍼灸メニュー</h3>
               <p className="text-sm text-stone-700 leading-loose mb-4">
                 もみほぐし＋鍼のセットコース（¥4,500〜）や鍼1部位オプション（¥1,500）をご用意。首・肩・腰など気になる部位へ、鍼のアプローチをプラスできます。
@@ -186,10 +199,16 @@ export default function MenuPage() {
               href="/menu/beauty-acupuncture"
               className="group bg-cream-50 border border-sand-200 p-8 hover:border-brown-300 transition-colors"
             >
-              <p className="font-en text-[10px] tracking-widest text-brown-400 mb-2">Beauty Acupuncture</p>
+              <div className="flex items-start justify-between mb-3">
+                <p className="font-en text-[10px] tracking-widest text-brown-400">Beauty Acupuncture</p>
+                <div className="flex gap-1.5 flex-wrap justify-end">
+                  <span className="text-[9px] tracking-widest border border-brown-300 text-brown-400 px-2 py-0.5">公式予約限定</span>
+                  <span className="text-[9px] tracking-widest border border-sand-200 text-greige-400 px-2 py-0.5">金・土中心</span>
+                </div>
+              </div>
               <h3 className="text-lg font-light text-stone-800 tracking-wide mb-3">美容鍼（美顔鍼）</h3>
               <p className="text-sm text-stone-700 leading-loose mb-4">
-                美顔鍼¥3,500。顔周りに細い鍼を施術し、肌のハリ・むくみ・フェイスラインのケアを目的とした美容ケアです。
+                美顔鍼¥3,500。お顔まわりに細い鍼を使った美容目的のケアです。君津で美容鍼・美顔鍼をお探しの方はぜひご相談ください。
               </p>
               <p className="text-xs tracking-widest text-brown-400 group-hover:text-brown-500">
                 詳しく見る →

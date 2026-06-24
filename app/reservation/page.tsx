@@ -128,9 +128,68 @@ export default function ReservationPage() {
           <div className="mt-6">
             <ReserveButton href={HPB_URL} label="ホットペッパービューティーで予約" variant="dark" size="lg" />
           </div>
-          <p className="mt-4 text-xs text-greige-400 leading-loose">
-            ホットペッパービューティーの外部サイトに移動します。
-          </p>
+          <div className="mt-5 border-l-2 border-sand-200 pl-4">
+            <p className="text-xs text-greige-400 leading-loose">
+              ホットペッパービューティーの外部サイトに移動します。<br />
+              ※ 鍼灸・美容鍼メニューはホットペッパービューティーには掲載しておりません。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Section 3.5: 鍼灸・美容鍼の予約案内 ===== */}
+      <section className="py-14 bg-cream-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader
+            en="Acupuncture"
+            ja="鍼灸・美容鍼のご予約について"
+            lead="鍼灸・美容鍼は予約方法が通常メニューと異なります。"
+          />
+          <div className="mt-6 border-l-2 border-brown-400 pl-5 py-4 bg-cream-50">
+            <p className="text-sm font-medium text-stone-800 mb-2">公式予約またはLINEからのみ受付</p>
+            <p className="text-sm text-stone-700 leading-loose">
+              鍼灸メニュー・美容鍼はホットペッパービューティーには掲載しておりません。ご予約・ご相談は公式WEB予約またはLINEよりお問い合わせください。
+            </p>
+          </div>
+          <div className="mt-6 bg-cream-50 border border-sand-200">
+            <div className="px-6 py-4 border-b border-sand-200">
+              <p className="text-xs tracking-widest text-brown-400 mb-3">対応可能時間</p>
+              <table className="w-full text-sm">
+                <tbody>
+                  {[
+                    { day: '金曜日', time: '10:00〜22:00' },
+                    { day: '土曜日', time: '10:00〜14:00' },
+                    { day: 'その他曜日', time: '要相談' },
+                  ].map((row, i, arr) => (
+                    <tr key={row.day} className={i < arr.length - 1 ? 'border-b border-sand-200' : ''}>
+                      <td className="py-2.5 text-stone-700 w-36">{row.day}</td>
+                      <td className="py-2.5 text-stone-800">{row.time}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="px-6 py-4">
+              <p className="text-xs text-greige-400 leading-loose">
+                その他曜日のご希望がある場合は、公式予約またはLINEよりご相談ください。
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            {[
+              { label: '通常メニュー', desc: '公式WEB予約・ホットペッパー・LINE', icon: 'もみほぐし・ヘッドケア・足つぼ' },
+              { label: '鍼灸・美容鍼', desc: '公式WEB予約・LINEのみ', icon: '鍼灸・美顔鍼' },
+            ].map((item) => (
+              <div key={item.label} className="border border-sand-200 p-5 bg-cream-50">
+                <p className="text-[10px] tracking-widest text-greige-400 mb-1">{item.icon}</p>
+                <p className="font-medium text-stone-800 mb-2 tracking-wide">{item.label}</p>
+                <p className="text-xs text-stone-700 leading-loose">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6">
+            <ReserveButton href={BMERIT_URL} label="公式WEB予約（鍼灸もこちらから）" variant="dark" size="lg" />
+          </div>
         </div>
       </section>
 
