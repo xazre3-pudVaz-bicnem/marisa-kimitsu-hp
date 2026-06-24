@@ -3,19 +3,21 @@ import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL, SHOP_INFO } from '@/lib/constants'
+import { BMERIT_URL, HPB_URL, LINE_URL, SHOP_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: '君津駅周辺のマッサージ・もみほぐし｜MARISA 君津店',
-  description: '君津駅から車で約5分。君津駅南口近くのもみほぐしサロンMARISA。最終受付23時で夜遅い電車でも間に合います。無料駐車場・当日予約OK。',
-  keywords: ['君津駅 マッサージ', '君津駅 もみほぐし', '君津駅 周辺 リラクゼーション', '君津 駅近 整体', '君津駅 肩こり'],
+  title: '君津駅周辺・近くのマッサージ｜MARISA 君津店',
+  description: '君津駅近くでマッサージ・もみほぐしをお探しの方へ。MARISA 君津店は君津駅から車で約5分。夜0時まで・当日予約OK・無料駐車場完備。',
+  keywords: ['君津駅 マッサージ', '君津駅 もみほぐし', '君津駅 近く リラクゼーション', '君津駅 肩こり ケア'],
   openGraph: {
-    title: '君津駅周辺のマッサージ・もみほぐし｜MARISA 君津店',
-    description: '君津駅から車で約5分。最終受付23時で夜遅い電車でも間に合うもみほぐしサロン。無料駐車場完備。',
+    title: '君津駅周辺・近くのマッサージ｜MARISA 君津店',
+    description: '君津駅近くでマッサージ・もみほぐしをお探しの方へ。MARISA 君津店は君津駅から車で約5分。夜0時まで・当日予約OK・無料駐車場完備。',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
     locale: 'ja_JP',
     type: 'website',
   },
-  alternates: { canonical: '/area/kimitsu-station' },
+  twitter: { card: 'summary_large_image' },
+  alternates: { canonical: 'https://marisa-kimitsu.com/area/kimitsu-station' },
 }
 
 const faqSchema = {
@@ -24,30 +26,53 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '君津駅からMARISAまでどのくらいかかりますか？',
+      name: '君津駅からどのくらいかかりますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '君津駅南口からお車で約5分ほどです。タクシーでお越しの場合も同様に約5分で到着します。駅から徒歩でのアクセスは難しいエリアですが、お車またはタクシーで気軽にお越しいただけます。',
+        text: '君津駅南口からお車またはタクシーで約5分ほどです。南口・北口いずれからも同程度の時間でお越しいただけます。カーナビに「千葉県君津市杢師3-20-10」とご入力ください。',
       },
     },
     {
       '@type': 'Question',
-      name: '電車でお越しの場合、帰りの交通手段はどうなりますか？',
+      name: '電車で来ることはできますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '電車でお越しの場合、帰りはタクシーをご利用いただくのが便利です。施術後にタクシーを呼んでいただければ、君津駅まですぐにお送りします。最終受付が23:00のため、夜遅い電車のご利用にも対応できます。',
+        text: '君津駅はJR内房線の主要駅で、千葉・木更津・館山方面からの電車が停まります。電車でお越しの場合は君津駅からタクシーをご利用ください。駅前にタクシー乗り場があります。',
       },
     },
     {
       '@type': 'Question',
-      name: 'バスでのアクセスはできますか？',
+      name: '駅からタクシーはありますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '君津駅からのバス路線は限られており、店舗付近を通るバスは少ないため、お車またはタクシーでのご来店をおすすめしています。お車でお越しの場合は店舗前に無料駐車場がございます。',
+        text: 'はい、君津駅前にタクシー乗り場があります。タクシーで約5分・料金目安は700〜900円程度です。帰りも店舗からタクシーをお呼びすることができますので、スタッフにお声がけください。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '駅周辺の駐車場はどうなっていますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'MARISAには店舗前に無料駐車場をご用意しています。君津駅周辺からお車でお越しになる場合も、駐車料金は一切かかりません。お車とタクシーどちらでもご来店いただけます。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '夜遅くまで営業していますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、夜0時まで営業（最終受付23:00）しています。電車通勤の方が仕事帰りにご来店いただきやすい時間設定です。年中無休ですので、平日・休日を問わずご利用いただけます。',
       },
     },
   ],
 }
+
+const menus = [
+  { name: 'もみほぐし', time: '45分〜', price: '¥3,500〜', href: '/menu/body-care', desc: '肩こり・腰痛・全身の疲れをしっかりほぐします' },
+  { name: 'ヘッドリラックス', time: '60分〜', price: '¥5,000〜', href: '/menu/head', desc: '頭・首・肩のコリをまとめてケア' },
+  { name: '足つぼ', time: '45分〜', price: '¥3,500〜', href: '/menu/foot', desc: '立ち仕事・歩き疲れに。足裏から全身をサポート' },
+  { name: '鍼灸・美容鍼', time: '60分〜', price: '要予約', href: BMERIT_URL, desc: '本格的な鍼施術。BMERITよりご予約ください', external: true },
+]
 
 export default function AreaKimitsuStationPage() {
   return (
@@ -74,7 +99,7 @@ export default function AreaKimitsuStationPage() {
               君津駅から車で5分。駅近くのもみほぐしサロン
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              君津駅南口からお車またはタクシーで約5分。MARISA君津店は最終受付23:00と夜遅い電車でも間に合う営業時間で、駅ご利用の方が通いやすいもみほぐしサロンです。
+              君津駅南口からお車またはタクシーで約5分。MARISA君津店は最終受付23:00と夜遅い電車でも間に合う営業時間で、駅ご利用の方が通いやすいもみほぐしサロンです。電車通勤の方の仕事帰りにも最適です。
             </p>
           </div>
         </div>
@@ -83,7 +108,7 @@ export default function AreaKimitsuStationPage() {
       {/* Access from Kimitsu Station */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="From Kimitsu Station" ja="君津駅からのアクセス" />
+          <SectionHeader en="From Kimitsu Station" ja="君津駅からのアクセス詳細" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
               君津駅南口を出て、お車またはタクシーで約5分でMARISAにお到着いただけます。君津駅は内房線の主要駅であり、千葉方面や木更津・館山方面からの電車が停まります。駅周辺からのアクセスがスムーズな立地です。
@@ -98,13 +123,26 @@ export default function AreaKimitsuStationPage() {
               君津駅は内房線で千葉駅から約1時間のアクセスで、木更津・袖ケ浦・市原方面からも電車でお越しいただけます。電車でのアクセスをご検討の方も、ぜひMARISAをご利用ください。
             </p>
           </div>
+
+          {/* Route summary */}
+          <div className="mt-10 bg-sand-100 border border-sand-200 p-6 space-y-3 text-sm">
+            <p className="font-medium text-stone-800 tracking-wide mb-4">君津駅からのルート目安</p>
+            <div className="flex gap-4 text-stone-700">
+              <span className="text-brown-400 shrink-0">●</span>
+              <span>君津駅南口 → タクシー約5分（700〜900円程度）→ MARISA</span>
+            </div>
+            <div className="flex gap-4 text-stone-700">
+              <span className="text-brown-400 shrink-0">●</span>
+              <span>君津駅南口 → お車で杢師方面へ → 約5分 → MARISA（無料駐車場あり）</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Late-night access */}
+      {/* Why station users choose MARISA */}
       <section className="py-16 lg:py-24 bg-cream-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Late Night Welcome" ja="夜遅い電車でも間に合います" />
+          <SectionHeader en="Late Night Welcome" ja="電車通勤の方にこそ使いやすい理由" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
               MARISAは夜0時まで営業しており、最終受付は23:00です。仕事帰りに電車で君津にお戻りになる方も、遅い時間のご予約が可能です。22:00頃に電車で到着し、23:00の最終受付でご来店いただくこともできます。
@@ -118,6 +156,31 @@ export default function AreaKimitsuStationPage() {
             <p>
               ホットペッパービューティーから24時間いつでもオンライン予約が可能です。電車の中でご予約いただき、到着後すぐにご来店いただけます。スタッフ一同、ご来店を心よりお待ちしております。
             </p>
+            <p>
+              鍼灸・美容鍼もご用意しています。もみほぐしとあわせてより深いケアをご希望の方は、BMERIT よりご予約ください。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Menu Cards */}
+      <section className="py-16 lg:py-24 bg-sand-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Menu" ja="対応メニュー" lead="君津駅周辺からお越しの方にもご利用いただけるメニューをご紹介します" />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {menus.map((m) => (
+              <Link
+                key={m.name}
+                href={m.href}
+                target={m.external ? '_blank' : undefined}
+                rel={m.external ? 'noopener noreferrer' : undefined}
+                className="block bg-cream-50 border border-sand-200 p-5 hover:border-brown-300 transition-colors"
+              >
+                <p className="font-medium text-stone-800 tracking-wide mb-1">{m.name}</p>
+                <p className="text-xs text-greige-400 mb-2">{m.time} / {m.price}</p>
+                <p className="text-xs text-stone-700 leading-relaxed">{m.desc}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -132,7 +195,7 @@ export default function AreaKimitsuStationPage() {
               { label: '住所', value: SHOP_INFO.address },
               { label: '営業時間', value: '10:00〜24:00（最終受付23:00）年中無休' },
               { label: '駐車場', value: '無料駐車場あり（店舗前）' },
-              { label: '君津駅から', value: '車・タクシーで約5分（南口より）' },
+              { label: '君津駅から', value: '車・タクシーで約5分（南口・北口いずれも同程度）' },
             ].map((item) => (
               <div key={item.label} className="flex gap-6 py-3">
                 <dt className="w-28 shrink-0 text-greige-400 tracking-wide">{item.label}</dt>
@@ -170,7 +233,7 @@ export default function AreaKimitsuStationPage() {
           <div className="flex flex-wrap gap-3 text-xs">
             {[
               { label: '君津でマッサージをお探しの方', href: '/area/kimitsu' },
-              { label: '仕事帰りに通いたい方', href: '/scene/after-work' },
+              { label: '君津IC近くのマッサージ', href: '/area/kimitsu-ic' },
               { label: 'アクセス・駐車場', href: '/access' },
               { label: 'メニュー・料金', href: '/menu' },
               { label: 'よくある質問', href: '/faq' },
@@ -206,6 +269,14 @@ export default function AreaKimitsuStationPage() {
               variant="light"
               size="lg"
             />
+            {LINE_URL && (
+              <ReserveButton
+                href={LINE_URL}
+                label="LINEで問い合わせ"
+                variant="outline"
+                size="lg"
+              />
+            )}
             <ReserveButton
               href="/access"
               label="アクセスを確認する"

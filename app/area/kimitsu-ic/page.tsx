@@ -3,19 +3,21 @@ import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL, SHOP_INFO } from '@/lib/constants'
+import { BMERIT_URL, HPB_URL, LINE_URL, SHOP_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: '君津インターそばのもみほぐし・マッサージ｜MARISA 君津店',
-  description: '君津インターチェンジから車で約10分。館山自動車道利用で木更津・市原・東京方面からもアクセス便利。夜0時まで営業・無料駐車場完備。',
-  keywords: ['君津IC マッサージ', '君津インター もみほぐし', '館山道 マッサージ', '君津インターチェンジ 近く', '館山自動車道 リラクゼーション'],
+  title: '君津IC近くのマッサージ・もみほぐし｜MARISA 君津店',
+  description: '君津IC近くでマッサージ・もみほぐしをお探しの方へ。MARISA 君津店は君津ICから車で約10分。高速道路利用で木更津・富津・袖ケ浦からもアクセス便利。',
+  keywords: ['君津IC マッサージ', '君津IC もみほぐし', '君津 インター 近く マッサージ', '館山自動車道 マッサージ'],
   openGraph: {
-    title: '君津インターそばのもみほぐし・マッサージ｜MARISA 君津店',
-    description: '君津インターから車で10分。館山自動車道利用で広域からアクセス可能なもみほぐしサロン。夜0時まで営業・無料駐車場完備。',
+    title: '君津IC近くのマッサージ・もみほぐし｜MARISA 君津店',
+    description: '君津IC近くでマッサージ・もみほぐしをお探しの方へ。MARISA 君津店は君津ICから車で約10分。高速道路利用で木更津・富津・袖ケ浦からもアクセス便利。',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
     locale: 'ja_JP',
     type: 'website',
   },
-  alternates: { canonical: '/area/kimitsu-ic' },
+  twitter: { card: 'summary_large_image' },
+  alternates: { canonical: 'https://marisa-kimitsu.com/area/kimitsu-ic' },
 }
 
 const faqSchema = {
@@ -24,7 +26,7 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '君津インターチェンジからMARISAまでどのくらいかかりますか？',
+      name: '君津ICからMARISAまで何分ですか？',
       acceptedAnswer: {
         '@type': 'Answer',
         text: '君津インターチェンジから店舗まで車で約10分です。インターを降りてから杢師方面へ向かっていただくとスムーズにお越しいただけます。カーナビに「千葉県君津市杢師3-20-10」と入力してお越しください。',
@@ -32,22 +34,45 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: '東京・横浜方面からのアクセスはどうなりますか？',
+      name: '高速を使って来られますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '東京・横浜方面からは、アクアラインまたは京葉道路から館山自動車道を経由して君津インターチェンジでお降りください。東京湾アクアライン利用の場合は木更津金田インターから館山道へ接続し、君津インターまで約10分です。',
+        text: 'はい、館山自動車道・君津インターチェンジが最寄りのインターです。木更津・袖ケ浦・市原方面からは館山道を南下し、東京・横浜方面からはアクアラインまたは京葉道路から館山道へ接続してください。',
       },
     },
     {
       '@type': 'Question',
-      name: '高速道路を利用した際の駐車場はありますか？',
+      name: '遠方からでも大丈夫ですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、店舗前に無料駐車場をご用意しています。高速道路でお越しの遠方からのお客様も、駐車料金なしでご利用いただけます。広めのスペースを確保していますので安心してお越しください。',
+        text: 'はい、遠方からお越しのお客様も多くいらっしゃいます。事前にホットペッパービューティーよりご予約いただくと確実にご案内できます。無料駐車場も完備していますので安心してお越しください。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '事前予約は必要ですか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '遠方からお越しの場合は事前予約を強くおすすめしています。当日予約も対応していますが、確実にご案内するためにも事前のご予約が便利です。ホットペッパービューティーから24時間いつでもご予約いただけます。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '夜遅くまで営業していますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、夜0時まで営業（最終受付23:00）しています。高速道路でのお仕事帰りや夕方以降のご来店も大歓迎です。年中無休ですので、平日・休日・祝日を問わずご利用いただけます。',
       },
     },
   ],
 }
+
+const menus = [
+  { name: 'もみほぐし', time: '45分〜', price: '¥3,500〜', href: '/menu/body-care', desc: '肩こり・腰痛・全身の疲れをしっかりほぐします' },
+  { name: 'ヘッドリラックス', time: '60分〜', price: '¥5,000〜', href: '/menu/head', desc: '頭・首・肩のコリをまとめてケア' },
+  { name: '足つぼ', time: '45分〜', price: '¥3,500〜', href: '/menu/foot', desc: '立ち仕事・歩き疲れに。足裏から全身をサポート' },
+  { name: '鍼灸・美容鍼', time: '60分〜', price: '要予約', href: BMERIT_URL, desc: '本格的な鍼施術。BMERITよりご予約ください', external: true },
+]
 
 export default function AreaKimitsuIcPage() {
   return (
@@ -74,7 +99,7 @@ export default function AreaKimitsuIcPage() {
               君津インターから車で10分。高速道路沿いのもみほぐし
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              館山自動車道・君津インターチェンジから約10分。木更津・市原・東京・横浜方面からも高速道路でアクセスしやすいMARISA君津店。夜0時まで営業・無料駐車場完備で、遠方からのお客様も安心してご利用いただけます。
+              館山自動車道・君津インターチェンジから約10分。木更津・市原・富津・袖ケ浦方面からも高速道路でアクセスしやすいMARISA君津店。夜0時まで営業・無料駐車場完備で、遠方からのお客様も安心してご利用いただけます。
             </p>
           </div>
         </div>
@@ -83,7 +108,7 @@ export default function AreaKimitsuIcPage() {
       {/* Access via Kimitsu IC */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Access via Kimitsu IC" ja="君津インターからのアクセス" />
+          <SectionHeader en="Access via Kimitsu IC" ja="君津インターからのアクセス詳細" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
               館山自動車道・君津インターチェンジを降りたら、杢師方面へ向かってください。インターから約10分でMARISA君津店にお到着いただけます。カーナビには「千葉県君津市杢師3-20-10」とご入力ください。
@@ -95,8 +120,29 @@ export default function AreaKimitsuIcPage() {
               木更津・袖ケ浦方面からは館山自動車道を南下し、君津インターでお降りください。木更津南インターまたは袖ケ浦インターから乗車すれば、約15〜20分でお越しいただけます。
             </p>
             <p>
-              市原・千葉方面からは、館山自動車道または京葉道路から接続し、君津インターまで約30〜40分です。高速道路を利用することで一般道に比べて大幅に時間を短縮できます。
+              市原・千葉方面からは、館山自動車道または京葉道路から接続し、君津インターまで約30〜40分です。高速道路を利用することで一般道に比べて大幅に時間を短縮できます。富津方面からは富津竹岡インターから乗車すると便利です。
             </p>
+          </div>
+
+          {/* Route summary */}
+          <div className="mt-10 bg-sand-100 border border-sand-200 p-6 space-y-3 text-sm">
+            <p className="font-medium text-stone-800 tracking-wide mb-4">各方面からのルート目安</p>
+            <div className="flex gap-4 text-stone-700">
+              <span className="text-brown-400 shrink-0">●</span>
+              <span>木更津・袖ケ浦 → 館山自動車道 → 君津IC → MARISA（約15〜25分）</span>
+            </div>
+            <div className="flex gap-4 text-stone-700">
+              <span className="text-brown-400 shrink-0">●</span>
+              <span>市原 → 館山自動車道 → 君津IC → MARISA（約30〜40分）</span>
+            </div>
+            <div className="flex gap-4 text-stone-700">
+              <span className="text-brown-400 shrink-0">●</span>
+              <span>東京・横浜 → アクアライン → 館山自動車道 → 君津IC → MARISA（約50〜70分）</span>
+            </div>
+            <div className="flex gap-4 text-stone-700">
+              <span className="text-brown-400 shrink-0">●</span>
+              <span>富津 → 富津竹岡IC → 館山自動車道 → 君津IC → MARISA（約20分）</span>
+            </div>
           </div>
         </div>
       </section>
@@ -118,6 +164,31 @@ export default function AreaKimitsuIcPage() {
             <p>
               もみほぐし・ヘッドリラックス・足つぼなど豊富なメニューから、その日の体の状態に合わせてお選びいただけます。45分3,500円〜というリーズナブルな価格設定で、高速代をかけても満足いただける施術をご提供します。初めてのご来店の方もお気軽にどうぞ。
             </p>
+            <p>
+              鍼灸・美容鍼をご希望の方はBMERITよりご予約ください。もみほぐしと鍼灸を組み合わせて、より深いケアをご体験いただけます。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Menu Cards */}
+      <section className="py-16 lg:py-24 bg-sand-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Menu" ja="対応メニュー" lead="君津IC周辺からお越しの方にもご利用いただけるメニューをご紹介します" />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {menus.map((m) => (
+              <Link
+                key={m.name}
+                href={m.href}
+                target={m.external ? '_blank' : undefined}
+                rel={m.external ? 'noopener noreferrer' : undefined}
+                className="block bg-cream-50 border border-sand-200 p-5 hover:border-brown-300 transition-colors"
+              >
+                <p className="font-medium text-stone-800 tracking-wide mb-1">{m.name}</p>
+                <p className="text-xs text-greige-400 mb-2">{m.time} / {m.price}</p>
+                <p className="text-xs text-stone-700 leading-relaxed">{m.desc}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -171,10 +242,11 @@ export default function AreaKimitsuIcPage() {
           <div className="flex flex-wrap gap-3 text-xs">
             {[
               { label: '君津でマッサージをお探しの方', href: '/area/kimitsu' },
-              { label: '車で通いたい方', href: '/scene/parking' },
+              { label: '木更津方面からお越しの方', href: '/area/kisarazu' },
+              { label: '袖ケ浦方面からお越しの方', href: '/area/sodegaura' },
+              { label: '富津方面からお越しの方', href: '/area/futtsu' },
               { label: 'アクセス・駐車場', href: '/access' },
               { label: 'メニュー・料金', href: '/menu' },
-              { label: 'よくある質問', href: '/faq' },
             ].map((l) => (
               <Link
                 key={l.href}
@@ -207,6 +279,14 @@ export default function AreaKimitsuIcPage() {
               variant="light"
               size="lg"
             />
+            {LINE_URL && (
+              <ReserveButton
+                href={LINE_URL}
+                label="LINEで問い合わせ"
+                variant="outline"
+                size="lg"
+              />
+            )}
             <ReserveButton
               href="/access"
               label="アクセスを確認する"

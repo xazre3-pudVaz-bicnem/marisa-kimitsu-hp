@@ -3,19 +3,21 @@ import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL, SHOP_INFO } from '@/lib/constants'
+import { BMERIT_URL, HPB_URL, LINE_URL, SHOP_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: '富津市からもみほぐし・マッサージをお探しなら｜MARISA 君津店',
-  description: '富津市から車で約15〜20分。国道127号線経由で君津市のもみほぐしサロンMARISAへアクセス便利。夜0時まで営業・無料駐車場・当日予約OK。',
-  keywords: ['富津 マッサージ', '富津 もみほぐし', '富津市 リラクゼーション', '富津 整体', '富津 肩こり'],
+  title: '富津からのアクセス・マッサージ｜MARISA 君津店',
+  description: '富津方面からもみほぐし・マッサージをお探しの方へ。MARISA 君津店は富津から車で約15分。夜0時まで・当日予約OK・無料駐車場。',
+  keywords: ['富津 マッサージ', '富津 もみほぐし', '富津 リラクゼーション', '富津 肩こり ケア'],
   openGraph: {
-    title: '富津市からもみほぐし・マッサージをお探しなら｜MARISA 君津店',
-    description: '富津市から車で約15〜20分。国道127号線経由でアクセス便利なもみほぐしサロン。夜0時まで営業・無料駐車場完備。',
+    title: '富津からのアクセス・マッサージ｜MARISA 君津店',
+    description: '富津方面からもみほぐし・マッサージをお探しの方へ。MARISA 君津店は富津から車で約15分。夜0時まで・当日予約OK・無料駐車場。',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
     locale: 'ja_JP',
     type: 'website',
   },
-  alternates: { canonical: '/area/futtsu' },
+  twitter: { card: 'summary_large_image' },
+  alternates: { canonical: 'https://marisa-kimitsu.com/area/futtsu' },
 }
 
 const faqSchema = {
@@ -24,10 +26,34 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '富津市からMARISA君津店までどのくらいかかりますか？',
+      name: '富津からMARISAまでどのくらいかかりますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '富津市街地からは国道127号線経由で車で約15〜20分ほどです。竹岡・天羽方面からは少し長くなりますが、20〜25分を目安にお越しください。道路状況により変動する場合があります。',
+        text: '富津市街地からは国道127号線経由で車で約15〜20分ほどです。竹岡・天羽方面からは約20〜25分を目安にお越しください。館山自動車道・君津IC経由でも同程度でお越しいただけます。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '夜遅くでも受けられますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '夜0時まで営業しており、最終受付は23:00です。富津でのお仕事帰りや夕方以降のご利用も大歓迎です。年中無休ですので、平日・休日を問わずご来店いただけます。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '当日予約できますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、当日予約も承っています。ホットペッパービューティーからオンラインで空き状況をご確認のうえご予約いただくとスムーズです。急なご予定でもできる限りご対応しますので、まずはご確認ください。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '鍼灸もできますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、鍼灸・美容鍼のご予約はBMERITよりお受けしています。もみほぐしと組み合わせてのご利用も可能です。ご予約の際に詳細をご確認ください。',
       },
     },
     {
@@ -35,19 +61,18 @@ const faqSchema = {
       name: '駐車場はありますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、店舗前に無料駐車場をご用意しています。富津方面からお車でお越しの方も安心してご利用いただけます。駐車場は混雑することが少なく、スムーズにご来店いただけます。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '当日予約はできますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'はい、当日予約も承っています。ホットペッパービューティーからオンラインでご予約いただけます。急なご予約でもできる限りご対応しますので、まずはご確認ください。最終受付は23:00です。',
+        text: 'はい、店舗前に無料駐車場をご用意しています。富津方面からお車でお越しの方も駐車料金は一切かかりません。安心してご来店ください。',
       },
     },
   ],
 }
+
+const menus = [
+  { name: 'もみほぐし', time: '45分〜', price: '¥3,500〜', href: '/menu/body-care', desc: '肩こり・腰痛・全身の疲れをしっかりほぐします' },
+  { name: 'ヘッドリラックス', time: '60分〜', price: '¥5,000〜', href: '/menu/head', desc: '頭・首・肩のコリをまとめてケア' },
+  { name: '足つぼ', time: '45分〜', price: '¥3,500〜', href: '/menu/foot', desc: '立ち仕事・歩き疲れに。足裏から全身をサポート' },
+  { name: '鍼灸・美容鍼', time: '60分〜', price: '要予約', href: BMERIT_URL, desc: '本格的な鍼施術。BMERITよりご予約ください', external: true },
+]
 
 export default function AreaFuttsuPage() {
   return (
@@ -83,7 +108,7 @@ export default function AreaFuttsuPage() {
       {/* Access from Futtsu */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Access from Futtsu" ja="富津市からのアクセス" />
+          <SectionHeader en="Access from Futtsu" ja="富津市からのアクセス詳細" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
               富津市からMARISA君津店へは、国道127号線を北上してお越しいただくのが最もわかりやすいルートです。富津市街地を出発して君津方面へ向かうと、約15〜20分でお到着いただけます。
@@ -92,11 +117,28 @@ export default function AreaFuttsuPage() {
               竹岡・天羽エリアからは、国道127号線を経由して君津市内へ入り、杢師交差点付近が目印となります。こちらからは約20〜25分ほどを目安にお越しください。道路はほぼ直線的でわかりやすく、初めての方でも迷いにくいルートです。
             </p>
             <p>
-              君津インターチェンジ（館山自動車道）を利用される場合は、高速道路経由でさらにスムーズにアクセスできます。インターを降りてから店舗まで約10分ですので、高速道路をご利用の富津方面のお客様にも便利です。
+              館山自動車道（館山道）をご利用の場合は、君津インターチェンジで下車してください。インターを降りてから店舗まで約10分ですので、高速道路をご利用の富津方面のお客様にも便利なルートです。富津竹岡インターから乗車するとさらに短時間でアクセスできます。
             </p>
             <p>
-              店舗前には無料駐車場をご用意していますので、お車でのご来店でも安心です。富津市内にはリラクゼーションサロンが少ないエリアもあるかと思いますが、君津のMARISAはそうしたお客様のご来店も大歓迎です。
+              店舗前には無料駐車場をご用意していますので、お車でのご来店でも安心です。富津市内にはリラクゼーションサロンが少ないエリアもあるかと思いますが、君津のMARISAはそうしたお客様のご来店も大歓迎です。カーナビには「千葉県君津市杢師3-20-10」とご入力ください。
             </p>
+          </div>
+
+          {/* Route summary */}
+          <div className="mt-10 bg-sand-100 border border-sand-200 p-6 space-y-3 text-sm">
+            <p className="font-medium text-stone-800 tracking-wide mb-4">富津からのルート目安</p>
+            <div className="flex gap-4 text-stone-700">
+              <span className="text-brown-400 shrink-0">●</span>
+              <span>富津市街地 → 国道127号線北上 → 君津市杢師 → MARISA（約15〜20分）</span>
+            </div>
+            <div className="flex gap-4 text-stone-700">
+              <span className="text-brown-400 shrink-0">●</span>
+              <span>竹岡・天羽方面 → 国道127号線北上 → 君津市杢師 → MARISA（約20〜25分）</span>
+            </div>
+            <div className="flex gap-4 text-stone-700">
+              <span className="text-brown-400 shrink-0">●</span>
+              <span>富津竹岡IC → 館山自動車道 → 君津IC → MARISA（約15分）</span>
+            </div>
           </div>
         </div>
       </section>
@@ -104,20 +146,45 @@ export default function AreaFuttsuPage() {
       {/* Why Futtsu residents choose MARISA */}
       <section className="py-16 lg:py-24 bg-cream-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Why Choose MARISA" ja="富津市在住の方に選ばれる理由" />
+          <SectionHeader en="Why Choose MARISA" ja="富津市の方にMARISAが選ばれる理由" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
-              富津市エリアの皆様からMARISAが選ばれる理由のひとつが、営業時間の長さです。夜0時まで営業（最終受付23:00）していますので、日中お忙しい方でも仕事帰りにお立ち寄りいただけます。
+              富津エリアの皆様からMARISAが選ばれる理由のひとつが、営業時間の長さです。夜0時まで営業（最終受付23:00）していますので、日中お忙しい方でも仕事帰りにお立ち寄りいただけます。
             </p>
             <p>
-              また、無料駐車場を完備していることも、お車でお越しになる富津方面のお客様にとって大きなメリットです。駐車場の心配なく、ゆったりとした気持ちでお越しいただけます。
+              無料駐車場を完備していることも、お車でお越しになる富津方面のお客様にとって大きなメリットです。駐車場の心配なく、ゆったりとした気持ちでお越しいただけます。
             </p>
             <p>
               年中無休で営業していますので、お休みの曜日を気にする必要がありません。祝日や年末年始も通常通り営業していますので、急なご予定でもご予約いただけます。ホットペッパービューティーから24時間いつでもオンラインご予約が可能です。
             </p>
             <p>
-              もみほぐし・ヘッドリラックス・足つぼなど、豊富なメニューをご用意しています。45分3,500円〜とリーズナブルな価格設定で、定期的なメンテナンスとしてもご活用いただけます。疲れが溜まったと感じたときに気軽にお越しいただける、身近なリラクゼーションサロンを目指しています。
+              もみほぐし・ヘッドリラックス・足つぼなど豊富なメニューをご用意しています。45分3,500円〜とリーズナブルな価格設定で、定期的なメンテナンスとしてもご活用いただけます。疲れが溜まったと感じたときに気軽にお越しいただける、身近なリラクゼーションサロンを目指しています。
             </p>
+            <p>
+              また、鍼灸・美容鍼のメニューもご用意しており、体の深部からのケアをサポートします。もみほぐしとの組み合わせで、より効果的な施術が期待できます。鍼灸のご予約はBMERITよりお申し込みください。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Menu Cards */}
+      <section className="py-16 lg:py-24 bg-sand-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Menu" ja="対応メニュー" lead="富津方面からお越しの方にもご利用いただけるメニューをご紹介します" />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {menus.map((m) => (
+              <Link
+                key={m.name}
+                href={m.href}
+                target={m.external ? '_blank' : undefined}
+                rel={m.external ? 'noopener noreferrer' : undefined}
+                className="block bg-cream-50 border border-sand-200 p-5 hover:border-brown-300 transition-colors"
+              >
+                <p className="font-medium text-stone-800 tracking-wide mb-1">{m.name}</p>
+                <p className="text-xs text-greige-400 mb-2">{m.time} / {m.price}</p>
+                <p className="text-xs text-stone-700 leading-relaxed">{m.desc}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -133,6 +200,7 @@ export default function AreaFuttsuPage() {
               { label: '営業時間', value: '10:00〜24:00（最終受付23:00）年中無休' },
               { label: '駐車場', value: '無料駐車場あり（店舗前）' },
               { label: '富津市から', value: '車で約15〜20分（国道127号線経由）' },
+              { label: '君津ICから', value: '車で約10分（館山自動車道利用）' },
             ].map((item) => (
               <div key={item.label} className="flex gap-6 py-3">
                 <dt className="w-28 shrink-0 text-greige-400 tracking-wide">{item.label}</dt>
@@ -171,6 +239,7 @@ export default function AreaFuttsuPage() {
             {[
               { label: '君津でマッサージをお探しの方', href: '/area/kimitsu' },
               { label: '木更津方面からお越しの方', href: '/area/kisarazu' },
+              { label: '房総エリアの方へ', href: '/area/boso' },
               { label: 'アクセス・駐車場', href: '/access' },
               { label: 'メニュー・料金', href: '/menu' },
               { label: 'よくある質問', href: '/faq' },
@@ -206,6 +275,14 @@ export default function AreaFuttsuPage() {
               variant="light"
               size="lg"
             />
+            {LINE_URL && (
+              <ReserveButton
+                href={LINE_URL}
+                label="LINEで問い合わせ"
+                variant="outline"
+                size="lg"
+              />
+            )}
             <ReserveButton
               href="/access"
               label="アクセスを確認する"

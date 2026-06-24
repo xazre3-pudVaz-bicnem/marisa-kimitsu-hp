@@ -3,19 +3,21 @@ import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL, SHOP_INFO } from '@/lib/constants'
+import { BMERIT_URL, HPB_URL, LINE_URL, SHOP_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: '房総エリアのもみほぐし・マッサージ｜MARISA 君津店',
-  description: '房総エリア（鴨川・鋸南・南房総方面）からもアクセス可能なもみほぐしサロン。千葉県南部の中心・君津市に位置するMARISA。夜0時まで営業・無料駐車場完備。',
-  keywords: ['房総 マッサージ', '房総 もみほぐし', '房総半島 リラクゼーション', '南房総 マッサージ', '鴨川 マッサージ'],
+  title: '房総エリアのマッサージ・もみほぐし｜MARISA 君津店',
+  description: '房総エリア（君津・木更津・富津・袖ケ浦・市原）でもみほぐし・マッサージをお探しなら。MARISA 君津店は夜0時まで・当日予約OK・無料駐車場完備。',
+  keywords: ['房総 マッサージ', '房総 もみほぐし', '千葉南部 マッサージ', '房総半島 リラクゼーション'],
   openGraph: {
-    title: '房総エリアのもみほぐし・マッサージ｜MARISA 君津店',
-    description: '房総エリアから館山自動車道や国道127号線でアクセス可能なもみほぐしサロン。夜0時まで営業・無料駐車場完備。',
+    title: '房総エリアのマッサージ・もみほぐし｜MARISA 君津店',
+    description: '房総エリア（君津・木更津・富津・袖ケ浦・市原）でもみほぐし・マッサージをお探しなら。MARISA 君津店は夜0時まで・当日予約OK・無料駐車場完備。',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
     locale: 'ja_JP',
     type: 'website',
   },
-  alternates: { canonical: '/area/boso' },
+  twitter: { card: 'summary_large_image' },
+  alternates: { canonical: 'https://marisa-kimitsu.com/area/boso' },
 }
 
 const faqSchema = {
@@ -24,30 +26,64 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '鴨川・南房総方面からMARISAへのアクセスはどのくらいかかりますか？',
+      name: '房総エリアのどこから来店できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '鴨川方面からは国道465号線または国道127号線経由で、車で約50〜60分ほどです。南房総・館山方面からは館山自動車道または国道127号線経由で約40〜50分を目安にお越しください。',
+        text: '君津・木更津・富津・袖ケ浦・市原・館山・南房総・鋸南など房総半島全域からお越しいただけます。館山自動車道や国道127号線でアクセスできるエリア全般からのご来店を歓迎しています。',
       },
     },
     {
       '@type': 'Question',
-      name: '鋸南方面からはどのようなルートでお越しになれますか？',
+      name: '遠くからでもアクセスできますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '鋸南方面からは国道127号線を北上し、富津市を経由して君津市へお越しください。車で約30〜40分ほどでお到着いただけます。館山自動車道の富津竹岡インターをご利用の場合は、君津インターまで高速を利用いただくとスムーズです。',
+        text: 'はい、館山自動車道をご利用いただくと房総各地からスムーズにアクセスできます。館山・鋸南方面から約30〜50分、鴨川方面からは約50〜60分を目安にお越しください。無料駐車場も完備しています。',
       },
     },
     {
       '@type': 'Question',
-      name: '房総エリアから来ても空席がありますか？事前予約は必要ですか？',
+      name: '君津以外の方も来店されますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '遠方からお越しの場合は事前予約を強くおすすめしています。ホットペッパービューティーから24時間いつでもオンライン予約が可能です。せっかくお越しいただいて満席でご案内できないことがないよう、お早めにご予約ください。',
+        text: 'はい、木更津・富津・袖ケ浦・市原・館山・南房総など多くのエリアからお越しいただいています。房総エリアのリラクゼーションサロンとして、広域からのご来店を歓迎しています。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '鍼灸もできますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、鍼灸・美容鍼のメニューをご用意しています。鍼灸のご予約はBMERITよりお申し込みください。もみほぐしと組み合わせてのご利用も可能です。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '予約方法は？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ホットペッパービューティーからのオンライン予約が便利です。24時間いつでも空き状況を確認してご予約いただけます。遠方からお越しの場合は事前予約をおすすめします。当日予約も可能です。',
       },
     },
   ],
 }
+
+const menus = [
+  { name: 'もみほぐし', time: '45分〜', price: '¥3,500〜', href: '/menu/body-care', desc: '肩こり・腰痛・全身の疲れをしっかりほぐします' },
+  { name: 'ヘッドリラックス', time: '60分〜', price: '¥5,000〜', href: '/menu/head', desc: '頭・首・肩のコリをまとめてケア' },
+  { name: '足つぼ', time: '45分〜', price: '¥3,500〜', href: '/menu/foot', desc: '立ち仕事・歩き疲れに。足裏から全身をサポート' },
+  { name: '鍼灸・美容鍼', time: '60分〜', price: '要予約', href: BMERIT_URL, desc: '本格的な鍼施術。BMERITよりご予約ください', external: true },
+]
+
+const areaList = [
+  { name: '君津市', time: '〜10分', note: '最寄りエリア' },
+  { name: '木更津市', time: '約25〜30分', note: '館山自動車道経由' },
+  { name: '富津市', time: '約15〜20分', note: '国道127号線経由' },
+  { name: '袖ケ浦市', time: '約20〜25分', note: '館山自動車道経由' },
+  { name: '市原市', time: '約30〜40分', note: '館山自動車道経由' },
+  { name: '館山市', time: '約40〜50分', note: '館山自動車道経由' },
+  { name: '南房総市・鋸南町', time: '約30〜40分', note: '国道127号線経由' },
+  { name: '鴨川市', time: '約50〜60分', note: '国道465号線経由' },
+]
 
 export default function AreaBosoPage() {
   return (
@@ -74,7 +110,7 @@ export default function AreaBosoPage() {
               房総エリアの方々にもご利用いただけます
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              鴨川・鋸南・南房総など房総エリアの方も、館山自動車道または国道127号線を利用して君津のMARISAへお越しいただけます。千葉県南部の中心的な立地で、房総各地からのアクセスポイントとなっています。
+              君津・木更津・富津・袖ケ浦・市原・館山・南房総など房総エリアの方も、館山自動車道または国道127号線を利用して君津のMARISAへお越しいただけます。千葉県南部の中心的な立地で、房総各地からのアクセスポイントとなっています。
             </p>
           </div>
         </div>
@@ -83,10 +119,10 @@ export default function AreaBosoPage() {
       {/* Access from Boso area */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Access from Boso" ja="房総各地からのアクセス" />
+          <SectionHeader en="Access from Boso" ja="房総各地からのアクセス詳細" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
-              房総半島の各エリアから、MARISAがある君津市へのアクセスをご案内します。君津市は房総半島の北部に位置し、館山自動車道の終点に近い立地です。半島各地からの玄関口として、房総エリアからのアクセスが比較的しやすい場所にあります。
+              房総半島の各エリアから、MARISAがある君津市へのアクセスをご案内します。君津市は房総半島の北部に位置し、館山自動車道の重要インターがある立地です。半島各地からの玄関口として、房総エリアからのアクセスが比較的しやすい場所にあります。
             </p>
             <p>
               鋸南・保田方面からは、国道127号線を北上して富津市を経由し、君津市へお越しください。車で約30〜40分ほどです。館山自動車道をご利用の場合は、富津竹岡インターから乗車して君津インターで下車すると便利です。
@@ -97,6 +133,20 @@ export default function AreaBosoPage() {
             <p>
               鴨川方面からは、国道465号線または国道128号線を経由して君津方面へ向かってください。山を越えるルートになりますが、車で約50〜60分ほどです。道路状況によって変動しますので、余裕を持ってお越しください。
             </p>
+          </div>
+
+          {/* Area access table */}
+          <div className="mt-10">
+            <p className="font-medium text-stone-800 tracking-wide text-sm mb-4">房総各地からの所要時間目安</p>
+            <div className="divide-y divide-sand-200 border border-sand-200">
+              {areaList.map((a) => (
+                <div key={a.name} className="flex gap-4 px-4 py-3 text-sm bg-cream-50">
+                  <span className="w-32 shrink-0 text-stone-800">{a.name}</span>
+                  <span className="w-24 shrink-0 text-brown-400 font-medium">{a.time}</span>
+                  <span className="text-greige-400 text-xs self-center">{a.note}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -110,14 +160,39 @@ export default function AreaBosoPage() {
               房総エリアの南部は、規模の大きなリラクゼーションサロンが少ないエリアも多く、「近くに良いサロンがない」というお客様も多くいらっしゃいます。そのような方々が君津のMARISAまで足を運んでくださっています。
             </p>
             <p>
-              MARISAは技術と接客にこだわり、お客様一人ひとりのお体の状態に合わせた施術をご提供しています。「房総のサロンより技術が高い」というお声もいただいており、遠方からお越しいただく価値を感じていただいています。
+              MARISAは技術と接客にこだわり、お客様一人ひとりのお体の状態に合わせた施術をご提供しています。「房総のサロンより丁寧に施術してもらえる」というお声もいただいており、遠方からお越しいただく価値を感じていただいています。
             </p>
             <p>
               夜0時まで営業（最終受付23:00）・年中無休という環境は、仕事の関係や家族の都合で昼間に来店しにくい方にも対応しています。無料駐車場を完備しているため、お車でのご来店がスムーズです。
             </p>
             <p>
-              もみほぐし45分3,500円〜のリーズナブルな価格で、質の高い施術をご提供しています。ヘッドリラックス（60分5,000円〜）や足つぼセット（5,500円〜）なども人気です。遠方からお越しいただく分、しっかりとした施術でご満足いただける内容を心がけています。
+              もみほぐし45分3,500円〜のリーズナブルな価格で、質の高い施術をご提供しています。ヘッドリラックス・足つぼなども人気です。遠方からお越しいただく分、しっかりとした施術でご満足いただける内容を心がけています。
             </p>
+            <p>
+              鍼灸・美容鍼もご用意しており（BMERITよりご予約）、もみほぐしでは届きにくい体の深部からのサポートにも対応しています。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Menu Cards */}
+      <section className="py-16 lg:py-24 bg-sand-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Menu" ja="対応メニュー" lead="房総エリアからお越しの方にもご利用いただけるメニューをご紹介します" />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {menus.map((m) => (
+              <Link
+                key={m.name}
+                href={m.href}
+                target={m.external ? '_blank' : undefined}
+                rel={m.external ? 'noopener noreferrer' : undefined}
+                className="block bg-cream-50 border border-sand-200 p-5 hover:border-brown-300 transition-colors"
+              >
+                <p className="font-medium text-stone-800 tracking-wide mb-1">{m.name}</p>
+                <p className="text-xs text-greige-400 mb-2">{m.time} / {m.price}</p>
+                <p className="text-xs text-stone-700 leading-relaxed">{m.desc}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -173,9 +248,10 @@ export default function AreaBosoPage() {
             {[
               { label: '君津でマッサージをお探しの方', href: '/area/kimitsu' },
               { label: '富津方面からお越しの方', href: '/area/futtsu' },
+              { label: '安房・館山方面からお越しの方', href: '/area/awa' },
+              { label: '南房総・鋸南方面からお越しの方', href: '/area/minamiboso' },
               { label: 'アクセス・駐車場', href: '/access' },
               { label: 'メニュー・料金', href: '/menu' },
-              { label: 'よくある質問', href: '/faq' },
             ].map((l) => (
               <Link
                 key={l.href}
@@ -208,6 +284,14 @@ export default function AreaBosoPage() {
               variant="light"
               size="lg"
             />
+            {LINE_URL && (
+              <ReserveButton
+                href={LINE_URL}
+                label="LINEで問い合わせ"
+                variant="outline"
+                size="lg"
+              />
+            )}
             <ReserveButton
               href="/access"
               label="アクセスを確認する"

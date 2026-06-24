@@ -3,19 +3,21 @@ import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL, SHOP_INFO } from '@/lib/constants'
+import { BMERIT_URL, HPB_URL, LINE_URL, SHOP_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: '安房・南房総方面からもみほぐし・マッサージをお探しなら｜MARISA 君津店',
-  description: '館山・鴨川・鋸南・富山方面から館山自動車道または国道127号線経由でアクセス可能。館山から約40分・鴨川から約50分のもみほぐしサロンMARISA君津店。',
-  keywords: ['安房 マッサージ', '南房総 もみほぐし', '館山 マッサージ', '鴨川 マッサージ', '安房 リラクゼーション'],
+  title: '安房・館山方面からのマッサージ・もみほぐし｜MARISA 君津店',
+  description: '館山・安房方面からもみほぐし・マッサージをお探しの方へ。MARISA 君津店は館山ICから車で約30〜40分。夜0時まで・当日予約OK・無料駐車場。',
+  keywords: ['館山 マッサージ', '安房 もみほぐし', '館山 リラクゼーション', '安房 マッサージ 君津'],
   openGraph: {
-    title: '安房・南房総方面からもみほぐし・マッサージをお探しなら｜MARISA 君津店',
-    description: '館山から約40分・鴨川から約50分のもみほぐしサロン。館山自動車道経由でアクセス便利。夜0時まで営業・無料駐車場完備。',
+    title: '安房・館山方面からのマッサージ・もみほぐし｜MARISA 君津店',
+    description: '館山・安房方面からもみほぐし・マッサージをお探しの方へ。MARISA 君津店は館山ICから車で約30〜40分。夜0時まで・当日予約OK・無料駐車場。',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
     locale: 'ja_JP',
     type: 'website',
   },
-  alternates: { canonical: '/area/awa' },
+  twitter: { card: 'summary_large_image' },
+  alternates: { canonical: 'https://marisa-kimitsu.com/area/awa' },
 }
 
 const faqSchema = {
@@ -24,30 +26,53 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '館山・安房方面からMARISAまでどのくらいかかりますか？',
+      name: '館山からどのくらいかかりますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '館山市内から館山自動車道（富津館山道路）経由で車で約40〜50分ほどです。国道127号線をご利用の場合は同程度またはやや長くなります。館山インターから乗車し、君津インターで下車してお越しください。',
+        text: '館山市内から館山自動車道（富津館山道路）経由で車で約40〜50分ほどです。館山インターから乗車し、君津インターで下車後、店舗まで約10分でお到着いただけます。',
       },
     },
     {
       '@type': 'Question',
-      name: '鴨川方面からはどのようなルートでお越しになれますか？',
+      name: '高速を使うルートは？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '鴨川方面からは国道465号線を経由して君津市方面へお越しいただくか、国道128号線から南房総市を経由して館山方向へ向かい、館山自動車道を利用する方法もあります。車で約50〜60分を目安にお越しください。',
+        text: '館山インターチェンジから館山自動車道を北上し、君津インターチェンジで下車してください。インターを出てから店舗まで約10分です。国道127号線での一般道ルートも同程度の時間でアクセスできます。',
       },
     },
     {
       '@type': 'Question',
-      name: '安房・南房総方面から来る際に注意することはありますか？',
+      name: '遠くから来ても大丈夫ですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '遠方からのご来店の場合は、事前予約を強くおすすめしています。ホットペッパービューティーからオンライン予約が可能です。また、到着が遅れる場合は事前にお知らせください。最終受付は23:00です。無料駐車場を完備していますので駐車の心配は不要です。',
+        text: 'はい、安房・館山方面からのお客様も多くいらっしゃいます。遠方からお越しの場合は事前予約をおすすめしています。ホットペッパービューティーから24時間いつでもご予約いただけます。無料駐車場も完備しています。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '鍼灸もできますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、鍼灸・美容鍼のメニューをご用意しています。鍼灸のご予約はBMERITよりお申し込みください。もみほぐしと組み合わせてのご利用も可能です。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '営業時間は？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '10:00〜24:00（最終受付23:00）年中無休で営業しています。安房・館山方面から夕方以降にお越しいただいても十分間に合う営業時間です。帰り道にゆっくりとご利用いただけます。',
       },
     },
   ],
 }
+
+const menus = [
+  { name: 'もみほぐし', time: '45分〜', price: '¥3,500〜', href: '/menu/body-care', desc: '肩こり・腰痛・全身の疲れをしっかりほぐします' },
+  { name: 'ヘッドリラックス', time: '60分〜', price: '¥5,000〜', href: '/menu/head', desc: '頭・首・肩のコリをまとめてケア' },
+  { name: '足つぼ', time: '45分〜', price: '¥3,500〜', href: '/menu/foot', desc: '立ち仕事・歩き疲れに。足裏から全身をサポート' },
+  { name: '鍼灸・美容鍼', time: '60分〜', price: '要予約', href: BMERIT_URL, desc: '本格的な鍼施術。BMERITよりご予約ください', external: true },
+]
 
 export default function AreaAwaPage() {
   return (
@@ -74,7 +99,7 @@ export default function AreaAwaPage() {
               安房・南房総方面からのご来店も歓迎しています
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              館山・鴨川・鋸南・富山など安房・南房総エリアの方も、館山自動車道または国道127号線経由でMARISA君津店へお越しいただけます。館山から約40分、鴨川から約50分。遠方からのご来店もお気軽にどうぞ。
+              館山・鴨川・鋸南・富山など安房・南房総エリアの方も、館山自動車道または国道127号線経由でMARISA君津店へお越しいただけます。館山から約40〜50分。夜0時まで・無料駐車場完備で遠方からのご来店もお気軽にどうぞ。
             </p>
           </div>
         </div>
@@ -83,7 +108,7 @@ export default function AreaAwaPage() {
       {/* Access from Awa area */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Access from Awa" ja="安房・南房総からのアクセス" />
+          <SectionHeader en="Access from Awa" ja="安房・南房総からのアクセス詳細" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
               安房・南房総方面からMARISA君津店へは、館山自動車道（富津館山道路を含む）をご利用いただくのが最もスムーズです。館山インターチェンジから乗車し、君津インターチェンジで下車してください。インターを出てから店舗まで約10分でお到着いただけます。
@@ -95,8 +120,25 @@ export default function AreaAwaPage() {
               鋸南・保田方面からは、国道127号線を北上して富津市を経由し君津市へ向かうルート、または富津竹岡インターから館山自動車道に乗って君津インターで下車するルートがあります。車で約30〜40分ほどです。
             </p>
             <p>
-              富山・鹿野山方面からは、県道や国道を経由して君津市へお越しください。車で約30分ほどでお到着いただけます。鴨川方面からは国道465号線を経由して君津方面へ向かう形になり、約50〜60分を目安にお越しください。
+              富山・鹿野山方面からは、県道や国道を経由して君津市へお越しください。車で約30分ほどでお到着いただけます。鴨川方面からは国道465号線を経由して君津方面へ向かう形になり、約50〜60分を目安にお越しください。カーナビには「千葉県君津市杢師3-20-10」とご入力ください。
             </p>
+          </div>
+
+          {/* Route summary */}
+          <div className="mt-10 bg-sand-100 border border-sand-200 p-6 space-y-3 text-sm">
+            <p className="font-medium text-stone-800 tracking-wide mb-4">安房・南房総からのルート目安</p>
+            <div className="flex gap-4 text-stone-700">
+              <span className="text-brown-400 shrink-0">●</span>
+              <span>館山IC → 館山自動車道北上 → 君津IC → MARISA（約40〜50分）</span>
+            </div>
+            <div className="flex gap-4 text-stone-700">
+              <span className="text-brown-400 shrink-0">●</span>
+              <span>鋸南・保田 → 国道127号線北上 → 富津市経由 → 君津市杢師 → MARISA（約30〜40分）</span>
+            </div>
+            <div className="flex gap-4 text-stone-700">
+              <span className="text-brown-400 shrink-0">●</span>
+              <span>鴨川方面 → 国道465号線 → 君津市 → MARISA（約50〜60分）</span>
+            </div>
           </div>
         </div>
       </section>
@@ -116,8 +158,33 @@ export default function AreaAwaPage() {
               夜0時まで営業（最終受付23:00）・年中無休という営業体制は、観光シーズンや農業・漁業のオフシーズンなど、生活パターンが変わりやすい安房・南房総エリアの方々にも利用しやすい環境です。ホットペッパービューティーから24時間いつでも予約できます。
             </p>
             <p>
-              もみほぐし45分3,500円〜というリーズナブルな価格で、ヘッドリラックス（60分5,000円〜）や足つぼセット（5,500円〜）など豊富なメニューをご用意しています。店舗前の無料駐車場でお車も安心です。安房・南房総方面からお越しの際はぜひ事前にご予約のうえお越しください。スタッフ一同、心よりお待ちしております。
+              もみほぐし45分3,500円〜というリーズナブルな価格で、ヘッドリラックス・足つぼなど豊富なメニューをご用意しています。店舗前の無料駐車場でお車も安心です。安房・南房総方面からお越しの際はぜひ事前にご予約のうえお越しください。
             </p>
+            <p>
+              鍼灸・美容鍼も（BMERITよりご予約）ご利用いただけます。日常のお体のケアに、ぜひMARISAをご活用ください。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Menu Cards */}
+      <section className="py-16 lg:py-24 bg-sand-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Menu" ja="対応メニュー" lead="安房・館山方面からお越しの方にもご利用いただけるメニューをご紹介します" />
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {menus.map((m) => (
+              <Link
+                key={m.name}
+                href={m.href}
+                target={m.external ? '_blank' : undefined}
+                rel={m.external ? 'noopener noreferrer' : undefined}
+                className="block bg-cream-50 border border-sand-200 p-5 hover:border-brown-300 transition-colors"
+              >
+                <p className="font-medium text-stone-800 tracking-wide mb-1">{m.name}</p>
+                <p className="text-xs text-greige-400 mb-2">{m.time} / {m.price}</p>
+                <p className="text-xs text-stone-700 leading-relaxed">{m.desc}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -175,9 +242,9 @@ export default function AreaAwaPage() {
               { label: '君津でマッサージをお探しの方', href: '/area/kimitsu' },
               { label: '富津方面からお越しの方', href: '/area/futtsu' },
               { label: '房総エリアの方へ', href: '/area/boso' },
+              { label: '館山方面からお越しの方', href: '/area/tateyama' },
               { label: 'アクセス・駐車場', href: '/access' },
               { label: 'メニュー・料金', href: '/menu' },
-              { label: 'よくある質問', href: '/faq' },
             ].map((l) => (
               <Link
                 key={l.href}
@@ -210,6 +277,14 @@ export default function AreaAwaPage() {
               variant="light"
               size="lg"
             />
+            {LINE_URL && (
+              <ReserveButton
+                href={LINE_URL}
+                label="LINEで問い合わせ"
+                variant="outline"
+                size="lg"
+              />
+            )}
             <ReserveButton
               href="/access"
               label="アクセスを確認する"
