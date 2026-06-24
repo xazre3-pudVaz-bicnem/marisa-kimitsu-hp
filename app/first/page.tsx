@@ -4,12 +4,25 @@ import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL, SHOP_INFO } from '@/lib/constants'
+import { HPB_URL, BMERIT_URL, LINE_URL, SHOP_INFO } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: '初めての方へ｜MARISA 君津店',
+  title: '初めての方へ・ご来店の流れ｜もみほぐし・MARISA 君津店',
   description:
-    '君津のもみほぐしサロン「MARISA」への初めてのご来店をサポートします。ご来店の流れ・服装・駐車場・当日予約・男性利用・ペア利用など、よくあるご質問をまとめてご案内します。',
+    '初めてもみほぐし・MARISAにご来店の方へ。ご予約から施術・お会計までの流れをご案内。肩こり・腰のつらさ・眼精疲労など、君津でリラクゼーションをお探しの方の疑問を解決します。',
+  keywords: [
+    '君津 マッサージ 初めて',
+    '君津 もみほぐし 初めて',
+    'もみほぐし MARISA 初めて',
+    '君津 リラクゼーション 初めて',
+  ],
+  openGraph: {
+    title: '初めての方へ・ご来店の流れ｜もみほぐし・MARISA 君津店',
+    description:
+      '初めてのご来店でも安心。ご予約から施術・お会計までの流れ、よくある疑問をわかりやすくご案内します。',
+    locale: 'ja_JP',
+    type: 'website',
+  },
   alternates: { canonical: '/first' },
 }
 
@@ -19,10 +32,26 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '服装はどうすればいいですか？',
+      name: '何を着て行けばいいですか？着替えは必要ですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '動きやすい服装でお越しいただくのがベストですが、特に決まりはありません。施術前にお着替えの時間をご用意していますので、スーツや制服でのご来店も問題ありません。着替えは当店でご用意しています。',
+        text: '特別な服装でお越しいただく必要はありません。スーツや仕事帰りの服でもそのままお越しください。施術前に当店でご用意した施術着にお着替えいただきます。着替えをお持ちいただく必要はありません。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'コースはどう選べばいいですか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '初めての方には60分コース（全身バランスよくケア）をおすすめしています。まずお試ししたい方は45分コースも好評です。カウンセリング時にスタッフにご相談いただければ、その日の体の状態に合わせてご提案します。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '予約なしで行っても大丈夫ですか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'ご予約なしでのご来店も受け付けていますが、混雑状況によってはお待ちいただく場合があります。スムーズにご案内するため、事前のご予約をおすすめしています。',
       },
     },
     {
@@ -30,7 +59,7 @@ const faqSchema = {
       name: '当日の予約はできますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、当日予約に対応しています。ホットペッパービューティーのネット予約、またはお電話にてお問い合わせください。空き状況により対応できない場合もありますので、お早めのご連絡をおすすめします。',
+        text: 'はい、当日予約に対応しています。公式WEB予約（B-merit）またはホットペッパービューティーのネット予約、またはお電話にてお問い合わせください。空き状況により対応できない場合もありますので、お早めのご連絡をおすすめします。',
       },
     },
     {
@@ -51,34 +80,26 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: 'カップルや家族など、複数人で利用できますか？',
+      name: '施術中に話しかけてもいいですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、ペアやグループでのご利用も歓迎しています。ベッドを3台ご用意していますので、ご夫婦やご家族、お友達同士でも同時に施術を受けていただけます。ご予約時にご人数をお知らせください。',
+        text: 'どちらでも大丈夫です。会話しながらリラックスしたい方も、静かに施術に集中したい方も、スタッフはお客様のペースに合わせます。眠ってしまっても問題ありません。',
       },
     },
     {
       '@type': 'Question',
-      name: '夜遅くても予約できますか？',
+      name: '施術後に気をつけることは？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '営業時間は10:00〜24:00（最終受付23:00）です。仕事帰りでも夜遅くにご来店いただけます。',
+        text: '施術後は水分をしっかり補給してください。施術直後の激しい運動はお体への負担になる場合があります。翌日に軽い筋肉痛のような感覚が出ることがありますが、一時的な反応です。',
       },
     },
     {
       '@type': 'Question',
-      name: '圧の強さは途中で変えてもらえますか？',
+      name: '値段はいくらくらいですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'もちろんです。施術中、どのタイミングでもお気軽にお申し付けください。強め・弱めのご要望に合わせて調整します。我慢することなく、遠慮なくお声がけください。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '予約なしで来店できますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '当日のご来店も可能ですが、混雑状況によってはお待ちいただく場合がございます。スムーズにご案内するため、事前のご予約をおすすめしています。',
+        text: 'もみほぐしは45分¥3,900から。60分¥4,500（合計70分計）、90分¥6,400（合計100分計）、120分¥8,400のコースをご用意しています。ヘッドケア・足つぼ・セットコースなど各種メニューはご予約ページでご確認ください。',
       },
     },
   ],
@@ -87,68 +108,97 @@ const faqSchema = {
 const steps = [
   {
     step: '01',
-    label: 'ご予約・ご来店',
-    desc: 'ホットペッパービューティーのネット予約、またはお電話にてご予約ください。当日予約もOKです。お車でのご来店の場合は、店舗前の無料駐車場をご利用ください。君津駅からは車で約5分です。',
+    label: 'ご予約',
+    desc: '公式WEB予約（B-merit）・ホットペッパービューティー・お電話・LINEのいずれかからご予約ください。24時間いつでもオンライン予約が可能です。当日予約にも対応しています。',
   },
   {
     step: '02',
-    label: '受付・カウンセリング',
-    desc: 'ご来店いただきましたら受付にてお名前をお知らせください。初めての方にはカウンセリングシートにご記入いただきます。その日の体の状態・気になる部位・施術の強さのご希望などをお聞きし、最適な施術をご提案します。',
+    label: 'ご来店',
+    desc: 'お車でのご来店は店舗前の無料駐車場をご利用ください。君津駅からは車で約5分、君津ICから約10分です。仕事帰りのスーツ・普段着でそのままお越しください。',
   },
   {
     step: '03',
-    label: 'お着替え',
-    desc: '施術用の着替えをご用意しています。お持ちいただく必要はありません。貴重品はロッカーで安全に保管いただけます。スーツや仕事帰りの服装のままでも安心してご来店ください。',
+    label: '受付・お着替え',
+    desc: 'ご来店いただきましたら受付にてお名前をお知らせください。施術着はご用意していますので、更衣スペースにてお着替えください。着替えのお持ち込みは不要です。',
   },
   {
     step: '04',
-    label: '施術',
-    desc: '専用ベッドでリラックスしながら施術をお受けください。施術中、圧の強さや気になる点があれば遠慮なくお申し付けください。スタッフが丁寧に対応します。うつ伏せ・仰向けの体勢はコースによって異なります。',
+    label: 'カウンセリング',
+    desc: 'スタッフがその日の体の状態・気になる部位・施術の強さのご希望などを丁寧にお聞きします。初めての方でも遠慮なくご要望をお伝えください。最適な施術内容をご提案します。',
   },
   {
     step: '05',
-    label: 'お会計',
-    desc: '施術終了後、お着替えをしていただきお会計となります。現金のほか、クレジットカードでのお支払いも可能です。次回のご予約もこのタイミングで承ります。',
+    label: '施術',
+    desc: '専用ベッドでリラックスしながら施術をお受けください。施術中、圧の強さや気になる点があれば遠慮なくお申し付けください。眠ってしまっても大丈夫です。',
   },
   {
     step: '06',
-    label: '次回のご予約・ご帰宅',
-    desc: '施術後は体がほぐれた状態です。お帰りの際は水分をしっかりとっていただくことをおすすめしています。定期的なケアを続けることで、体の状態が整いやすくなります。また次回のご来店をお待ちしております。',
+    label: '施術後・お着替え',
+    desc: '施術終了後はゆっくりお着替えください。体がほぐれた状態ですので、水分補給をおすすめしています。施術後の体の感想・次回のご要望もお気軽にお伝えください。',
+  },
+  {
+    step: '07',
+    label: 'お会計・ご帰宅',
+    desc: 'お会計は現金またはクレジットカードにてお支払いいただけます。次回のご予約もこのタイミングで承ります。またのご来店をスタッフ一同お待ちしております。',
   },
 ]
 
 const faqs = [
   {
-    q: '服装はどうすればいいですか？着替えは必要ですか？',
-    a: '特別な服装でお越しいただく必要はありません。スーツや仕事帰りの服でもそのままお越しください。施術前に当店でご用意した着替えに着替えていただきます。ゆったりとした施術着をご用意していますので、窮屈さを感じることなくリラックスして施術を受けていただけます。貴重品はロッカーで保管できます。',
+    q: '何を着て行けばいいですか？',
+    a: '特別な服装でお越しいただく必要はありません。スーツや仕事帰りの服でもそのままお越しください。施術前に当店でご用意した施術着にお着替えいただきます。着替えをお持ちいただく必要はありません。',
   },
   {
-    q: '駐車場はありますか？',
-    a: '無料駐車場を完備しています。お車でのご来店も安心してお越しください。君津インターからも約10分と、アクセスしやすい立地です。公共交通機関をご利用の場合は、君津駅からタクシーまたはバスをご利用いただけます。',
+    q: '着替えは必要ですか？',
+    a: '施術着は当店でご用意していますので、着替えをお持ちいただく必要はありません。施術前に更衣スペースにてお着替えいただきます。仕事帰りにそのままお越しいただいても安心です。',
   },
   {
-    q: '圧の強さは変えてもらえますか？途中でお願いしても大丈夫ですか？',
-    a: 'もちろんです。施術中、いつでもお申し付けください。「もう少し強く」「少し優しくしてほしい」など、遠慮なくお声がけいただけます。カウンセリング時にご要望をお伝えいただければ、最初から強さを合わせることも可能です。気持ちよく施術を受けていただくことが一番ですので、何でもお知らせください。',
+    q: 'コースはどう選べばいいですか？',
+    a: '初めての方には60分コース（¥4,500・合計70分計）をおすすめしています。全身をバランスよくケアでき、体の状態を感じていただきやすいコースです。まずお試ししたい方は45分コース（¥3,900）も好評です。カウンセリング時にスタッフにご相談いただければ、その日の体の状態に合わせてご提案します。',
   },
   {
-    q: '当日予約はできますか？',
-    a: 'はい、当日予約に対応しています。ホットペッパービューティーのネット予約から空き状況をご確認いただくか、お電話にてお問い合わせください。混雑している時間帯はお待ちいただく場合もありますので、事前のご予約をおすすめしています。特に週末や夕方以降は混み合うことが多いため、なるべく早めのご予約をお願いします。',
+    q: '予約なしで行っても大丈夫ですか？',
+    a: 'ご予約なしでのご来店も受け付けていますが、混雑状況によってはお待ちいただく場合があります。特に週末・祝日・夜の時間帯はご予約が埋まりやすいため、なるべく事前のご予約をおすすめしています。',
   },
   {
-    q: '男性でも利用できますか？',
-    a: 'はい、男性のお客様も大歓迎です。「男性は入りにくい」とご心配される方もいらっしゃいますが、当店では男性のお客様にも多くご来店いただいています。デスクワークによる肩こり・腰のつらさ・全身の疲れでお悩みの男性の方にもぜひご利用いただきたいサロンです。スタッフも丁寧に対応いたしますので、どうぞお気軽にお越しください。',
+    q: 'どのくらい前に予約しておけばいいですか？',
+    a: '平日の昼間であれば前日・当日のご予約でも対応できることが多いです。週末・祝日・夜の時間帯は早めに埋まりやすい傾向があります。ご希望の日時がある場合は、3〜7日前のご予約をおすすめしています。',
   },
   {
-    q: 'カップルや家族など、複数人で一緒に受けられますか？',
-    a: 'はい、ペア・グループでのご利用も歓迎しています。当店にはベッドが3台ありますので、ご家族やカップル、お友達同士で同じ時間帯に施術を受けていただけます。ご予約時に人数と希望時間をお知らせください。特別なご要望がある場合もご相談ください。',
+    q: '施術中に話しかけてもいいですか？',
+    a: 'どちらでも大丈夫です。会話しながらリラックスしたい方も、静かに施術に集中したい方も、スタッフはお客様のペースに合わせます。眠ってしまっても問題ありません。施術終了時に優しくお声がけします。',
   },
   {
-    q: '夜遅くでも予約できますか？',
-    a: '当店は10:00〜24:00（最終受付23:00）まで営業しています。仕事が終わった後でも、夜遅くにご来店いただけます。「いつも日中は時間がとれない」「夕食後にゆっくりほぐしたい」という方にも多くご利用いただいています。年中無休で営業していますので、お気軽にご来店ください。',
+    q: '施術後に気をつけることは？',
+    a: '施術後は体がほぐれた状態になっています。水分をしっかり補給してください。施術直後の激しい運動はお体への負担になることがあります。翌日に軽い筋肉痛のような感覚が出ることがありますが、一時的な反応です。気になる場合はスタッフにご相談ください。',
   },
   {
-    q: '予約なしでも来店できますか？',
-    a: 'ご予約なしでのご来店も受け付けています。ただし、混雑状況によってはお待ちいただくか、ご案内できない場合もございます。スムーズにご案内するため、事前のご予約をおすすめしています。特に週末・祝日・夜の時間帯はご予約が埋まりやすいため、なるべくお早めにご予約ください。',
+    q: '値段はいくらくらいですか？',
+    a: 'もみほぐしは45分¥3,900から。60分¥4,500（合計70分計）、90分¥6,400（合計100分計）、120分¥8,400のコースをご用意しています。ヘッドケア・足つぼ・セットコースなど各種メニューはご予約ページをご確認ください。初回クーポンもホットペッパービューティーにてご用意しています。',
+  },
+]
+
+const recommendedMenus = [
+  {
+    en: 'Body Care 60min',
+    label: 'もみほぐし 60分',
+    price: '¥4,500（合計70分計）',
+    desc: '首・肩・背中・腰・脚を全身バランスよくケア。初めての方に最もおすすめのコースです。「全身スッキリさせたい」「どのコースか迷っている」方にぴったりです。',
+    href: '/menu/body-care',
+  },
+  {
+    en: 'Head Set 60min',
+    label: 'ヘッドセット 60分',
+    price: '¥5,400',
+    desc: 'もみほぐし＋ヘッドケアのセットコース。肩こりと眼精疲労が両方気になる方、デスクワーク疲れにお悩みの方におすすめです。頭まわりもすっきりほぐします。',
+    href: '/menu/set',
+  },
+  {
+    en: 'Foot Reflexology 30min',
+    label: '足つぼ 30分',
+    price: '¥3,800',
+    desc: '足のだるさ・むくみが気になる方に。短時間でのお試しにも最適です。立ち仕事・長時間の歩行後のケアに喜ばれています。',
+    href: '/menu/foot',
   },
 ]
 
@@ -176,15 +226,22 @@ export default function FirstPage() {
         </div>
       </div>
 
-      {/* ===== Intro ===== */}
+      {/* ===== Welcome Message ===== */}
       <section className="py-16 lg:py-20 bg-cream-50">
         <div className="max-w-5xl mx-auto px-5 lg:px-8 lg:grid lg:grid-cols-2 lg:gap-14 lg:items-center">
           <div>
+            <p className="font-en text-xs tracking-widest uppercase text-brown-400 mb-4">Welcome</p>
+            <h2 className="text-2xl font-light tracking-wide text-stone-800 mb-6 leading-snug">
+              はじめてでも、<br />安心してお越しください
+            </h2>
             <p className="text-stone-700 leading-loose text-sm">
               もみほぐし・MARISA 君津店は、千葉県君津市にあるリラクゼーションサロンです。肩こり・腰のつらさ・眼精疲労・足のだるさなど、毎日の疲れを丁寧な施術でケアします。
             </p>
             <p className="text-stone-700 leading-loose text-sm mt-4">
-              「はじめてのサロンで緊張している」「どんな流れで進むのかわからない」という方もご安心ください。当店では初めての方にも安心してお過ごしいただけるよう、カウンセリングから施術まで丁寧にサポートします。このページでは、ご来店からお帰りまでの流れと、よくあるご質問をわかりやすくご紹介します。
+              「はじめてのサロンで緊張している」「どんな流れで進むのかわからない」「強さを遠慮なく言えるか不安」——そんな方も大丈夫です。当店では初めての方にも安心してお過ごしいただけるよう、カウンセリングから施術まで丁寧にサポートします。
+            </p>
+            <p className="text-stone-700 leading-loose text-sm mt-4">
+              施術着はご用意していますので手ぶらでお越しいただけます。仕事帰りのスーツのまま、お子様連れ、ご夫婦でのご来店など、さまざまなスタイルでのご利用を歓迎しています。夜0時まで営業・当日予約OK・無料駐車場完備と、通いやすい環境を整えています。
             </p>
           </div>
           <div className="mt-8 lg:mt-0 grid grid-cols-2 gap-2">
@@ -213,8 +270,8 @@ export default function FirstPage() {
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Visit Flow"
-            ja="ご来店の流れ"
-            lead="初めての方にも安心していただけるよう、施術の流れをご説明します。"
+            ja="ご来店の流れ（7ステップ）"
+            lead="初めての方にも安心していただけるよう、ご予約からお帰りまでの流れをご説明します。"
             centered
           />
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -262,6 +319,162 @@ export default function FirstPage() {
                 営業時間は10:00〜24:00（最終受付23:00）です。仕事帰りや夜に立ち寄りたい方にもご利用いただきやすい時間帯まで営業しています。当日予約にも対応していますので、「急に体がつらくなった」「今日時間ができた」という場合にもお気軽にご連絡ください。
               </p>
             </div>
+            <div className="border-l-2 border-brown-300 pl-5">
+              <h3 className="text-sm font-medium text-stone-800 mb-2 tracking-wide">手ぶら・着替え不要で来店OK</h3>
+              <p className="text-sm text-stone-700 leading-loose">
+                施術着・フェイスシート・タオルはすべてご用意しています。着替えをお持ちいただく必要はありません。仕事帰りにそのままお越しいただけます。貴重品も安全に保管できますのでご安心ください。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Recommended Menus ===== */}
+      <section className="py-16 lg:py-24 bg-sand-100">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
+          <SectionHeader
+            en="Recommended Menu"
+            ja="初めての方向けおすすめメニュー"
+            lead="「何を選べばいいかわからない」という方に、スタッフのおすすめをご紹介します。"
+            centered
+          />
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {recommendedMenus.map((menu) => (
+              <div key={menu.en} className="bg-cream-50 border border-sand-200 p-7 flex flex-col">
+                <p className="font-en text-xs tracking-widest uppercase text-brown-400 mb-2">{menu.en}</p>
+                <h3 className="text-base font-medium text-stone-800 tracking-wide mb-1">{menu.label}</h3>
+                <p className="text-sm text-brown-500 font-light mb-4">{menu.price}</p>
+                <p className="text-sm text-stone-700 leading-loose flex-1">{menu.desc}</p>
+                <div className="mt-6">
+                  <Link
+                    href={menu.href}
+                    className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500"
+                  >
+                    詳しく見る →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link
+              href="/menu"
+              className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500"
+            >
+              全メニュー・料金を見る →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Points / What to Bring ===== */}
+      <section className="py-16 lg:py-20 bg-cream-50">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader
+            en="Points to Know"
+            ja="来店のポイント・持ち物"
+            lead="はじめてのご来店前に確認しておくと安心な情報をまとめました。"
+          />
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {[
+              {
+                title: '着替えは不要',
+                desc: '施術着はご用意しています。手ぶらでOKです。',
+              },
+              {
+                title: '貴重品の管理',
+                desc: '施術中はスタッフが安全に保管します。アクセサリーは施術前に外してください。',
+              },
+              {
+                title: '飲食は施術前に軽めに',
+                desc: '食事直後の施術はお体の負担になる場合があります。施術の1〜2時間前までに食事を済ませるのがベストです。',
+              },
+              {
+                title: '施術後は水分補給を',
+                desc: '施術後は体がほぐれた状態です。お水やお茶などで水分補給をおすすめしています。',
+              },
+              {
+                title: 'アクセサリー・コンタクトについて',
+                desc: 'ネックレスや指輪などは施術前に外していただきます。コンタクトレンズも外しておくと楽に施術を受けられます。',
+              },
+              {
+                title: '体調がすぐれない場合',
+                desc: '発熱・体調不良の場合は施術をお控えください。体の状態に不安がある場合はご来店前にご相談ください。',
+              },
+            ].map((item) => (
+              <div key={item.title} className="border border-sand-200 bg-cream-50 p-5">
+                <p className="text-sm font-medium text-stone-800 mb-2 tracking-wide">{item.title}</p>
+                <p className="text-sm text-stone-700 leading-loose">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FAQ ===== */}
+      <section className="py-16 lg:py-24 bg-cream-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader
+            en="FAQ"
+            ja="初めての方によくあるご質問"
+            lead="初めてご来店される方からよくいただくご質問をまとめました。"
+          />
+          <div className="mt-10 space-y-6">
+            {faqs.map((faq, i) => (
+              <div key={i} className="border border-sand-200 p-6">
+                <p className="text-sm font-medium text-stone-800 mb-3 tracking-wide">
+                  <span className="font-en text-brown-400 mr-2">Q.</span>
+                  {faq.q}
+                </p>
+                <p className="text-sm text-stone-700 leading-loose pl-5">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8">
+            <Link
+              href="/faq"
+              className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500"
+            >
+              その他のよくある質問はこちら →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Voices ===== */}
+      <section className="py-16 lg:py-20 bg-cream-50">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader
+            en="Our Guests"
+            ja="こんな方にご来店いただいています"
+            lead="MARISAには、さまざまなきっかけや目的でお越しいただいています。"
+          />
+          <div className="mt-10 space-y-5">
+            {[
+              {
+                scene: 'デスクワーク中心の方',
+                text: '毎日パソコン作業で肩・首がカチカチに。仕事帰りに立ち寄って、翌日スッキリした状態で出社できるようになりました。夜0時まで営業しているので、残業後でも来られるのが助かります。',
+              },
+              {
+                scene: '立ち仕事・体を使う仕事の方',
+                text: '工場や接客業で一日中立ち仕事。足のだるさとむくみがひどかったのが、足つぼコースで楽になりました。2週間に1回のペースで通っています。',
+              },
+              {
+                scene: 'ご夫婦・カップルでの利用',
+                text: '2人で一緒に施術を受けられると聞いて来店しました。ベッドが3台あるので一緒の時間に受けられて、終わった後も2人でリフレッシュできて良かったです。',
+              },
+              {
+                scene: '初めてサロンに来た方',
+                text: 'マッサージサロンって敷居が高いイメージでしたが、スタッフの方が丁寧にカウンセリングしてくれて安心できました。服装も特に気にしなくていいし、着替えも用意してくれていたので楽でした。',
+              },
+            ].map((voice, i) => (
+              <div key={i} className="border border-sand-200 bg-cream-50 p-6">
+                <p className="text-xs tracking-widest text-brown-400 mb-3">{voice.scene}</p>
+                <p className="text-sm text-stone-700 leading-loose">{voice.text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -290,34 +503,26 @@ export default function FirstPage() {
         </div>
       </section>
 
-      {/* ===== FAQ ===== */}
-      <section className="py-16 lg:py-24 bg-cream-50">
+      {/* ===== Related Links ===== */}
+      <section className="py-12 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader
-            en="FAQ"
-            ja="よくあるご質問"
-            lead="初めてご来店される方からよくいただくご質問をまとめました。"
-          />
-          <div className="mt-10 space-y-6">
-            {faqs.map((faq, i) => (
-              <div key={i} className="border border-sand-200 p-6">
-                <p className="text-sm font-medium text-stone-800 mb-3 tracking-wide">
-                  <span className="font-en text-brown-400 mr-2">Q.</span>
-                  {faq.q}
-                </p>
-                <p className="text-sm text-stone-700 leading-loose pl-5">
-                  {faq.a}
-                </p>
-              </div>
+          <p className="text-xs tracking-widest text-greige-400 uppercase mb-6">Related Pages</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { href: '/menu', label: 'メニュー・料金', sub: 'Menu' },
+              { href: '/faq', label: 'よくある質問', sub: 'FAQ' },
+              { href: '/reservation', label: 'ご予約方法', sub: 'Reservation' },
+              { href: '/access', label: 'アクセス', sub: 'Access' },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="border border-sand-200 p-5 bg-cream-50 hover:border-brown-300 transition-colors"
+              >
+                <p className="font-en text-[10px] tracking-widest text-brown-400 mb-1">{item.sub}</p>
+                <p className="text-sm font-medium text-stone-800 tracking-wide">{item.label} →</p>
+              </Link>
             ))}
-          </div>
-          <div className="mt-8">
-            <Link
-              href="/faq"
-              className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500"
-            >
-              その他のよくある質問はこちら →
-            </Link>
           </div>
         </div>
       </section>
@@ -330,13 +535,25 @@ export default function FirstPage() {
             ご予約・お問い合わせ
           </h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
-            ご不明な点はお気軽にお問い合わせください。<br />
-            当日予約・ネット予約に対応しています。
+            夜0時まで営業中・当日予約OK・無料駐車場完備。<br />
+            公式WEB予約またはホットペッパービューティーからかんたんにご予約いただけます。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />
-            <ReserveButton href="/menu" label="メニューを見る" variant="outline" size="lg" />
+            <ReserveButton href={BMERIT_URL} label="WEB予約（公式）" variant="light" size="lg" />
+            <ReserveButton href={HPB_URL} label="ホットペッパーで予約" variant="outline" size="lg" />
           </div>
+          {LINE_URL && (
+            <div className="mt-6">
+              <a
+                href={LINE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs tracking-widest text-sand-300 border-b border-sand-400 pb-px hover:text-cream-50"
+              >
+                LINEでご相談 →
+              </a>
+            </div>
+          )}
         </div>
       </section>
     </>
