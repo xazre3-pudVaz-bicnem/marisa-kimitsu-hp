@@ -8,7 +8,7 @@ import { HPB_URL, BMERIT_URL, SHOP_INFO } from '@/lib/constants'
 export const metadata: Metadata = {
   title: '木更津からのアクセス・マッサージ・もみほぐし｜MARISA 君津店',
   description:
-    '木更津方面からもみほぐし・マッサージをお探しの方へ。もみほぐし・MARISA 君津店は木更津から車で約20分。夜0時まで・当日予約OK・無料駐車場。肩こり・腰のつらさ・足つぼ・鍼灸まで対応。',
+    '木更津方面からもみほぐし・マッサージをお探しの方へ。もみほぐし・MARISA 君津店は木更津から車で約15〜20分。夜0時まで・当日予約OK・無料駐車場。肩こり・腰のつらさ・足つぼ・鍼灸まで対応。',
   keywords: [
     '木更津 マッサージ',
     '木更津 もみほぐし',
@@ -16,12 +16,13 @@ export const metadata: Metadata = {
     '木更津 肩こり',
     '木更津 鍼灸',
     '木更津 近く マッサージ',
+    '木更津 もみほぐし 近く',
     '君津 マッサージ',
   ],
   openGraph: {
     title: '木更津からのアクセス・マッサージ・もみほぐし｜MARISA 君津店',
     description:
-      '木更津から車で約20分。もみほぐし・MARISA 君津店は夜0時まで営業・当日予約OK・無料駐車場完備。',
+      '木更津から車で約15〜20分。もみほぐし・MARISA 君津店は夜0時まで営業・当日予約OK・無料駐車場完備。',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
     locale: 'ja_JP',
     type: 'website',
@@ -36,18 +37,42 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '木更津からMARISAまでどのくらいかかりますか？',
+      name: '木更津から車でどのくらいかかりますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '木更津駅周辺から車で約20分程度です。館山自動車道をご利用の場合は木更津JCTから君津ICで下車し、そこから約10分でご来店いただけます。国道127号線や410号線を経由するルートでも到着できます。カーナビに「千葉県君津市杢師3-20-10」とご入力ください。',
+        text: '木更津市中心部から車で約15〜20分程度です。館山自動車道をご利用の場合は木更津JCTから君津ICで下車し、そこから約10分でご来店いただけます。国道127号線や410号線を経由するルートでも到着できます。カーナビに「千葉県君津市杢師3-20-10」とご入力ください。',
       },
     },
     {
       '@type': 'Question',
-      name: '予約は必要ですか？当日でもいけますか？',
+      name: '駐車場は無料ですか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、店舗前に無料駐車場を完備しています。コインパーキングを探す必要はありません。木更津からお車でお越しの場合も安心してご来店いただけます。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '当日予約はできますか？',
       acceptedAnswer: {
         '@type': 'Answer',
         text: '当日予約にも対応しています。ホットペッパービューティーまたは公式WEB予約（B-merit）から24時間いつでも空き状況を確認してご予約いただけます。事前に予約いただくと確実にご案内できます。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '鍼灸はホットペッパーから予約できますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '鍼灸・美容鍼は公式WEB予約（B-merit）からのみご予約いただけます。ホットペッパービューティーからは鍼灸のご予約はできませんのでご注意ください。もみほぐし・ヘッドケア・足つぼ・セットコースはホットペッパービューティーからもご予約いただけます。鍼灸の対応時間は金曜10:00〜22:00、土曜10:00〜14:00が中心です。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '木更津からの帰り道に立ち寄れますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、館山自動車道・国道127号線・国道410号線を使って君津方面へ向かう帰り道に立ち寄っていただけます。夜0時まで営業（最終受付23時）ですので、仕事帰りや夜の移動の途中でもご来店いただけます。無料駐車場完備。',
       },
     },
     {
@@ -56,14 +81,6 @@ const faqSchema = {
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'はい、木更津方面からもご来店いただいています。特に「夜遅くまで対応してくれるお店を探していた」「無料駐車場があるお店が希望だった」という方に利用いただいています。君津と木更津は隣接しているため、車での移動もスムーズです。',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: '鍼灸はホットペッパーから予約できますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: '鍼灸・美容鍼は公式WEB予約（B-merit）からのみご予約いただけます。ホットペッパービューティーからは鍼灸のご予約はできませんのでご注意ください。もみほぐし・ヘッドケア・足つぼ・セットコースはホットペッパービューティーからもご予約いただけます。',
       },
     },
     {
@@ -163,19 +180,37 @@ export default function AreaKisarazuPage() {
               歓迎しています。
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              もみほぐし・MARISA 君津店は千葉県君津市杢師3-20-10にある実店舗です（木更津市内ではありません）。木更津から車で約20分と近く、木更津方面からも多くのお客様にご来店いただいています。夜0時まで営業・当日予約OK・無料駐車場完備。
+              もみほぐし・MARISA 君津店は千葉県君津市杢師3-20-10にある実店舗です（木更津市内ではありません）。木更津から車で約15〜20分と近く、木更津方面からも多くのお客様にご来店いただいています。夜0時まで営業・当日予約OK・無料駐車場完備。
             </p>
           </div>
         </div>
       </div>
 
-      {/* ===== Access ===== */}
+      {/* ===== For Kisarazu Searchers ===== */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Access from Kisarazu" ja="木更津からMARISAへのアクセス" />
+          <SectionHeader en="From Kisarazu Area" ja="木更津方面で、もみほぐしを近くで探している方へ" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
-              もみほぐし・MARISAの実店舗は千葉県君津市杢師3-20-10にあります。木更津市と君津市は隣接しており、木更津駅周辺から車で約20分程度でお越しいただけます。
+              「木更津でもみほぐしを探しているけれど、近くにちょうどいいお店がない」という方へ。君津市のMARISAは木更津方面からも通いやすい距離にあります。
+            </p>
+            <p>
+              当店は君津市杢師3-20-10にある実店舗です。木更津市内ではありませんが、車で約15〜20分とアクセスしやすく、木更津方面からも多くのお客様にご利用いただいています。無料駐車場があるので、お車でのご来店も安心です。
+            </p>
+            <p>
+              夜0時まで営業・当日予約対応・年中無休という環境から、「夜でも通える」「急なときでも予約できる」という点で木更津方面のお客様にも選んでいただいています。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Access from Kisarazu ===== */}
+      <section className="py-16 lg:py-24 bg-sand-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Access from Kisarazu" ja="木更津方面からのアクセス" />
+          <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
+            <p>
+              もみほぐし・MARISAの実店舗は千葉県君津市杢師3-20-10にあります。木更津市と君津市は隣接しており、木更津駅周辺から車で約15〜20分程度でお越しいただけます。
             </p>
             <div className="border border-sand-200 p-6 space-y-5">
               <p className="text-xs tracking-widest text-brown-400 uppercase font-en">Route Options</p>
@@ -184,7 +219,7 @@ export default function AreaKisarazuPage() {
                   館山自動車道をご利用の場合（最短ルート）
                 </h3>
                 <p>
-                  木更津JCT（または木更津南IC・木更津北IC）から館山自動車道に乗り、「君津IC」で下車。インターを降りて君津市街方面へ進み、杢師3丁目が目的地です。インターから約10分。全体で約20〜25分程度。
+                  木更津JCT（または木更津南IC・木更津北IC）から館山自動車道に乗り、「君津IC」で下車。インターを降りて君津市街方面へ進み、杢師3丁目が目的地です。インターから約10分。全体で約15〜20分程度。
                 </p>
               </div>
               <div>
@@ -192,7 +227,7 @@ export default function AreaKisarazuPage() {
                   国道127号線をご利用の場合
                 </h3>
                 <p>
-                  木更津市内から国道127号線を君津方面へ南下。君津市街に入ったら杢師3丁目方面へ。交通状況により25〜30分程度。カーナビに「千葉県君津市杢師3-20-10」とご入力ください。
+                  木更津市内から国道127号線を君津方面へ南下。君津市街に入ったら杢師3丁目方面へ。交通状況により20〜30分程度。カーナビに「千葉県君津市杢師3-20-10」とご入力ください。
                 </p>
               </div>
               <div>
@@ -206,7 +241,7 @@ export default function AreaKisarazuPage() {
               <dl className="space-y-1.5 text-xs">
                 <div className="flex gap-4">
                   <dt className="text-greige-400 w-28 shrink-0">木更津駅から</dt>
-                  <dd>車で約20分</dd>
+                  <dd>車で約15〜20分</dd>
                 </div>
                 <div className="flex gap-4">
                   <dt className="text-greige-400 w-28 shrink-0">木更津JCTから</dt>
@@ -223,7 +258,7 @@ export default function AreaKisarazuPage() {
       </section>
 
       {/* ===== Features ===== */}
-      <section className="py-16 lg:py-24 bg-sand-100">
+      <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader en="Why Choose MARISA" ja="木更津から君津のMARISAを選ぶ理由" />
           <div className="mt-8 space-y-5">
@@ -238,7 +273,7 @@ export default function AreaKisarazuPage() {
       </section>
 
       {/* ===== Scenes ===== */}
-      <section className="py-16 lg:py-24 bg-cream-50">
+      <section className="py-16 lg:py-24 bg-sand-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader en="Usage Scenes" ja="木更津からの来店に向いているシーン" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
@@ -313,7 +348,7 @@ export default function AreaKisarazuPage() {
               { label: '営業時間', value: '10:00〜24:00（最終受付 23:00）' },
               { label: '定休日', value: '年中無休' },
               { label: '駐車場', value: '無料駐車場あり（店舗前）' },
-              { label: '木更津から', value: '車で約20分（館山自動車道経由）' },
+              { label: '木更津から', value: '車で約15〜20分（館山自動車道経由）' },
             ].map((item) => (
               <div key={item.label} className="flex gap-6 py-3">
                 <dt className="w-28 shrink-0 text-greige-400 tracking-wide">{item.label}</dt>
@@ -381,7 +416,7 @@ export default function AreaKisarazuPage() {
           <p className="font-en text-xs tracking-widest text-sand-300 uppercase mb-4">Reservation</p>
           <h2 className="text-2xl lg:text-3xl font-light tracking-wide mb-6">ご予約はこちらから</h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
-            木更津から車で約20分。<br />
+            木更津から車で約15〜20分。<br />
             夜0時まで営業・当日予約OK・無料駐車場完備。<br />
             鍼灸・美容鍼は公式WEB予約（B-merit）からのみご予約いただけます。
           </p>

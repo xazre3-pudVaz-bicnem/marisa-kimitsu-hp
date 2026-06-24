@@ -3,13 +3,16 @@ import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL, BMERIT_URL } from '@/lib/constants'
+import { HPB_URL, BMERIT_URL, LINE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: '当日予約OK・もみほぐし・マッサージ｜MARISA 君津店',
+  title: '君津で当日予約・すぐ予約できるマッサージをお探しなら｜もみほぐし・MARISA',
   description:
-    '君津市でマッサージ・もみほぐしの当日予約をお探しなら。MARISA 君津店は24時間WEB予約受付・当日予約対応。急な疲れ・休日の空き時間・仕事帰りなどにご利用ください。',
+    '君津でマッサージを近くで探している方、当日予約やすぐ予約を希望される方へ。もみほぐし・MARISAは夜0時まで営業、無料駐車場あり。仕事帰りや予定の合間にも利用しやすいリラクゼーションサロンです。',
   keywords: [
+    '君津 マッサージ 当日予約',
+    '君津 マッサージ すぐ予約',
+    '君津 マッサージ 近く',
     '君津 当日予約 マッサージ',
     '君津 当日予約 もみほぐし',
     '君津 急に マッサージ',
@@ -17,8 +20,8 @@ export const metadata: Metadata = {
     '君津 空き 予約',
   ],
   openGraph: {
-    title: '当日予約OK・もみほぐし・マッサージ｜MARISA 君津店',
-    description: '24時間WEB予約受付・当日予約対応。急な疲れにすぐ対応できます。',
+    title: '君津で当日予約・すぐ予約できるマッサージをお探しなら｜もみほぐし・MARISA',
+    description: '24時間WEB予約受付・当日予約対応。急な疲れにすぐ対応できます。夜0時まで営業・無料駐車場完備。',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
     locale: 'ja_JP',
     type: 'website',
@@ -174,26 +177,44 @@ export default function SceneSameDayPage() {
         </div>
       </section>
 
-      {/* ===== How to book ===== */}
+      {/* ===== For Nearby Searchers ===== */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="How to Book" ja="当日予約の流れ（3ステップ）" />
+          <SectionHeader en="Search to Book" ja="Googleで「君津 マッサージ 近く」から当日予約した方へ" />
+          <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
+            <p>
+              「君津 マッサージ 近く」「君津 マッサージ すぐ予約」でこのページを見つけていただいた方、ようこそ。MARISAはそのままネット予約が可能です。
+            </p>
+            <p>
+              ホットペッパービューティーまたは公式WEB予約（B-merit）から24時間いつでも空き確認・当日予約ができます。Googleで検索した流れでそのままご予約ページへお進みください。
+            </p>
+            <p>
+              空き状況はリアルタイムで更新されています。「今日の夜、君津で近くのマッサージに行きたい」と思ったら、そのまま予約できる環境を整えています。夜0時まで営業・最終受付23時・無料駐車場完備です。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== How to Book ===== */}
+      <section className="py-16 lg:py-24 bg-sand-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="3 Ways to Book" ja="すぐに予約できる3つの方法" />
           <div className="mt-10 space-y-4">
             {[
               {
                 step: '01',
-                title: '空き状況を確認する',
-                body: 'ホットペッパービューティーまたは公式WEB予約（B-merit）にアクセスし、今日の希望の時間帯を選択します。リアルタイムで空き状況が確認できるので、すぐにわかります。ホットペッパーではクーポンもご利用いただけます。鍼灸・美容鍼をご希望の方は公式WEB予約（B-merit）からのみご予約いただけます。',
+                title: 'ホットペッパービューティー（もみほぐし・ヘッドケア・足つぼ・セット）',
+                body: '24時間いつでも当日予約OK。クーポンもご利用いただけます。空き状況はリアルタイムで確認できます。Googleの検索結果からそのまま予約ページへアクセス可能です。',
               },
               {
                 step: '02',
-                title: '希望のコースと時間帯を選んで予約',
-                body: 'ご希望のコース（もみほぐし・ヘッドケア・足つぼ・セットコースなど）と時間帯を選択して予約を完了します。クーポンがある場合はこのステップで選択してください。予約確認のメールやSMSが届きます。',
+                title: '公式WEB予約・B-merit（鍼灸・美容鍼を含む全メニュー）',
+                body: '鍼灸・美容鍼は公式WEB予約（B-merit）からのみご予約いただけます。もみほぐし等も公式予約から予約可能です。24時間受付・最短当日予約可能。',
               },
               {
                 step: '03',
-                title: 'ご来店・手ぶらでOK',
-                body: '予約した時間にご来店ください。着替えや持ち物の準備は不要です。スーツ・制服・普段着のままで大丈夫。店舗前の無料駐車場をご利用ください。来店後にカウンセリングを行い、その日の体の状態に合わせてケアします。',
+                title: 'LINE（相談・問い合わせ）',
+                body: 'メニューの選び方・初めてのご相談などはLINEからも受け付けています。ご予約はホットペッパーまたは公式WEB予約からが便利です。',
               },
             ].map((s) => (
               <div key={s.step} className="flex gap-6 border border-sand-200 bg-cream-50 p-6">
@@ -205,11 +226,17 @@ export default function SceneSameDayPage() {
               </div>
             ))}
           </div>
+          <div className="mt-8 border border-sand-200 bg-cream-50 p-5">
+            <p className="text-xs text-stone-700 leading-loose">
+              <span className="font-medium text-stone-800">24時間ネット予約・最短当日予約可能</span><br />
+              空き状況はリアルタイムで更新されています。「今すぐ予約したい」という方も、上記いずれかの方法でその場でご確認いただけます。
+            </p>
+          </div>
         </div>
       </section>
 
       {/* ===== Scenes ===== */}
-      <section className="py-16 lg:py-24 bg-sand-100">
+      <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader en="When to Use" ja="当日予約が重宝するシーン" />
           <div className="mt-8 space-y-4">
@@ -224,7 +251,7 @@ export default function SceneSameDayPage() {
       </section>
 
       {/* ===== Tips ===== */}
-      <section className="py-16 lg:py-24 bg-cream-50">
+      <section className="py-16 lg:py-24 bg-sand-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader en="Tips" ja="当日予約のコツ・混雑を避けるポイント" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
@@ -310,9 +337,19 @@ export default function SceneSameDayPage() {
                 公式WEB予約・B-merit（鍼灸・美容鍼を含む全メニュー）
               </h3>
               <p>
-                鍼灸・美容鍼は公式WEB予約（B-merit）からのみご予約いただけます。もみほぐし等も公式予約から予約可能です。
+                鍼灸・美容鍼は公式WEB予約（B-merit）からのみご予約いただけます。もみほぐし等も公式予約から予約可能です。24時間受付・最短当日予約可能。
               </p>
             </div>
+            {LINE_URL && (
+              <div className="border border-sand-200 bg-cream-50 p-6">
+                <h3 className="font-medium text-stone-800 mb-3 tracking-wide">
+                  LINE（相談・問い合わせ）
+                </h3>
+                <p>
+                  メニューの選び方やご相談はLINEからも受け付けています。ご予約はホットペッパーまたは公式WEB予約からが便利です。
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>

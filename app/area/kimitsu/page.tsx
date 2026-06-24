@@ -8,9 +8,13 @@ import { HPB_URL, BMERIT_URL, SHOP_INFO } from '@/lib/constants'
 export const metadata: Metadata = {
   title: '君津でマッサージ・もみほぐしをお探しなら｜もみほぐし・MARISA 君津店',
   description:
-    '君津市でマッサージ・もみほぐし・鍼灸・美容鍼をお探しの方へ。夜0時まで営業・当日予約OK・無料駐車場完備。肩こり・腰のつらさ・眼精疲労・足のだるさ・鍼灸・美容鍼まで対応。君津駅から車で5分。',
+    '君津市で近くのマッサージをお探しの方へ。当日予約・すぐ予約もOK。女性のお客様も多くご利用。夜0時まで営業・無料駐車場完備。ホットペッパー・公式WEB予約で24時間ネット予約可。',
   keywords: [
     '君津 マッサージ',
+    '君津 マッサージ 近く',
+    '君津 マッサージ すぐ予約',
+    '君津 マッサージ 当日予約',
+    '君津 マッサージ 女性',
     '君津 もみほぐし',
     '君津 リラクゼーション',
     '君津 肩こり',
@@ -25,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '君津でマッサージ・もみほぐしをお探しなら｜もみほぐし・MARISA 君津店',
     description:
-      '君津市でマッサージ・もみほぐし・鍼灸・美容鍼をお探しの方へ。夜0時まで営業・当日予約OK・無料駐車場完備。',
+      '君津市で近くのマッサージをお探しの方へ。当日予約OK・女性のお客様も多くご利用。夜0時まで営業・無料駐車場完備。',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
     locale: 'ja_JP',
     type: 'website',
@@ -88,6 +92,14 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
+      name: '「君津 マッサージ 近く」で検索して当日予約できますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、ホットペッパービューティーまたは公式WEB予約（B-merit）から当日予約が可能です。Googleで検索後にそのままネット予約いただけます。空き状況はリアルタイムで確認できますので、すぐに予約したい方にもご利用しやすい環境を整えています。',
+      },
+    },
+    {
+      '@type': 'Question',
       name: '夜遅くでも予約できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -108,6 +120,14 @@ const faqSchema = {
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'はい、当日予約に対応しています。ホットペッパービューティーまたは公式WEB予約サイト（B-merit）から24時間いつでも空き状況をご確認いただき、当日のご予約が可能です。急な疲れや体のつらさを感じた日にもお気軽にどうぞ。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '女性でも利用しやすいですか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、女性のお客様にも多くご利用いただいています。落ち着いた雰囲気の店内で、施術前のカウンセリングを通じて力加減やご希望を確認しますので、初めての方にも安心してお越しいただけます。',
       },
     },
     {
@@ -179,7 +199,7 @@ const reasons = [
   {
     num: '07',
     title: '君津市内の中心部に位置・アクセス良好',
-    body: '千葉県君津市杢師3-20-10。君津駅から車で約5分、館山自動車道君津ICから約10分と、君津市内の各方面からアクセスしやすい立地です。木更津・富津・袖ケ浦など近隣エリアからのご来店も歓迎しています。',
+    body: '千葉県君津市杢師3-20-10。君津駅から車で約5分、館山自動車道君津ICから約10分と、君津市内の各方面からアクセスしやすい立地です。木更津方面からも通いやすい立地で、近隣エリアからのご来店も歓迎しています。',
   },
 ]
 
@@ -270,8 +290,11 @@ export default function AreaKimitsuPage() {
       {/* ===== About ===== */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="For Kimitsu" ja="君津でマッサージを探している方へ" />
+          <SectionHeader en="For Kimitsu" ja="君津で近くのマッサージを探している方へ" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
+            <p>
+              「君津 マッサージ 近く」でGoogle検索して、このページをご覧いただいている方へ。そのまま当日予約が可能です。ホットペッパービューティーまたは公式WEB予約（B-merit）から24時間いつでも空き確認・ネット予約ができます。
+            </p>
             <p>
               「仕事帰りに行けるマッサージがない」「駐車場があるお店を探している」「夜遅くまで対応してくれるところがいい」——君津市でマッサージ・もみほぐしを探すとき、こうした条件で絞り込んでいる方は多いはずです。
             </p>
@@ -291,8 +314,101 @@ export default function AreaKimitsuPage() {
         </div>
       </section>
 
-      {/* ===== Reasons ===== */}
+      {/* ===== Google Search / Same-day Booking ===== */}
       <section className="py-16 lg:py-24 bg-sand-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Same-Day Booking" ja="Google検索・当日予約について" />
+          <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
+            <p>
+              「君津 マッサージ すぐ予約」「君津 マッサージ 当日予約」など、今すぐ予約したい方のための情報をまとめました。MARISAはネット予約を24時間受け付けており、空き状況はリアルタイムで確認できます。
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+              <div className="border border-sand-200 bg-cream-50 p-5">
+                <p className="text-xs font-medium text-brown-400 tracking-widest mb-2">ホットペッパービューティー</p>
+                <p className="text-sm text-stone-800 font-medium mb-2">もみほぐし・ヘッドケア・足つぼ・セット</p>
+                <p className="text-xs text-stone-700 leading-loose">
+                  24時間ネット予約受付。クーポン利用可。当日予約対応。Googleの検索結果からそのまま予約ページへアクセス可能です。
+                </p>
+              </div>
+              <div className="border border-sand-200 bg-cream-50 p-5">
+                <p className="text-xs font-medium text-brown-400 tracking-widest mb-2">公式WEB予約（B-merit）</p>
+                <p className="text-sm text-stone-800 font-medium mb-2">全メニュー対応・鍼灸・美容鍼</p>
+                <p className="text-xs text-stone-700 leading-loose">
+                  鍼灸・美容鍼はこちらからのみご予約可。24時間受付・最短当日予約OK。
+                </p>
+              </div>
+            </div>
+            <p>
+              最終受付は23時ですので、仕事帰りや夜の空き時間にもご利用いただけます。「今日の夜、近くでマッサージを受けたい」と思ったらそのまま予約ページへどうぞ。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Women's Section ===== */}
+      <section className="py-16 lg:py-24 bg-cream-50">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="For Women" ja="女性のお客様にも選ばれています" />
+          <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
+            <p>
+              「君津でマッサージを探している女性の方」にも、MARISAは多くご利用いただいています。落ち着いた雰囲気の店内で、施術前のカウンセリングを通じて力加減や気になる部位・ご要望をしっかり確認してから施術を行います。
+            </p>
+            <div className="border border-sand-200 p-6 space-y-3">
+              <h3 className="text-sm font-medium text-stone-800 tracking-wide">女性のお客様からよくいただくご感想</h3>
+              <ul className="space-y-2">
+                {[
+                  '「一人でも入りやすかった」',
+                  '「カウンセリングで丁寧に確認してもらえた」',
+                  '「圧の加減を細かく聞いてくれた」',
+                  '「仕事帰りに気軽に寄れる」',
+                  '「美容鍼を試してみたかったので、鍼灸師さんがいて助かった」',
+                ].map((v) => (
+                  <li key={v} className="flex items-start gap-2 text-xs text-stone-700">
+                    <span className="w-1 h-1 rounded-full bg-brown-300 mt-2 shrink-0" />
+                    {v}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p>
+              もみほぐし・ヘッドケア・足つぼのほか、美容目的の美容鍼（公式WEB予約限定）も女性のお客様に人気のメニューです。「鍼が初めてで不安」という方も、施術前のカウンセリングで丁寧にご説明しますのでお気軽にご相談ください。
+            </p>
+            <p>
+              女性お一人でのご来店も大歓迎です。ご予約はホットペッパービューティーまたは公式WEB予約から24時間受け付けています。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== After Work / Convenience ===== */}
+      <section className="py-16 lg:py-24 bg-sand-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Convenience" ja="仕事帰りや予定の合間にも通いやすい立地" />
+          <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
+            <p>
+              MARISAは夜0時まで営業・最終受付23時で年中無休。仕事が長引いた日や、予定の合間に立ち寄りたい日にも対応しています。「夜でも近くでマッサージを受けたい」という方にご利用いただきやすい環境を整えています。
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { title: '夜0時まで営業', desc: '最終受付23時。残業後でもそのまま来店できます。' },
+                { title: '無料駐車場完備', desc: '店舗前に無料駐車場あり。コインパーキング不要です。' },
+                { title: '当日予約OK', desc: '24時間ネット予約受付。急な予定変更にも対応。' },
+              ].map((item) => (
+                <div key={item.title} className="border border-sand-200 bg-cream-50 p-5">
+                  <h3 className="text-sm font-medium text-stone-800 mb-2 tracking-wide">{item.title}</h3>
+                  <p className="text-xs text-stone-700 leading-loose">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p>
+              君津駅から車で約5分、君津インターから約10分。木更津方面からも通いやすく、無料駐車場があるため車社会の君津ならではの使い方で通っていただいています。「仕事帰りにふらっと寄れる」「週に一度の定期メンテナンスに」という利用が多いのも特徴です。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Reasons ===== */}
+      <section className="py-16 lg:py-24 bg-cream-100">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Why MARISA"
@@ -363,7 +479,7 @@ export default function AreaKimitsuPage() {
               また、工場・建設・農業などの体を使う仕事の方だけでなく、デスクワーク・育児・家事などで疲れをためやすい方、スポーツ後のリカバリーに活用したい方、週に一度の定期メンテナンスとして通いたい方など、幅広い目的でご利用いただいています。
             </p>
             <p>
-              君津市から隣接する木更津・富津・袖ケ浦・市原方面からもアクセスしやすい立地です。「木更津市内にちょうどいいお店がない」という方に、君津のMARISAをご利用いただいているケースも多くあります。
+              木更津方面からも通いやすく、無料駐車場・夜0時まで営業という環境から、君津市外からもご来店いただくことがあります。
             </p>
           </div>
         </div>

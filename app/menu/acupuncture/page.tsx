@@ -201,6 +201,19 @@ export default function AcupuncturePage() {
         </div>
       </div>
 
+      {/* ===== Hero Photo ===== */}
+      <div className="bg-sand-100">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8 py-8">
+          {/* TODO: Replace with actual photo — public/images/menu/acupuncture-atmosphere.jpg */}
+          <div className="relative aspect-[16/9] bg-sand-200 flex flex-col items-center justify-center text-stone-400">
+            <svg className="w-10 h-10 mb-2 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <p className="text-xs tracking-widest">写真準備中</p>
+          </div>
+        </div>
+      </div>
+
       {/* ===== About Acupuncture at MARISA ===== */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
@@ -215,9 +228,16 @@ export default function AcupuncturePage() {
             <p className="text-sm text-stone-700 leading-loose mb-5">
               MARISAでは「もみほぐし＋鍼」の組み合わせコースを中心にご提供しています。まずもみほぐしで全体の緊張をやわらげ、その後に鍼でより集中したアプローチを行います。この流れにより、体全体のほぐれと局所的なケアを同時に行うことができます。担当するのは鍼灸師の資格を持つスタッフ「なお」です。
             </p>
-            <p className="text-sm text-stone-700 leading-loose">
+            <p className="text-sm text-stone-700 leading-loose mb-8">
               鍼灸は初めてという方も多くいらっしゃいます。施術前のカウンセリングで状態をしっかりお聞きし、不安を感じることなく受けていただけるよう丁寧にご説明します。肩や腰のコリが長引いていると感じる方、デスクワークやスポーツ後の日常的なメンテナンスとして取り入れたい方にご利用いただいています。
             </p>
+            {/* TODO: Replace with actual photo — public/images/menu/acupuncture-care.jpg */}
+            <div className="relative aspect-[16/9] bg-sand-200 flex flex-col items-center justify-center text-stone-400">
+              <svg className="w-10 h-10 mb-2 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <p className="text-xs tracking-widest">写真準備中</p>
+            </div>
           </div>
         </div>
       </section>
