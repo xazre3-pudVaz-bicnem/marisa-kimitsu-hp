@@ -54,16 +54,23 @@ export default async function BlogPostPage({ params }: Props) {
     '@type': 'BlogPosting',
     headline: post.title,
     datePublished: post.date,
+    dateModified: post.date,
+    image: `${SITE_URL}/og-image.jpg`,
     author: {
       '@type': 'Organization',
       name: 'もみほぐし・MARISA 君津店',
+      url: SITE_URL,
+      '@id': `${SITE_URL}/#business`,
     },
     publisher: {
       '@type': 'Organization',
       name: 'もみほぐし・MARISA 君津店',
+      url: SITE_URL,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/logo.png`,
+        url: `${SITE_URL}/og-image.jpg`,
+        width: 1200,
+        height: 630,
       },
     },
     description: post.description || post.title,
@@ -72,6 +79,11 @@ export default async function BlogPostPage({ params }: Props) {
       '@id': `${SITE_URL}/blog/${slug}`,
     },
     keywords: post.tags.join(', '),
+    inLanguage: 'ja',
+    about: {
+      '@type': 'Thing',
+      name: 'もみほぐし・リラクゼーション',
+    },
   }
 
   return (

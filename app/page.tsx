@@ -13,13 +13,17 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 }
 
+const SITE_URL_VAL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://marisa-kimitsu.com'
+
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'HealthAndBeautyBusiness',
+  '@id': `${SITE_URL_VAL}/#business`,
   name: 'もみほぐし・MARISA 君津店',
+  alternateName: 'MARISA 君津店',
   description:
-    '千葉県君津市のもみほぐし・リラクゼーションサロン。肩こり・腰のつらさ・眼精疲労・足のだるさに対応。夜0時まで営業・当日予約OK・無料駐車場あり。',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://marisa-kimitsu.com',
+    '千葉県君津市のもみほぐし・リラクゼーションサロン。肩こり・腰のつらさ・眼精疲労・足のだるさ・鍼灸・美容鍼に対応。夜0時まで営業・当日予約OK・無料駐車場あり。君津駅から車5分。',
+  url: SITE_URL_VAL,
   telephone: SHOP_INFO.phone,
   address: {
     '@type': 'PostalAddress',
@@ -39,15 +43,35 @@ const localBusinessSchema = {
     },
   ],
   priceRange: '¥¥',
-  image: `${process.env.NEXT_PUBLIC_SITE_URL ?? 'https://marisa-kimitsu.com'}/og-image.jpg`,
+  image: [`${SITE_URL_VAL}/og-image.jpg`],
+  logo: { '@type': 'ImageObject', url: `${SITE_URL_VAL}/og-image.jpg` },
   sameAs: [SHOP_INFO.instagramUrl, SHOP_INFO.hpbUrl],
   hasMap: SHOP_INFO.googleMapUrl,
   currenciesAccepted: 'JPY',
-  paymentAccepted: '現金、クレジットカード',
+  paymentAccepted: '現金',
+  areaServed: [
+    { '@type': 'City', name: '君津市' },
+    { '@type': 'City', name: '木更津市' },
+    { '@type': 'City', name: '富津市' },
+    { '@type': 'City', name: '袖ケ浦市' },
+  ],
   amenityFeature: [
     { '@type': 'LocationFeatureSpecification', name: '無料駐車場', value: true },
     { '@type': 'LocationFeatureSpecification', name: '当日予約', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'ペア・グループ利用', value: true },
+    { '@type': 'LocationFeatureSpecification', name: '男性歓迎', value: true },
   ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'MARISAのメニュー',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'もみほぐし', description: '全身の筋肉の緊張をほぐすリラクゼーション施術' }, price: '3900', priceCurrency: 'JPY' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'ヘッドケア', description: '頭皮・側頭部・眼周りのケア' }, price: '2000', priceCurrency: 'JPY' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '足つぼ・リフレクソロジー', description: '足裏の反射区を刺激するリラクゼーション施術' }, price: '3800', priceCurrency: 'JPY' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '鍼灸メニュー', description: 'もみほぐしと鍼の組み合わせ施術（公式予約限定）' }, price: '4500', priceCurrency: 'JPY' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: '美容鍼', description: 'お顔まわりのケアに特化した鍼施術（公式予約限定）' }, price: '3500', priceCurrency: 'JPY' },
+    ],
+  },
 }
 
 const features = [
