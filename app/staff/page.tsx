@@ -43,7 +43,7 @@ const mainStaff = [
     message:
       '鍼灸師の資格を活かし、もみほぐしとの組み合わせケアを行います。体のつらい部位に丁寧にアプローチし、日々のメンテナンスをサポートします。初めて鍼を試してみたい方も、まずお気軽にご相談ください。',
     // Final image: /images/staff/nao-head-care.jpg
-    image: '/LINE_ALBUM_もみほぐしMARISA_260615_25.jpg',
+    image: '/S__15343701.jpg',
     imageAlt: '君津 鍼灸師 もみほぐし MARISA なお ヘッドケア施術風景',
   },
 ]
