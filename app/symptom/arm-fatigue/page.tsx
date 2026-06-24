@@ -3,21 +3,22 @@ import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL } from '@/lib/constants'
+import { HPB_URL, BMERIT_URL, LINE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: '君津の腕・肘・手首の疲れのもみほぐし｜MARISA 君津店',
+  title: '君津の腕・手の疲れケア｜MARISA 君津店',
   description:
-    '千葉県君津市のリラクゼーションサロン「MARISA」の腕・肘・手首ケア。PC作業・スマホ・家事による腕のだるさや疲れを、もみほぐしでやわらげます。当日予約OK・夜0時まで営業。',
-  keywords: ['君津 腕 疲れ マッサージ', '君津 肘 ケア', '君津 手首 もみほぐし'],
+    '千葉県君津市のリラクゼーションサロン「MARISA」の腕・手首ケア。タイピング・スマホ・家事による手首・前腕の疲れや腕の重だるさをもみほぐしでやわらげます。当日予約OK・夜0時まで営業。',
+  keywords: ['君津 腕 疲れ', '君津 手首 ケア', '君津 PC 腕 疲れ'],
   openGraph: {
-    title: '君津の腕・肘・手首の疲れのもみほぐし｜MARISA 君津店',
-    description: '千葉県君津市のリラクゼーションサロン「MARISA」の腕・肘・手首ケア。PC作業・スマホ・家事による腕のだるさや疲れをやわらげます。',
+    title: '君津の腕・手の疲れケア｜MARISA 君津店',
+    description:
+      '千葉県君津市のリラクゼーションサロン「MARISA」の腕・手首ケア。タイピング・スマホ・家事による腕のだるさ・疲れをやわらげます。',
     locale: 'ja_JP',
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  alternates: { canonical: '/symptom/arm-fatigue' },
+  alternates: { canonical: 'https://marisa-kimitsu.com/symptom/arm-fatigue' },
 }
 
 const faqSchema = {
@@ -48,6 +49,22 @@ const faqSchema = {
         text: '軽い疲れやだるさ・筋肉の張りには対応していますが、強い痛み・しびれ・腫れがある場合はまず医療機関のご受診をお勧めします。当サロンはリラクゼーション施設であり、痛みの診断・治療は行っておりません。施術前のカウンセリングでお体の状態をお知らせください。',
       },
     },
+    {
+      '@type': 'Question',
+      name: '料理・家事で腕が疲れやすいのですが対応できますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、家事・育児で腕・手首を酷使される方のご来店も多くいらっしゃいます。包丁の使用・鍋の持ち上げ・抱っこなどで蓄積した前腕・肩の疲れをほぐします。「腕を重点的に」とカウンセリングでお伝えいただければ、腕・前腕・手首に時間をかけてほぐします。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '鍼灸との組み合わせはできますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、MARISAでは鍼灸メニューもご用意しています（公式サイトからの予約のみ）。慢性的な腕・前腕の疲れやこわばりには、もみほぐしと鍼灸を組み合わせたケアが好評です。詳しくはスタッフにお気軽にご相談ください。',
+      },
+    },
   ],
 }
 
@@ -64,6 +81,18 @@ const causes = [
     title: '料理・家事・育児',
     desc: '包丁の使用・鍋の持ち上げ・洗い物・掃除機がけ・子どもの抱っこ——家事や育児では腕・手首・肘を日常的に酷使します。「主婦の方・育児中の方の腕の疲れ」は見過ごされやすいですが、積み重なることで慢性的な腕の重だるさにつながります。',
   },
+  {
+    title: '工場作業・手作業の多い仕事',
+    desc: '君津市内の工場での手作業・組み立て・検品など、腕・手首・指を繰り返し使う仕事は特定の部位に疲れが蓄積しやすくなります。「同じ部位ばかりが疲れる」という方に多いパターンです。',
+  },
+  {
+    title: '肩こりからの波及',
+    desc: '肩の筋肉（三角筋・回旋筋腱板）の緊張が強くなると、腕全体の筋肉への血流が低下しやすくなります。「肩がこると腕まで重くなる」という方は、肩から腕への緊張の波及が起きているサインです。',
+  },
+  {
+    title: '睡眠中の不自然な姿勢',
+    desc: '横向きで寝るときに腕を下にして寝る・うつ伏せで寝るなど、就寝中の姿勢によって腕への血流が妨げられることがあります。「朝起きると腕がだるい」という方はこのパターンが関係していることがあります。',
+  },
 ]
 
 const shoulderConnection = [
@@ -76,9 +105,56 @@ const shoulderConnection = [
     desc: '腕を長時間使い続けると、その負担は肩関節・肩甲骨を経由して首・肩のコリとしても現れます。「腕は疲れているし、肩も凝っている」という方は、この連動が起きているサインです。腕だけでなく肩・首まで一体でほぐすことが大切です。',
   },
   {
-    title: '神経のつながり',
-    desc: '腕・手首・指に感じるしびれやだるさは、首・肩の神経とつながっています。筋肉の緊張が神経を圧迫することで手先のだるさを感じやすくなることがあります。ただし、強いしびれや痛みは医療機関への受診をおすすめします。',
+    title: '腕の疲れと睡眠の浅さ',
+    desc: '腕・肩まわりの筋肉の緊張が強いと、横になっても体が休まりにくくなることがあります。「腕が張ったまま眠れない」という方には、就寝前のもみほぐしで腕・肩の緊張をほぐすことが役立つことがあります。',
   },
+]
+
+const scenes = [
+  {
+    title: 'PC・デスクワーク中心の仕事の方',
+    desc: '一日中タイピングやマウス操作をする方は、利き手側の前腕・手首に疲れが溜まりやすくなります。仕事帰りに腕を重点的にほぐすケアとしてご利用いただいています。',
+  },
+  {
+    title: '家事・育児で腕を使いすぎの方',
+    desc: '子どもの抱っこ・家事全般で腕を日々酷使している方。「腕が上がらない」「手首が疲れた」という状態になりやすく、もみほぐしで腕の負担をやわらげるサポートをします。',
+  },
+  {
+    title: '工場・手作業の多い仕事の方',
+    desc: '君津の工場や製造業で手作業が多い方。同じ動作の繰り返しで特定の部位が疲れやすく、定期的なケアで日々のメンテナンスとしてご利用いただいています。',
+  },
+]
+
+const recommendedMenus = [
+  {
+    tag: '60 min',
+    title: 'もみほぐし 60分（腕・肩重点）',
+    desc: '¥4,500。腕の疲れと合わせて肩・首もまとめてほぐします。カウンセリングで「腕中心に」とお伝えください。',
+    href: '/menu/body-care',
+    isExternal: false,
+  },
+  {
+    tag: '90 min',
+    title: 'もみほぐし 90分',
+    desc: '¥6,400。腕・肩・首・背中・腰と全身をじっくりほぐします。全身疲れも一緒にリセットしたい方に。',
+    href: '/menu/body-care',
+    isExternal: false,
+  },
+  {
+    tag: '鍼灸',
+    title: '鍼灸コース（公式サイト予約）',
+    desc: '30分+針¥4,500〜。慢性的な腕・前腕の疲れや張りに。もみほぐしでほぐれにくい深部へのアプローチ。公式サイトからの予約のみ。',
+    href: BMERIT_URL,
+    isExternal: true,
+  },
+]
+
+const steps = [
+  { step: '01', title: 'ご予約', desc: 'ホットペッパービューティー・当日来店でご予約。当日予約OK。' },
+  { step: '02', title: 'カウンセリング', desc: '腕の疲れの状況・特に気になる部位・圧の好みをお聞きします。' },
+  { step: '03', title: '肩・首のほぐし', desc: '腕の疲れと連動する肩・首から先にほぐします。' },
+  { step: '04', title: '腕・前腕・手首の集中ケア', desc: '前腕屈筋群・伸筋群・上腕二頭筋・上腕三頭筋を丁寧にほぐします。圧の強さはご要望に応じて調整。' },
+  { step: '05', title: 'アフターケア', desc: '施術後の体の感覚を確認。腕のセルフストレッチや日常ケアのポイントをご案内します。' },
 ]
 
 const faqs = [
@@ -94,6 +170,14 @@ const faqs = [
     q: '腕の痛みがある場合も施術できますか？',
     a: '軽い疲れやだるさ・筋肉の張りには対応していますが、強い痛み・しびれ・腫れがある場合はまず医療機関のご受診をお勧めします。当サロンはリラクゼーション施設であり、痛みの診断・治療は行っておりません。施術前のカウンセリングでお体の状態をお知らせください。',
   },
+  {
+    q: '料理・家事で腕が疲れやすいのですが対応できますか？',
+    a: 'はい、家事・育児で腕・手首を酷使される方のご来店も多くいらっしゃいます。包丁の使用・鍋の持ち上げ・抱っこなどで蓄積した前腕・肩の疲れをほぐします。「腕を重点的に」とカウンセリングでお伝えいただければ、腕・前腕・手首に時間をかけてほぐします。',
+  },
+  {
+    q: '鍼灸との組み合わせはできますか？',
+    a: 'はい、MARISAでは鍼灸メニューもご用意しています（公式サイトからの予約のみ）。慢性的な腕・前腕の疲れやこわばりには、もみほぐしと鍼灸を組み合わせたケアが好評です。詳しくはスタッフにお気軽にご相談ください。',
+  },
 ]
 
 export default function ArmFatiguePage() {
@@ -104,28 +188,28 @@ export default function ArmFatiguePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* ===== Page Header ===== */}
+      {/* ===== 1. Page Header ===== */}
       <div className="bg-sand-100 pt-28 pb-12 lg:pt-36 lg:pb-16">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <Breadcrumb
             items={[
               { label: 'お悩み別', href: '/symptom' },
-              { label: '腕・肘・手首の疲れ' },
+              { label: '腕・手の疲れ' },
             ]}
           />
           <div className="mt-4">
             <p className="font-en text-xs tracking-widest uppercase text-brown-400 mb-3">Arm &amp; Wrist Care</p>
             <h1 className="text-3xl lg:text-4xl font-light tracking-wide text-stone-800 leading-snug">
-              腕・肘・手首の疲れ・だるさをほぐす
+              腕・手首の疲れ・重だるさをほぐす
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              「PC作業の後に腕がだるくて重い」「スマホを持ちすぎて手首が疲れた」「家事で腕の筋肉が張っている」——腕・肘・手首の疲れは、日常の積み重ねで慢性化しやすい部位です。MARISAでは、腕の疲れを全身もみほぐしの中でケアし、肩・首とのつながりも意識してほぐします。
+              「PC作業の後に腕がだるくて重い」「スマホを持ちすぎて手首が疲れた」「家事で腕の筋肉が張っている」——腕・肘・手首の疲れは、日常の積み重ねで慢性化しやすい部位です。MARISAでは、腕の疲れを全身もみほぐしの中でケアし、肩・首とのつながりも意識してほぐし、腕まわりの負担をやわらげるサポートをします。
             </p>
           </div>
         </div>
       </div>
 
-      {/* ===== Causes ===== */}
+      {/* ===== 2. Causes ===== */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
@@ -133,7 +217,7 @@ export default function ArmFatiguePage() {
             ja="腕の疲れの主な原因"
             lead="現代の日常生活では、腕・手首を酷使する場面が多くあります。"
           />
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {causes.map((c) => (
               <div key={c.title} className="border border-sand-200 p-6 bg-cream-50">
                 <h3 className="text-sm font-medium text-stone-800 mb-2 tracking-wide">{c.title}</h3>
@@ -149,7 +233,7 @@ export default function ArmFatiguePage() {
         </div>
       </section>
 
-      {/* ===== Shoulder Connection ===== */}
+      {/* ===== 3. Shoulder Connection ===== */}
       <section className="py-16 bg-cream-100">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
@@ -168,7 +252,26 @@ export default function ArmFatiguePage() {
         </div>
       </section>
 
-      {/* ===== Approach ===== */}
+      {/* ===== 4. Life Scenes ===== */}
+      <section className="py-16 bg-sand-100">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
+          <SectionHeader
+            en="Life Scenes"
+            ja="こんな方の腕の疲れケアにご利用いただいています"
+            lead="君津エリアで腕・手首の疲れにお悩みの方々にご利用いただいています。"
+          />
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+            {scenes.map((s) => (
+              <div key={s.title} className="border border-sand-200 bg-cream-50 p-6">
+                <h3 className="text-sm font-medium text-stone-800 mb-2 tracking-wide">{s.title}</h3>
+                <p className="text-sm text-stone-700 leading-loose">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 5. MARISA Approach ===== */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader
@@ -186,42 +289,85 @@ export default function ArmFatiguePage() {
               腕の疲れと肩こりを両方お持ちの方が多いため、肩・首・背中との連動を意識しながら施術します。腕だけをほぐしても肩・首に緊張が残っていると腕の疲れが戻りやすいため、一体でほぐすことが大切です。
             </p>
             <p className="border-l-2 border-brown-300 pl-4 text-stone-600 italic">
-              ※ 強い痛み・しびれ・腫れがある場合は医療機関へのご受診をお勧めします。当サロンはリラクゼーション施設であり、治療・診断は行っておりません。
+              ※ 強い痛み・しびれ・腫れがある場合は医療機関へのご受診をお勧めします。当サロンはリラクゼーション施設であり、診断・治療は行っておりません。
             </p>
           </div>
         </div>
       </section>
 
-      {/* ===== Recommended Menus ===== */}
-      <section className="py-16 bg-sand-100">
+      {/* ===== 6. Recommended Menus ===== */}
+      <section className="py-16 bg-cream-100">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Menus"
             ja="腕の疲れにおすすめのメニュー"
           />
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl">
-            <div className="border border-sand-200 bg-cream-50 p-6">
-              <p className="text-xs tracking-widest text-brown-400 mb-2">Body Care</p>
-              <h3 className="text-sm font-medium text-stone-800 mb-2">もみほぐし 60分</h3>
-              <p className="text-sm text-stone-700 leading-loose mb-4">¥4,500〜。腕の疲れと合わせて肩・首もまとめてほぐします。カウンセリングで「腕中心に」とお伝えください。</p>
-              <Link href="/menu" className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500">
-                メニューを見る →
-              </Link>
-            </div>
-            <div className="border border-sand-200 bg-cream-50 p-6">
-              <p className="text-xs tracking-widest text-brown-400 mb-2">Full Body</p>
-              <h3 className="text-sm font-medium text-stone-800 mb-2">もみほぐし 90分</h3>
-              <p className="text-sm text-stone-700 leading-loose mb-4">¥6,500〜。腕・肩・首・背中・腰と全身をじっくりほぐします。全身疲れも一緒にリセットしたい方に。</p>
-              <Link href="/menu" className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500">
-                メニューを見る →
-              </Link>
-            </div>
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl">
+            {recommendedMenus.map((m) => (
+              <div key={m.title} className="border border-sand-200 bg-cream-50 p-6">
+                <p className="text-xs tracking-widest text-brown-400 mb-2">{m.tag}</p>
+                <h3 className="text-sm font-medium text-stone-800 mb-2">{m.title}</h3>
+                <p className="text-sm text-stone-700 leading-loose mb-4">{m.desc}</p>
+                {m.isExternal ? (
+                  <a href={m.href} target="_blank" rel="noopener noreferrer" className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500">
+                    公式サイトで予約 →
+                  </a>
+                ) : (
+                  <Link href={m.href} className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500">
+                    詳しく見る →
+                  </Link>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ===== FAQ ===== */}
+      {/* ===== 7. Duration Guide ===== */}
+      <section className="py-16 bg-sand-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader
+            en="Duration Guide"
+            ja="コース時間の目安"
+            lead="腕の疲れの度合いや全身の疲れに応じてコース時間をお選びください。"
+          />
+          <div className="mt-8 space-y-4">
+            {[
+              { time: '60分', label: 'もみほぐし 60分', desc: '¥4,500。腕＋肩＋首をまとめてほぐす定番コース。腕の疲れと肩こりを同時にケア。' },
+              { time: '90分', label: 'もみほぐし 90分', desc: '¥6,400。全身の疲れと腕の疲れを同時にリセットしたい方に。腕だけでなく全身の血行も促します。' },
+            ].map((item) => (
+              <div key={item.label} className="flex gap-4 border border-sand-200 bg-cream-50 p-5">
+                <div className="font-en text-xl text-brown-400 font-light w-14 shrink-0">{item.time}</div>
+                <div>
+                  <p className="text-sm font-medium text-stone-800 mb-1">{item.label}</p>
+                  <p className="text-xs text-stone-700 leading-loose">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 8. Treatment Flow ===== */}
       <section className="py-16 lg:py-24 bg-cream-50">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Flow" ja="施術の流れ" />
+          <div className="mt-10 space-y-4">
+            {steps.map((s) => (
+              <div key={s.step} className="flex gap-4 border border-sand-200 bg-cream-50 p-5">
+                <div className="font-en text-xl text-brown-400 font-light w-10 shrink-0">{s.step}</div>
+                <div>
+                  <p className="text-sm font-medium text-stone-800 mb-1">{s.title}</p>
+                  <p className="text-xs text-stone-700 leading-loose">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 9. FAQ ===== */}
+      <section className="py-16 lg:py-24 bg-cream-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader en="FAQ" ja="よくあるご質問" />
           <div className="mt-10 space-y-6">
@@ -238,7 +384,7 @@ export default function ArmFatiguePage() {
         </div>
       </section>
 
-      {/* ===== Related links ===== */}
+      {/* ===== 10. Related & CTA ===== */}
       <section className="py-12 bg-sand-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <p className="text-xs tracking-widest text-greige-400 mb-4 uppercase">Related</p>
@@ -256,20 +402,21 @@ export default function ArmFatiguePage() {
         </div>
       </section>
 
-      {/* ===== CTA ===== */}
       <section className="py-20 lg:py-28 bg-brown-600 text-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8 text-center">
           <p className="font-en text-xs tracking-widest text-sand-300 uppercase mb-4">Reservation</p>
           <h2 className="text-2xl lg:text-3xl font-light tracking-wide mb-6">
-            腕・肘・手首の疲れは、MARISAへ
+            腕・手首の疲れは、MARISAへ
           </h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
-            夜0時まで営業中・当日予約OK。<br />
+            夜0時まで営業中・当日予約OK・無料駐車場あり。<br />
             君津のリラクゼーションサロン MARISAへ。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />
-            <ReserveButton href="/menu" label="メニューを見る" variant="outline" size="lg" />
+            {LINE_URL && (
+              <ReserveButton href={LINE_URL} label="LINEで予約する" variant="outline" size="lg" />
+            )}
           </div>
         </div>
       </section>

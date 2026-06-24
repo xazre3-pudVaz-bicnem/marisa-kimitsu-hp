@@ -3,21 +3,22 @@ import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
 import ReserveButton from '@/components/ui/ReserveButton'
-import { HPB_URL } from '@/lib/constants'
+import { HPB_URL, LINE_URL } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: '君津のデスクワーク疲れ・PC疲れのもみほぐし｜MARISA 君津店',
+  title: '君津のデスクワーク疲れケア｜MARISA 君津店',
   description:
-    '千葉県君津市のリラクゼーションサロン「MARISA」のデスクワーク疲れケア。PC作業による肩こり・首こり・眼精疲労・腰の張りを、もみほぐしでリセット。仕事帰りに当日予約OK。',
-  keywords: ['君津 デスクワーク疲れ', '君津 PC 肩こり', '君津 事務 マッサージ'],
+    '千葉県君津市のリラクゼーションサロン「MARISA」のデスクワーク疲れケア。長時間PC作業による肩・首・腰のトリプル疲れと眼精疲労を、もみほぐし・ヘッドセットでリセット。仕事帰りに当日予約OK。',
+  keywords: ['君津 デスクワーク 肩こり', '君津 テレワーク 疲れ', '君津 PC疲れ'],
   openGraph: {
-    title: '君津のデスクワーク疲れ・PC疲れのもみほぐし｜MARISA 君津店',
-    description: '千葉県君津市のリラクゼーションサロン「MARISA」のデスクワーク疲れケア。PC作業・事務仕事による肩こり・首こり・腰の張りをほぐします。',
+    title: '君津のデスクワーク疲れケア｜MARISA 君津店',
+    description:
+      '千葉県君津市のリラクゼーションサロン「MARISA」のデスクワーク疲れケア。PC作業・事務仕事による肩・首・腰・眼精疲労をまとめてほぐします。',
     locale: 'ja_JP',
     type: 'website',
   },
   twitter: { card: 'summary_large_image' },
-  alternates: { canonical: '/symptom/desk-work' },
+  alternates: { canonical: 'https://marisa-kimitsu.com/symptom/desk-work' },
 }
 
 const faqSchema = {
@@ -29,7 +30,7 @@ const faqSchema = {
       name: 'デスクワーク疲れにおすすめのコースは何ですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'デスクワークによる肩・首・腰の疲れには「もみほぐし60分」がおすすめです。眼精疲労や頭の重さも気になる場合は「ヘッドセットコース（60分）」が、全身まとめてリセットしたい場合は「もみほぐし90分」が好評です。カウンセリングでお体の状態をお聞きしてからコースをご提案します。',
+        text: 'デスクワークによる肩・首・腰の疲れには「もみほぐし60〜90分」がおすすめです。眼精疲労や頭の重さも気になる場合は「ヘッドセットコース（60分¥5,400）」が、全身まとめてリセットしたい場合は「もみほぐし90分¥6,400」が好評です。カウンセリングでお体の状態をお聞きしてからコースをご提案します。',
       },
     },
     {
@@ -45,7 +46,23 @@ const faqSchema = {
       name: 'PC作業で眼精疲労も気になりますが対応できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、ヘッドケアメニューでは側頭部・後頭部・こめかみ周辺の筋肉をほぐします。眼精疲労と首こりは連動していることが多いため、もみほぐしとヘッドケアを組み合わせたヘッドセットコースが眼精疲労にもお喜びいただいています。',
+        text: 'はい、ヘッドケアメニューでは側頭部・後頭部・こめかみ周辺の筋肉をほぐします。眼精疲労と首こりは連動していることが多いため、もみほぐしとヘッドケアを組み合わせたヘッドセットコースが眼精疲労でお悩みの方にもご好評をいただいています。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'テレワーク（在宅勤務）の疲れにも対応していますか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'はい、テレワーク特有の疲れにも対応しています。在宅勤務では姿勢が固定されやすく、通勤での歩行がなくなるため下半身の血流が特に滞りやすくなります。もみほぐしで首・肩・腰・脚まで全体的にケアすることをおすすめします。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '毎日デスクワークの場合はどのくらいの頻度で通うといいですか？',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '毎日デスクワークが続く方は、週1〜2回のご利用が理想です。難しい場合は月2〜4回のペースでも、疲れを翌日に持ち越しにくくなります。日々のメンテナンスとして定期的にご利用いただくお客様が多くいらっしゃいます。',
       },
     },
   ],
@@ -53,7 +70,7 @@ const faqSchema = {
 
 const whatHappens = [
   {
-    title: '姿勢の崩れ',
+    title: '姿勢の崩れ・巻き肩',
     desc: 'PC画面に集中するにつれ、頭が前に出て肩が内側に巻き込まれる「巻き肩・前傾姿勢」になりがちです。この姿勢は首・肩・胸まわりの筋肉に継続的な負担をかけ、慢性的なコリの原因になります。',
   },
   {
@@ -73,10 +90,54 @@ const tensionPattern = [
   { area: '腰', desc: '長時間の着座で腸腰筋・臀筋が縮まり、腰椎への負担が増加。腰の張りや重さにつながる。' },
 ]
 
+const scenes = [
+  {
+    title: '事務・テレワーカー',
+    desc: '毎日長時間PC作業が続く方。夕方になるほど肩や腰が重くなりやすく、仕事帰りにMARISAでリセットしてから帰宅するルーティンの方が増えています。',
+  },
+  {
+    title: '君津市内の工場・製造業のデスク部門',
+    desc: '君津市には大型工場が多く、管理・事務部門でデスクワークが続く方も多くいらっしゃいます。職場から近いMARISAで帰宅途中に立ち寄るご利用が人気です。',
+  },
+  {
+    title: '千葉・東京方面への通勤＋デスクワーク',
+    desc: '長距離通勤＋終日PC作業という方は、通勤疲れとデスクワーク疲れが重なりやすい状態です。90分でじっくり全身をリセットするコースが特におすすめです。',
+  },
+]
+
+const recommendedMenus = [
+  {
+    tag: 'Head Set',
+    title: 'ヘッドセットコース',
+    desc: '60分¥5,400・90分¥6,700。眼精疲労・頭の重さも気になる方に。もみほぐし＋ヘッドケアのセット。首から頭まで一体でリセット。',
+    href: '/menu/set',
+  },
+  {
+    tag: '60 min',
+    title: 'もみほぐし 60分',
+    desc: '¥4,500。首・肩・背中・腰を全体的にほぐす定番コース。仕事帰りのリセットに最適。カウンセリングで重点部位をお伝えください。',
+    href: '/menu/body-care',
+  },
+  {
+    tag: '90 min',
+    title: 'もみほぐし 90分',
+    desc: '¥6,400。全身をじっくりほぐしたい方に。疲れが溜まった週の終わりや特に体が重い日に。',
+    href: '/menu/body-care',
+  },
+]
+
+const steps = [
+  { step: '01', title: 'ご予約', desc: 'ホットペッパービューティー・当日来店でご予約。仕事帰りの当日予約OK。' },
+  { step: '02', title: 'カウンセリング', desc: '今日の仕事の状況・特に気になる部位・圧の好みをお聞きします。' },
+  { step: '03', title: '首・肩のほぐし', desc: 'デスクワークで最も緊張しやすい首・肩から丁寧にほぐします。' },
+  { step: '04', title: '全身ケア', desc: '背中・腰・脚まで、体全体の血行を促しながらほぐします。' },
+  { step: '05', title: 'アフターケア', desc: '施術後の体の感覚を確認。セルフストレッチや姿勢のポイントをご案内します。' },
+]
+
 const faqs = [
   {
     q: 'デスクワーク疲れにおすすめのコースは何ですか？',
-    a: 'デスクワークによる肩・首・腰の疲れには「もみほぐし60分」がおすすめです。眼精疲労や頭の重さも気になる場合は「ヘッドセットコース（60分）」が、全身まとめてリセットしたい場合は「もみほぐし90分」が好評です。カウンセリングでお体の状態をお聞きしてからコースをご提案します。',
+    a: 'デスクワークによる肩・首・腰の疲れには「もみほぐし60〜90分」がおすすめです。眼精疲労や頭の重さも気になる場合は「ヘッドセットコース（60分¥5,400）」が、全身まとめてリセットしたい場合は「もみほぐし90分¥6,400」が好評です。カウンセリングでお体の状態をお聞きしてからコースをご提案します。',
   },
   {
     q: '仕事帰りに当日予約できますか？',
@@ -84,7 +145,15 @@ const faqs = [
   },
   {
     q: 'PC作業で眼精疲労も気になりますが対応できますか？',
-    a: 'はい、ヘッドケアメニューでは側頭部・後頭部・こめかみ周辺の筋肉をほぐします。眼精疲労と首こりは連動していることが多いため、もみほぐしとヘッドケアを組み合わせたヘッドセットコースが眼精疲労にもお喜びいただいています。',
+    a: 'はい、ヘッドケアメニューでは側頭部・後頭部・こめかみ周辺の筋肉をほぐします。眼精疲労と首こりは連動していることが多いため、もみほぐしとヘッドケアを組み合わせたヘッドセットコースが眼精疲労でお悩みの方にもご好評をいただいています。',
+  },
+  {
+    q: 'テレワーク（在宅勤務）の疲れにも対応していますか？',
+    a: 'はい、テレワーク特有の疲れにも対応しています。在宅勤務では姿勢が固定されやすく、通勤での歩行がなくなるため下半身の血流が特に滞りやすくなります。もみほぐしで首・肩・腰・脚まで全体的にケアすることをおすすめします。',
+  },
+  {
+    q: '毎日デスクワークの場合はどのくらいの頻度で通うといいですか？',
+    a: '毎日デスクワークが続く方は、週1〜2回のご利用が理想です。難しい場合は月2〜4回のペースでも、疲れを翌日に持ち越しにくくなります。日々のメンテナンスとして定期的にご利用いただくお客様が多くいらっしゃいます。',
   },
 ]
 
@@ -96,7 +165,7 @@ export default function DeskWorkPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* ===== Page Header ===== */}
+      {/* ===== 1. Page Header ===== */}
       <div className="bg-sand-100 pt-28 pb-12 lg:pt-36 lg:pb-16">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <Breadcrumb
@@ -108,16 +177,16 @@ export default function DeskWorkPage() {
           <div className="mt-4">
             <p className="font-en text-xs tracking-widest uppercase text-brown-400 mb-3">Desk Work Care</p>
             <h1 className="text-3xl lg:text-4xl font-light tracking-wide text-stone-800 leading-snug">
-              デスクワークによる体の疲れ・コリをリセット
+              デスクワークによる肩・首・腰の疲れをリセット
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              「仕事が終わると肩が上がらないほど凝っている」「夕方になると腰が重くて集中できない」——PC作業や事務仕事が続くと、体は知らず知らずのうちに緊張を蓄積します。MARISAでは、デスクワークで疲弊した首・肩・背中・腰をまとめてほぐし、翌日への疲れを持ち越しにくくします。
+              「仕事が終わると肩が上がらないほど凝っている」「夕方になると腰が重くて集中できない」「PC疲れで目まで頭まで重い」——PC作業や事務仕事が続くと、体は知らず知らずのうちに緊張を蓄積します。MARISAでは、デスクワークで疲弊した首・肩・背中・腰の「トリプル疲れ」をまとめてほぐし、翌日への疲れを持ち越しにくくします。
             </p>
           </div>
         </div>
       </div>
 
-      {/* ===== What Happens ===== */}
+      {/* ===== 2. What Happens ===== */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
@@ -136,7 +205,7 @@ export default function DeskWorkPage() {
         </div>
       </section>
 
-      {/* ===== Tension Pattern ===== */}
+      {/* ===== 3. Tension Pattern ===== */}
       <section className="py-16 bg-cream-100">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
@@ -161,82 +230,93 @@ export default function DeskWorkPage() {
         </div>
       </section>
 
-      {/* ===== Approach ===== */}
+      {/* ===== 4. Life Scenes ===== */}
+      <section className="py-16 bg-sand-100">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
+          <SectionHeader
+            en="Life Scenes"
+            ja="君津エリアでのデスクワーク疲れの場面"
+            lead="君津の日常生活の中で、デスクワーク疲れを感じやすいシーンをご紹介します。"
+          />
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+            {scenes.map((s) => (
+              <div key={s.title} className="border border-sand-200 bg-cream-50 p-6">
+                <h3 className="text-sm font-medium text-stone-800 mb-2 tracking-wide">{s.title}</h3>
+                <p className="text-sm text-stone-700 leading-loose">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 5. Recommended Menus ===== */}
       <section className="py-16 lg:py-24 bg-cream-50">
-        <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader
-            en="Our Approach"
-            ja="MARISAのアプローチ"
-          />
-          <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
-            <p>
-              デスクワーク疲れへのアプローチでは、首・肩・背中・腰を一連の流れとしてほぐすことを重視します。施術前のカウンセリングで「特に気になる部位」をお聞きし、その日の体の状態に合わせて重点箇所を決めます。
-            </p>
-            <p>
-              特に慢性化している部位（「いつも同じところが凝る」という方）は、表面の筋肉だけでなく深部の筋肉にも丁寧にアプローチします。圧の強さはカウンセリングで調整しますので、「強めにほぐしてほしい」「痛いのが苦手」など、お好みをご遠慮なくお申し付けください。
-            </p>
-            <p>
-              眼精疲労・頭の重さが伴う場合は、ヘッドケアとの組み合わせもご提案します。仕事帰りに立ち寄ってリセットする習慣として、定期的にご利用いただくお客様も多くいらっしゃいます。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== After Work Scene ===== */}
-      <section className="py-14 bg-sand-100">
-        <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader
-            en="After Work"
-            ja="仕事帰りのご利用"
-          />
-          <div className="mt-6 space-y-4 text-sm text-stone-700 leading-loose">
-            <p>
-              MARISAは君津駅から車で約5分、夜0時まで営業しています。仕事帰りにそのままお立ち寄りいただけます。当日予約も承っていますので、「今日は特に疲れた」という日にもすぐにご利用いただけます。
-            </p>
-            <p>
-              店舗前に無料駐車場をご用意していますので、車での通勤の方もスムーズにご利用いただけます。仕事から帰る途中に立ち寄って体をリセットしてから帰宅する、というご利用スタイルの方も多くいらっしゃいます。
-            </p>
-          </div>
-          <div className="mt-6">
-            <Link href="/scene/after-work" className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500">
-              仕事帰りのご利用について詳しく →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== Recommended Menus ===== */}
-      <section className="py-16 bg-cream-50">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Menus"
             ja="デスクワーク疲れにおすすめのメニュー"
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl">
-            <div className="border border-sand-200 bg-cream-50 p-6">
-              <p className="text-xs tracking-widest text-brown-400 mb-2">60 min</p>
-              <h3 className="text-sm font-medium text-stone-800 mb-2">もみほぐし 60分</h3>
-              <p className="text-sm text-stone-700 leading-loose mb-4">¥4,500〜。首・肩・背中・腰を全体的にほぐす定番コース。仕事帰りのリセットに。</p>
-              <Link href="/menu" className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500">メニューを見る →</Link>
-            </div>
-            <div className="border border-sand-200 bg-cream-50 p-6">
-              <p className="text-xs tracking-widest text-brown-400 mb-2">Head Set</p>
-              <h3 className="text-sm font-medium text-stone-800 mb-2">ヘッドセットコース</h3>
-              <p className="text-sm text-stone-700 leading-loose mb-4">¥5,000〜。眼精疲労・頭の重さも気になる方に。もみほぐし＋ヘッドケアのセット。</p>
-              <Link href="/menu" className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500">メニューを見る →</Link>
-            </div>
-            <div className="border border-sand-200 bg-cream-50 p-6">
-              <p className="text-xs tracking-widest text-brown-400 mb-2">90 min</p>
-              <h3 className="text-sm font-medium text-stone-800 mb-2">もみほぐし 90分</h3>
-              <p className="text-sm text-stone-700 leading-loose mb-4">¥6,500〜。全身をじっくりほぐしたい方に。週末前のリセットや疲れが溜まったときに。</p>
-              <Link href="/menu" className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500">メニューを見る →</Link>
-            </div>
+            {recommendedMenus.map((m) => (
+              <div key={m.title} className="border border-sand-200 bg-cream-50 p-6">
+                <p className="text-xs tracking-widest text-brown-400 mb-2">{m.tag}</p>
+                <h3 className="text-sm font-medium text-stone-800 mb-2">{m.title}</h3>
+                <p className="text-sm text-stone-700 leading-loose mb-4">{m.desc}</p>
+                <Link href={m.href} className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500">
+                  詳しく見る →
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ===== FAQ ===== */}
-      <section className="py-16 lg:py-24 bg-cream-100">
+      {/* ===== 6. Course Duration Guide ===== */}
+      <section className="py-16 bg-cream-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader
+            en="Duration Guide"
+            ja="コース時間の目安"
+            lead="今日の疲れの度合いに応じてコース時間をお選びください。"
+          />
+          <div className="mt-8 space-y-4">
+            {[
+              { time: '45分', label: 'もみほぐし 45分', desc: '¥3,900。「短時間でも肩と首だけリセットしたい」方に。' },
+              { time: '60分', label: 'もみほぐし 60分 / ヘッドセット', desc: '¥4,500 / ¥5,400。仕事帰りの定番リセットに。眼精疲労にはヘッドセットが特におすすめ。' },
+              { time: '90分', label: 'もみほぐし 90分 / ヘッドセット', desc: '¥6,400 / ¥6,700。全身をじっくりほぐしたい日に。週の終わりや疲れが溜まったときに。' },
+            ].map((item) => (
+              <div key={item.time} className="flex gap-4 border border-sand-200 bg-cream-50 p-5">
+                <div className="font-en text-xl text-brown-400 font-light w-14 shrink-0">{item.time}</div>
+                <div>
+                  <p className="text-sm font-medium text-stone-800 mb-1">{item.label}</p>
+                  <p className="text-xs text-stone-700 leading-loose">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 7. Treatment Flow ===== */}
+      <section className="py-16 lg:py-24 bg-sand-100">
+        <div className="max-w-3xl mx-auto px-5 lg:px-8">
+          <SectionHeader en="Flow" ja="施術の流れ" />
+          <div className="mt-10 space-y-4">
+            {steps.map((s) => (
+              <div key={s.step} className="flex gap-4 border border-sand-200 bg-cream-50 p-5">
+                <div className="font-en text-xl text-brown-400 font-light w-10 shrink-0">{s.step}</div>
+                <div>
+                  <p className="text-sm font-medium text-stone-800 mb-1">{s.title}</p>
+                  <p className="text-xs text-stone-700 leading-loose">{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 8. FAQ ===== */}
+      <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader en="FAQ" ja="よくあるご質問" />
           <div className="mt-10 space-y-6">
@@ -253,7 +333,7 @@ export default function DeskWorkPage() {
         </div>
       </section>
 
-      {/* ===== Related links ===== */}
+      {/* ===== 9. Related links ===== */}
       <section className="py-12 bg-sand-100">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <p className="text-xs tracking-widest text-greige-400 mb-4 uppercase">Related</p>
@@ -261,6 +341,7 @@ export default function DeskWorkPage() {
             {[
               { label: '肩こりのお悩み', href: '/symptom/stiff-shoulder' },
               { label: '眼精疲労・頭の重さ', href: '/symptom/eye-fatigue' },
+              { label: '肩甲骨まわりの張り', href: '/symptom/shoulder-blade' },
               { label: '仕事帰りのご利用', href: '/scene/after-work' },
               { label: 'メニュー・料金', href: '/menu' },
               { label: '君津でマッサージをお探しの方', href: '/area/kimitsu' },
@@ -271,7 +352,7 @@ export default function DeskWorkPage() {
         </div>
       </section>
 
-      {/* ===== CTA ===== */}
+      {/* ===== 10. CTA ===== */}
       <section className="py-20 lg:py-28 bg-brown-600 text-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8 text-center">
           <p className="font-en text-xs tracking-widest text-sand-300 uppercase mb-4">Reservation</p>
@@ -279,12 +360,14 @@ export default function DeskWorkPage() {
             仕事帰りに、MARISAでリセット
           </h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
-            夜0時まで営業中・当日予約OK。<br />
+            夜0時まで営業中・当日予約OK・無料駐車場あり。<br />
             君津のリラクゼーションサロン MARISAへ。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />
-            <ReserveButton href="/menu" label="メニューを見る" variant="outline" size="lg" />
+            {LINE_URL && (
+              <ReserveButton href={LINE_URL} label="LINEで予約する" variant="outline" size="lg" />
+            )}
           </div>
         </div>
       </section>
