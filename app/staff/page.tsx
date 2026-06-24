@@ -31,8 +31,7 @@ const mainStaff = [
     specialties: ['もみほぐし', '足つぼ'],
     message:
       '「来るたびに楽になれる場所」を目指して、日々の施術に取り組んでいます。お客様のお悩みをしっかりお聞きし、体の状態に合わせた丁寧なケアをご提供します。ご不安なことは何でもお気軽にお申し付けください。',
-    // Final image: /images/staff/owner-foot-care.jpg
-    image: '/LINE_ALBUM_もみほぐしMARISA_260615_13.jpg',
+    image: '/0V2A1767_0.JPG',
     imageAlt: '君津 もみほぐし MARISA オーナー 足ケア施術風景',
   },
   {
