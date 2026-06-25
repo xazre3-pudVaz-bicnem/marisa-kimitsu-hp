@@ -168,7 +168,21 @@ export default function TopPage() {
       />
 
       {/* ===== Hero ===== */}
-      <section className="relative min-h-screen flex items-center bg-cream-50 overflow-hidden">
+      <section className="relative min-h-[600px] sm:min-h-[680px] lg:min-h-screen flex items-center bg-cream-50 overflow-hidden">
+        {/* Image: full background on mobile → right panel on desktop */}
+        <div className="absolute inset-0 lg:inset-auto lg:right-0 lg:top-0 lg:bottom-0 lg:w-2/5 overflow-hidden">
+          <Image
+            src="/LINE_ALBUM_もみほぐしMARISA_260615_5.jpg"
+            alt="君津 もみほぐし marisa 施術風景"
+            fill
+            className="object-cover object-[center_30%] lg:object-top"
+            priority
+            sizes="(max-width: 1024px) 100vw, 40vw"
+          />
+          {/* overlay: readable on mobile, subtle on desktop */}
+          <div className="absolute inset-0 bg-cream-50/72 lg:bg-cream-50/10" />
+        </div>
+
         <div className="relative z-10 max-w-7xl mx-auto px-5 lg:px-8 w-full pt-32 pb-24 lg:pt-40 lg:pb-32">
           <div className="max-w-xl">
             <p className="font-en text-xs tracking-widest text-brown-400 uppercase mb-6">
@@ -185,16 +199,6 @@ export default function TopPage() {
               千葉県君津市杢師、君津駅から車で約5分。
             </p>
           </div>
-        </div>
-        <div className="absolute right-0 top-0 bottom-0 w-2/5 lg:w-1/3 hidden lg:block overflow-hidden">
-          <Image
-            src="/LINE_ALBUM_もみほぐしMARISA_260615_5.jpg"
-            alt="君津 もみほぐし marisa 施術風景"
-            fill
-            className="object-cover object-top"
-            priority
-          />
-          <div className="absolute inset-0 bg-cream-50/10" />
         </div>
       </section>
 
