@@ -224,19 +224,25 @@ export default function TopPage() {
       </section>
 
       {/* ===== Photo Strip ===== */}
-      <section className="bg-stone-800 py-2">
-        <div className="grid grid-cols-4 gap-0.5">
-          <div className="relative aspect-video overflow-hidden">
-            <Image src="/LINE_ALBUM_もみほぐしMARISA_260615_2.jpg" alt="君津 もみほぐし marisa 店内" fill className="object-cover" />
+      <section className="overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2">
+          <div className="relative aspect-[4/3] sm:aspect-[3/2] overflow-hidden">
+            <Image
+              src="/photo-warm-1.png"
+              alt="もみほぐし・MARISA 店内・施術風景"
+              fill
+              className="object-cover object-[25%_center]"
+              sizes="(max-width: 640px) 100vw, 50vw"
+            />
           </div>
-          <div className="relative aspect-video overflow-hidden">
-            <Image src="/LINE_ALBUM_もみほぐしMARISA_260615_21.jpg" alt="君津 マッサージ 施術イメージ" fill className="object-cover" />
-          </div>
-          <div className="relative aspect-video overflow-hidden">
-            <Image src="/LINE_ALBUM_もみほぐしMARISA_260615_17.jpg" alt="君津 リラクゼーション サロン 店内" fill className="object-cover" />
-          </div>
-          <div className="relative aspect-video overflow-hidden">
-            <Image src="/LINE_ALBUM_もみほぐしMARISA_260615_36.jpg" alt="君津 もみほぐし marisa 施術ベッド" fill className="object-cover" />
+          <div className="relative aspect-[4/3] sm:aspect-[3/2] overflow-hidden">
+            <Image
+              src="/photo-warm-2.png"
+              alt="もみほぐし・MARISA 店内・リラクゼーション空間"
+              fill
+              className="object-cover object-[60%_center]"
+              sizes="(max-width: 640px) 100vw, 50vw"
+            />
           </div>
         </div>
       </section>
