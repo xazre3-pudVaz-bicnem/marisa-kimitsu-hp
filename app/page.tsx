@@ -223,30 +223,6 @@ export default function TopPage() {
         </div>
       </section>
 
-      {/* ===== Photo Strip ===== */}
-      <section className="overflow-hidden">
-        <div className="grid grid-cols-1 sm:grid-cols-2">
-          <div className="relative aspect-[4/3] sm:aspect-[3/2] overflow-hidden">
-            <Image
-              src="/photo-warm-1.png"
-              alt="もみほぐし・MARISA 店内・施術風景"
-              fill
-              className="object-cover object-[25%_center]"
-              sizes="(max-width: 640px) 100vw, 50vw"
-            />
-          </div>
-          <div className="relative aspect-[4/3] sm:aspect-[3/2] overflow-hidden">
-            <Image
-              src="/photo-warm-2.png"
-              alt="もみほぐし・MARISA 店内・リラクゼーション空間"
-              fill
-              className="object-cover object-[60%_center]"
-              sizes="(max-width: 640px) 100vw, 50vw"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* ===== Concerns ===== */}
       <section className="py-24 lg:py-32 bg-sand-100">
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
