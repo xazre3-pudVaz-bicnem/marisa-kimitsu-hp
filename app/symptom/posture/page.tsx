@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -244,7 +244,7 @@ export default function PosturePage() {
           <SectionHeader
             en="Life Scenes"
             ja="こんな方の姿勢ケアにご利用いただいています"
-            lead="君津エリアで姿勢のお悩みを抱える方々にご利用いただいています。"
+            lead="姿勢のお悩みを抱える方々にご利用いただいています。"
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
             {scenes.map((s) => (
@@ -262,7 +262,7 @@ export default function PosturePage() {
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Our Approach"
-            ja="MARISAのもみほぐしで筋肉の緊張をゆるめる"
+            ja="もみほぐしで筋肉の緊張をゆるめる"
           />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
@@ -391,7 +391,7 @@ export default function PosturePage() {
           </h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業中・当日予約OK・無料駐車場あり。<br />
-            君津のリラクゼーションサロン MARISAへ。
+            ご来店をお待ちしています。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />

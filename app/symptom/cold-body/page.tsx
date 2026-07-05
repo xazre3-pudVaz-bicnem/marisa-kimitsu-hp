@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -210,7 +210,7 @@ export default function ColdBodyPage() {
           <SectionHeader
             en="For You"
             ja="こんな方にご利用いただいています"
-            lead="冷え・むくみでお悩みの君津エリアの方々にご利用いただいています。"
+            lead="冷え・むくみでお悩みの方々にご利用いただいています。"
           />
           <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {personas.map((p) => (
@@ -358,7 +358,7 @@ export default function ColdBodyPage() {
           </h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業中・当日予約OK・無料駐車場あり。<br />
-            君津のリラクゼーションサロン MARISAへ。
+            ご来店をお待ちしています。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -237,7 +237,7 @@ export default function ChronicFatiguePage() {
           <SectionHeader
             en="Life Scenes"
             ja="こんな方の慢性疲れケアにご利用いただいています"
-            lead="君津エリアで慢性的な疲れを抱える方々にご利用いただいています。"
+            lead="慢性的な疲れを抱える方々にご利用いただいています。"
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
             {scenes.map((s) => (
@@ -253,7 +253,7 @@ export default function ChronicFatiguePage() {
       {/* ===== 5. MARISA Approach ===== */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Our Approach" ja="MARISAが大切にしていること" />
+          <SectionHeader en="Our Approach" ja="大切にしていること" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
               慢性的な疲れを感じている方には、「とにかく全身をほぐして、ゆっくりリラックスしてほしい」——MARISAではそのために時間をかけた施術を大切にしています。
@@ -376,7 +376,7 @@ export default function ChronicFatiguePage() {
           <h2 className="text-2xl lg:text-3xl font-light tracking-wide mb-6">慢性疲れは、MARISAでリセット</h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業・当日予約OK・無料駐車場あり。<br />
-            君津のリラクゼーションサロン MARISA。
+            ご来店をお待ちしています。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />

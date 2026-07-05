@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -212,7 +212,7 @@ export default function SceneBeforeSleepPage() {
           <h2 className="text-2xl lg:text-3xl font-light tracking-wide mb-6">ご予約はこちらから</h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業・当日予約OK。<br />
-            君津のリラクゼーションサロン MARISA。
+            ご来店をお待ちしています。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />

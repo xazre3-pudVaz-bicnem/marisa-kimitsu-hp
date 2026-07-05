@@ -328,7 +328,7 @@ export default function NeckPage() {
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Our Approach"
-            ja="MARISAでのケア方針"
+            ja="ケアのポイント"
           />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>

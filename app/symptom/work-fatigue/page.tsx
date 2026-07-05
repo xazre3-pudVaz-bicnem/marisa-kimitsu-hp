@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -231,7 +231,7 @@ export default function WorkFatiguePage() {
           <SectionHeader
             en="Life Scenes"
             ja="こんな方の仕事疲れケアにご利用いただいています"
-            lead="君津エリアで仕事疲れにお悩みの方々にご利用いただいています。"
+            lead="仕事疲れにお悩みの方々にご利用いただいています。"
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
             {scenes.map((s) => (
@@ -371,7 +371,7 @@ export default function WorkFatiguePage() {
           <h2 className="text-2xl lg:text-3xl font-light tracking-wide mb-6">仕事帰りは、MARISAへ</h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業・当日予約OK・無料駐車場あり。<br />
-            残業後でも立ち寄れる、君津のリラクゼーションサロン MARISA。
+            残業後でも立ち寄れる、ご来店をお待ちしています。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />

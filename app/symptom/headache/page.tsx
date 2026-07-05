@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -239,7 +239,7 @@ export default function HeadachePage() {
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Our Approach"
-            ja="MARISAのヘッドケアアプローチ"
+            ja="ヘッドケアアプローチ"
           />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
@@ -374,7 +374,7 @@ export default function HeadachePage() {
           </h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業中・当日予約OK・無料駐車場あり。<br />
-            君津のリラクゼーションサロン MARISAへ。
+            ご来店をお待ちしています。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />

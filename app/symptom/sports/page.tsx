@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -263,7 +263,7 @@ export default function SportsPage() {
           <SectionHeader
             en="Life Scenes"
             ja="君津エリアのスポーツ愛好家の方のご利用"
-            lead="こんな方々がスポーツ後のケアとしてMARISAをご利用いただいています。"
+            lead="スポーツ後のケアとしてご利用いただいています。"
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
             {scenes.map((s) => (
@@ -394,7 +394,7 @@ export default function SportsPage() {
           </h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業中・当日予約OK・無料駐車場あり。<br />
-            君津のリラクゼーションサロン MARISAへ。
+            ご来店をお待ちしています。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />

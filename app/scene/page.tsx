@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -8,7 +8,7 @@ import { HPB_URL } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'シーン別もみほぐし・ご利用シーン一覧｜MARISA 君津店',
   description:
-    '仕事帰り・当日予約・ペア利用・プレゼント・定期メンテナンスなど、さまざまなシーンでご利用いただける君津のリラクゼーションサロン MARISA。夜0時まで営業・無料駐車場完備。',
+    '仕事帰り・当日予約・ペア利用・プレゼント・定期メンテナンスなど、さまざまなシーンでご利用いただけるご来店をお待ちしています。夜0時まで営業・無料駐車場完備。',
   keywords: ['君津 マッサージ シーン別', '君津 もみほぐし 仕事帰り', '君津 リラクゼーション ペア', '君津 当日予約 マッサージ'],
   openGraph: {
     title: 'シーン別もみほぐし一覧｜MARISA 君津店',
@@ -204,7 +204,7 @@ export default function SceneIndexPage() {
           <h2 className="text-2xl lg:text-3xl font-light tracking-wide mb-6">ご予約はこちらから</h2>
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業・当日予約OK・無料駐車場完備。<br />
-            どんなシーンでも気軽にご利用いただける君津のリラクゼーションサロン MARISA。
+            どんなシーンでも気軽にご利用いただけるご来店をお待ちしています。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />

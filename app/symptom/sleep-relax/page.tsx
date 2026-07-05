@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
@@ -324,7 +324,7 @@ export default function SleepRelaxPage() {
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Our Approach"
-            ja="MARISAでのケア方針"
+            ja="ケアのポイント"
           />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
