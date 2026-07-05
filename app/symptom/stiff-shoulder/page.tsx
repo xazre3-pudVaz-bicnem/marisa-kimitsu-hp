@@ -291,7 +291,7 @@ export default function StiffShoulderPage() {
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Life in Kimitsu"
-            ja="君津での生活と肩こりが起きやすいシーン"
+            ja="生活の中で肩こりが起きやすいシーン"
             lead="君津エリアの生活習慣・仕事環境と肩こりのつながりを確認しましょう。"
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">

@@ -256,7 +256,7 @@ export default function LegFatiguePage() {
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Life in Kimitsu"
-            ja="君津での生活と足のだるさが起きやすいシーン"
+            ja="生活の中で足のだるさが起きやすいシーン"
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
             {kimitsuScenes.map((s) => (
