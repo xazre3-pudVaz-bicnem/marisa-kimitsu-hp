@@ -50,10 +50,6 @@ export const metadata: Metadata = {
   },
   twitter: { card: 'summary_large_image' },
   robots: { index: false, follow: true },
-  icons: {
-    icon: '/logo.jpg',
-    apple: '/logo.jpg',
-  },
 }
 
 const websiteSchema = {
