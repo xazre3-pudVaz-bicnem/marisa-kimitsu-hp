@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -36,7 +36,7 @@ const faqSchema = {
       name: '美容鍼はどんな方に向いていますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '美容鍼は肌の状態をケアしたい方、フェイスラインが気になる方に選ばれています。美容鍼のご予約は公式サイト（B-merit）からのみ承っています。体のもみほぐしとは別のアプローチで、顔まわりのケアをご希望の方にご活用いただいています。',
+        text: '美容鍼は肌の状態をケアしたい方、フェイスラインが気になる方に選ばれています。美容鍼のご予約は公式サイトからのみ承っています。体のもみほぐしとは別のアプローチで、顔まわりのケアをご希望の方にご活用いただいています。',
       },
     },
     {
@@ -150,7 +150,7 @@ export default function SceneLadiesPage() {
             <div className="bg-cream-50 border border-sand-200 p-6">
               <p className="font-medium text-stone-800 mb-2 tracking-wide">美容鍼（公式サイト予約限定）</p>
               <p className="text-sm text-stone-700 leading-loose">
-                肌の状態やフェイスラインのケアをご希望の方向けに美容鍼もご提供しています。鍼灸・美容鍼のご予約は公式サイト（B-merit）からのみ承っています。
+                肌の状態やフェイスラインのケアをご希望の方向けに美容鍼もご提供しています。鍼灸・美容鍼のご予約は公式サイトからのみ承っています。
               </p>
               <div className="mt-3">
                 <Link href={BMERIT_URL} className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500" target="_blank" rel="noopener noreferrer">美容鍼の予約はこちら（公式サイト）→</Link>

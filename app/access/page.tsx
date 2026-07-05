@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
@@ -272,7 +272,7 @@ export default function AccessPage() {
             </div>
             <div className="border-l-2 border-brown-300 pl-5 mt-4">
               <p className="font-medium text-stone-800 mb-1 tracking-wide">鍼灸メニューの対応時間</p>
-              <p>鍼灸師（なお）が対応する鍼灸メニューは、基本的に金曜日10:00〜22:00・土曜日10:00〜14:00となります。その他の曜日は要相談です。公式WEB予約（B-merit）からご予約ください。</p>
+              <p>鍼灸師（なお）が対応する鍼灸メニューは、基本的に金曜日10:00〜22:00・土曜日10:00〜14:00となります。その他の曜日は要相談です。公式WEB予約からご予約ください。</p>
             </div>
           </div>
         </div>

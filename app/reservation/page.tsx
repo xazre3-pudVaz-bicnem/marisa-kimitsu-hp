@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -25,13 +25,13 @@ export default function ReservationPage() {
               ご予約方法
             </h1>
             <p className="mt-4 text-stone-700 text-sm leading-loose max-w-2xl">
-              MARISAのご予約は、公式WEB予約（B-merit）・ホットペッパービューティー・LINEから24時間いつでもお申し込みいただけます。当日予約・クーポン利用も可能です。
+              MARISAのご予約は、公式WEB予約・ホットペッパービューティー・LINEから24時間いつでもお申し込みいただけます。当日予約・クーポン利用も可能です。
             </p>
           </div>
         </div>
       </div>
 
-      {/* ===== Section 1: 公式WEB予約（B-merit） — PRIMARY ===== */}
+      {/* ===== Section 1: 公式WEB予約 — PRIMARY ===== */}
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
           <SectionHeader
@@ -41,7 +41,7 @@ export default function ReservationPage() {
           />
           <div className="mt-8 space-y-4 text-sm text-stone-700 leading-loose">
             <p>
-              MARISAの公式予約システム（B-merit）から、24時間いつでもご予約いただけます。スマートフォン・パソコンから空き状況をリアルタイムで確認しながら、ご希望の日時・コースを選んでお申し込みいただけます。
+              MARISAの公式予約システムから、24時間いつでもご予約いただけます。スマートフォン・パソコンから空き状況をリアルタイムで確認しながら、ご希望の日時・コースを選んでお申し込みいただけます。
             </p>
             <p>
               当日予約にも対応しています。「急に時間ができた」「今すぐほぐしたい」という場合もそのままご予約ください。クーポンもご利用いただけますので、お得にご来店いただけます。
@@ -63,7 +63,7 @@ export default function ReservationPage() {
             <ReserveButton href={BMERIT_URL} label="公式WEB予約はこちら" variant="dark" size="lg" />
           </div>
           <p className="mt-4 text-xs text-greige-400 leading-loose">
-            公式の予約システムです。外部サイト（B-merit）に移動します。
+            公式の予約システムです。外部サイトに移動します。
           </p>
         </div>
       </section>

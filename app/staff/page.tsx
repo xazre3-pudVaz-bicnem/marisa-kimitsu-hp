@@ -47,6 +47,18 @@ const mainStaff = [
     imageAlt: '君津 鍼灸師 もみほぐし MARISA なお ヘッドケア施術風景',
   },
   {
+    id: 'yui',
+    name: 'ゆい',
+    role: 'セラピスト',
+    qualificationBadge: null,
+    specialties: ['もみほぐし', '足つぼ', 'リラクゼーション'],
+    message:
+      'お客様の体の状態に合わせた丁寧な施術を心がけています。「また来たい」と思っていただけるような、落ち着いた時間をご提供いたします。不定期出勤となりますが、担当させていただく際はどうぞよろしくお願いいたします。',
+    image: '/LINE_ALBUM_もみほぐしMARISA_260615_5.jpg',
+    imagePending: false,
+    imageAlt: '君津 もみほぐし MARISA セラピスト ゆい',
+  },
+  {
     id: 'mei',
     name: 'めい',
     role: 'セラピスト',
@@ -62,13 +74,14 @@ const mainStaff = [
 
 const supportStaff = [
   {
-    id: 'yui',
-    name: 'ゆい',
+    id: 'nagasawa',
+    name: 'ながさわ',
     displayLabel: 'サポートスタッフ（不定期出勤）',
     message:
-      '主に繁忙期・不定期でサポートとして在籍しています。ご予約の際はホットペッパービューティーの空き状況をご確認ください。',
-    image: '/LINE_ALBUM_もみほぐしMARISA_260615_5.jpg',
-    imageAlt: '君津 もみほぐし MARISA サポートスタッフ ゆい',
+      '不定期でサポートとして在籍しています。ご予約の際はホットペッパービューティーの空き状況をご確認ください。',
+    image: '/images/staff/nagasawa.jpg',
+    imagePending: true,
+    imageAlt: '君津 もみほぐし MARISA サポートスタッフ ながさわ',
   },
 ]
 
@@ -269,13 +282,21 @@ export default function StaffPage() {
               <div key={staff.id} className="bg-cream-50 border border-sand-200 p-6 flex gap-5 items-start">
                 {/* Compact photo */}
                 <div className="relative w-20 h-20 flex-shrink-0 overflow-hidden bg-sand-200">
-                  <Image
-                    src={staff.image}
-                    alt={staff.imageAlt}
-                    fill
-                    className="object-cover object-top"
-                    sizes="80px"
-                  />
+                  {(staff as { imagePending?: boolean }).imagePending ? (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <svg className="w-8 h-8 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                    </div>
+                  ) : (
+                    <Image
+                      src={staff.image}
+                      alt={staff.imageAlt}
+                      fill
+                      className="object-cover object-top"
+                      sizes="80px"
+                    />
+                  )}
                 </div>
 
                 <div className="flex-1 min-w-0">

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
@@ -133,7 +133,7 @@ const steps = [
   {
     step: '01',
     title: 'ご予約',
-    desc: 'WEB予約（B-merit・ホットペッパービューティー）または当日のご来店受付。',
+    desc: 'WEB予約（ホットペッパービューティー）または当日のご来店受付。',
   },
   {
     step: '02',

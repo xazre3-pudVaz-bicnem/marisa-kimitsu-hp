@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
@@ -351,7 +351,7 @@ export default function SceneParkingPage() {
           <p className="text-sm text-sand-300 leading-loose mb-10">
             無料駐車場完備・夜0時まで営業・当日予約OK。<br />
             千葉県君津市杢師3-20-10。<br />
-            鍼灸・美容鍼は公式WEB予約（B-merit）からのみご予約いただけます。
+            鍼灸・美容鍼は公式WEB予約からのみご予約いただけます。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />

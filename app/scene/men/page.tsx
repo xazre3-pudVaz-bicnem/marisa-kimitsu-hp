@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -60,7 +60,7 @@ const faqSchema = {
       name: '男性のおすすめコースは何ですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '初めての方には60分もみほぐしが人気です。体全体をほぐせてコストパフォーマンスが高く、試しやすいコースです。肩・腰のつらさが強い方は90分コースでじっくりほぐすと、より体の変化を感じやすくなります。鍼灸は公式サイト（B-merit）からのみご予約いただけます。',
+        text: '初めての方には60分もみほぐしが人気です。体全体をほぐせてコストパフォーマンスが高く、試しやすいコースです。肩・腰のつらさが強い方は90分コースでじっくりほぐすと、より体の変化を感じやすくなります。鍼灸は公式サイトからのみご予約いただけます。',
       },
     },
   ],
@@ -144,7 +144,7 @@ export default function SceneMenPage() {
             <div className="bg-cream-50 border border-sand-200 p-6">
               <p className="font-medium text-stone-800 mb-2 tracking-wide">鍼灸（公式サイト予約限定）</p>
               <p className="text-sm text-stone-700 leading-loose">
-                慢性的な肩こり・腰のつらさが気になる方向けに鍼灸もご用意しています。鍼灸のご予約は公式サイト（B-merit）からのみ承っています。もみほぐしとは異なるアプローチでお体をサポートします。
+                慢性的な肩こり・腰のつらさが気になる方向けに鍼灸もご用意しています。鍼灸のご予約は公式サイトからのみ承っています。もみほぐしとは異なるアプローチでお体をサポートします。
               </p>
               <div className="mt-3">
                 <Link href={BMERIT_URL} className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500" target="_blank" rel="noopener noreferrer">鍼灸の予約はこちら（公式サイト）→</Link>

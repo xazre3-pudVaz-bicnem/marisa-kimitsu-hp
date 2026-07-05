@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
@@ -59,7 +59,7 @@ const faqSchema = {
       name: '当日の予約はできますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、当日予約に対応しています。公式WEB予約（B-merit）またはホットペッパービューティーのネット予約、またはお電話にてお問い合わせください。空き状況により対応できない場合もありますので、お早めのご連絡をおすすめします。',
+        text: 'はい、当日予約に対応しています。公式WEB予約またはホットペッパービューティーのネット予約、またはお電話にてお問い合わせください。空き状況により対応できない場合もありますので、お早めのご連絡をおすすめします。',
       },
     },
     {
@@ -109,7 +109,7 @@ const steps = [
   {
     step: '01',
     label: 'ご予約',
-    desc: '公式WEB予約（B-merit）・ホットペッパービューティー・お電話・LINEのいずれかからご予約ください。24時間いつでもオンライン予約が可能です。当日予約にも対応しています。',
+    desc: '公式WEB予約・ホットペッパービューティー・お電話・LINEのいずれかからご予約ください。24時間いつでもオンライン予約が可能です。当日予約にも対応しています。',
   },
   {
     step: '02',

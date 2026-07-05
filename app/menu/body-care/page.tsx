@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
@@ -172,7 +172,7 @@ const steps = [
   {
     step: '01',
     title: 'ご予約',
-    desc: 'WEB予約（B-merit・ホットペッパービューティー）または当日のご来店受付。お電話でのご予約も承っています。',
+    desc: 'WEB予約（ホットペッパービューティー）または当日のご来店受付。お電話でのご予約も承っています。',
   },
   {
     step: '02',
@@ -448,7 +448,7 @@ export default function BodyCarePage() {
             <div className="border border-sand-200 bg-cream-50 p-6">
               <h3 className="text-sm font-medium text-stone-800 mb-2 tracking-wide">もみほぐし＋鍼灸（公式予約限定）</h3>
               <p className="text-sm text-stone-700 leading-loose mb-4">
-                特定の部位に集中的にアプローチしたい方に。もみほぐしと鍼灸を組み合わせることで、体の深部へのアプローチが可能です。鍼灸メニューはB-merit公式予約からのみご予約いただけます。
+                特定の部位に集中的にアプローチしたい方に。もみほぐしと鍼灸を組み合わせることで、体の深部へのアプローチが可能です。鍼灸メニューは公式WEB予約からのみご予約いただけます。
               </p>
               <Link href="/menu/acupuncture" className="text-xs tracking-widest text-brown-400 border-b border-brown-300 pb-px hover:text-brown-500">
                 鍼灸メニューを見る →

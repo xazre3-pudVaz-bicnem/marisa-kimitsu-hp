@@ -396,6 +396,11 @@ export default function LegFatiguePage() {
             </div>
             <div className="border border-sand-200 bg-cream-50 p-6">
               <p className="text-xs tracking-widest text-brown-400 mb-2">Staff</p>
+              <h3 className="text-sm font-medium text-stone-800 mb-2">なお</h3>
+              <p className="text-sm text-stone-700 leading-loose">もみほぐし・足つぼ・全メニュー対応。鍼灸師資格を持ち、体の状態に合わせた丁寧なケアを提供します。</p>
+            </div>
+            <div className="border border-sand-200 bg-cream-50 p-6">
+              <p className="text-xs tracking-widest text-brown-400 mb-2">Staff</p>
               <h3 className="text-sm font-medium text-stone-800 mb-2">ゆい</h3>
               <p className="text-sm text-stone-700 leading-loose">不定期出勤。もみほぐし・足つぼを担当します。</p>
             </div>

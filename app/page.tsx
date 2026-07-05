@@ -44,7 +44,7 @@ const localBusinessSchema = {
   ],
   priceRange: '¥¥',
   image: [`${SITE_URL_VAL}/og-image.jpg`],
-  logo: { '@type': 'ImageObject', url: `${SITE_URL_VAL}/og-image.jpg` },
+  logo: { '@type': 'ImageObject', url: `${SITE_URL_VAL}/logo.jpg`, width: 1279, height: 1279 },
   sameAs: [SHOP_INFO.instagramUrl, SHOP_INFO.hpbUrl],
   hasMap: SHOP_INFO.googleMapUrl,
   currenciesAccepted: 'JPY',

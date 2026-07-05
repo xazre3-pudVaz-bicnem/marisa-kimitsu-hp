@@ -88,20 +88,4 @@ export const NAV_ITEMS = [
       { label: '定期メンテナンス', href: '/scene/regular' },
     ],
   },
-  {
-    label: 'ガイド',
-    href: '/guide/what-is-momihogushi',
-    children: [
-      { label: 'もみほぐしとは', href: '/guide/what-is-momihogushi' },
-      { label: 'ヘッドケアとは', href: '/guide/head-care' },
-      { label: '足つぼとは', href: '/guide/foot-reflexology' },
-      { label: '通う頻度の目安', href: '/guide/frequency' },
-      { label: 'コースの選び方', href: '/guide/course-selection' },
-      { label: '整体との違い', href: '/guide/vs-seitai' },
-      { label: '施術後の過ごし方', href: '/guide/after-care' },
-      { label: '期待できること', href: '/guide/benefits' },
-      { label: '料金ガイド', href: '/guide/price-guide' },
-      { label: '君津のマッサージ選びガイド', href: '/guide/kimitsu-massage-guide' },
-    ],
-  },
 ] as const

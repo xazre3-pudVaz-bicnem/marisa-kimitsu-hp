@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -409,7 +409,7 @@ export default function GuidePricePage() {
               詳細は公式予約ページでご確認ください。
             </p>
             <div className="bg-cream-50 border border-sand-200 p-4 text-xs text-stone-700 leading-loose">
-              ※鍼灸・美容鍼は公式サイト（b-merit）からの予約限定メニューです。
+              ※鍼灸・美容鍼は公式サイトからの予約限定メニューです。
               ホットペッパービューティーからは予約できません。
             </div>
           </div>

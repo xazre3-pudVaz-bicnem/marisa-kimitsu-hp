@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
@@ -154,7 +154,7 @@ const menuItems = [
     desc: '肩こりの気になる部位に鍼でピンポイントアプローチ。もみほぐしとの組み合わせで深部へのケアが可能です。担当：なお（鍼灸師）。金曜・土曜中心出勤。',
     price: 'もみほぐし30分+鍼 ¥4,500 / 45分+鍼 ¥5,400 / 70分+鍼 ¥6,000',
     href: '/menu/acupuncture',
-    note: '鍼灸メニューは公式WEB予約（B-merit）限定です。金曜10:00-22:00、土曜10:00-14:00が基本勤務時間です。',
+    note: '鍼灸メニューは公式WEB予約限定です。金曜10:00-22:00、土曜10:00-14:00が基本勤務時間です。',
   },
 ]
 
@@ -196,7 +196,7 @@ const faqs = [
   },
   {
     q: 'もみほぐしと鍼灸の違いは何ですか？',
-    a: 'もみほぐしは手技（指・手のひら）を使って筋肉をほぐすリラクゼーション施術です。鍼灸は専門資格を持つ鍼灸師が細い鍼を用いて特定の部位にアプローチする施術で、より深部へのケアが期待できます。MARISAでは鍼灸＋もみほぐしのセットメニュー（¥4,500〜）もご用意しています。鍼灸は公式WEB予約（B-merit）限定で、担当の「なお」が金曜・土曜中心に出勤しています。',
+    a: 'もみほぐしは手技（指・手のひら）を使って筋肉をほぐすリラクゼーション施術です。鍼灸は専門資格を持つ鍼灸師が細い鍼を用いて特定の部位にアプローチする施術で、より深部へのケアが期待できます。MARISAでは鍼灸＋もみほぐしのセットメニュー（¥4,500〜）もご用意しています。鍼灸は公式WEB予約限定で、担当の「なお」が金曜・土曜中心に出勤しています。',
   },
   {
     q: '何分のコースを選べばいいですか？',
@@ -417,7 +417,7 @@ export default function StiffShoulderPage() {
             <div className="border border-sand-200 bg-cream-50 p-6">
               <p className="text-xs tracking-widest text-brown-400 mb-2">Acupuncturist</p>
               <h3 className="text-sm font-medium text-stone-800 mb-2">なお（鍼灸師）</h3>
-              <p className="text-sm text-stone-700 leading-loose">国家資格を持つ鍼灸師。肩こりの鍼灸施術を担当します。金曜10:00-22:00、土曜10:00-14:00が基本勤務時間です。公式WEB予約（B-merit）でご予約ください。</p>
+              <p className="text-sm text-stone-700 leading-loose">国家資格を持つ鍼灸師。肩こりの鍼灸施術を担当します。金曜10:00-22:00、土曜10:00-14:00が基本勤務時間です。公式WEB予約でご予約ください。</p>
             </div>
             <div className="border border-sand-200 bg-cream-50 p-6">
               <p className="text-xs tracking-widest text-brown-400 mb-2">Staff</p>

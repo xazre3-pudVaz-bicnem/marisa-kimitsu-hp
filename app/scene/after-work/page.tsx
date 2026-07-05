@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -52,7 +52,7 @@ const faqSchema = {
       name: '当日の仕事帰りにも予約できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、当日予約に対応しています。ホットペッパービューティーまたは公式WEB予約（B-merit）から24時間いつでも空き状況をご確認いただき、その場でご予約いただけます。仕事中の昼休みに当日夜の予約を入れておくのが確実です。',
+        text: 'はい、当日予約に対応しています。ホットペッパービューティーまたは公式WEB予約から24時間いつでも空き状況をご確認いただき、その場でご予約いただけます。仕事中の昼休みに当日夜の予約を入れておくのが確実です。',
       },
     },
     {
@@ -311,7 +311,7 @@ export default function SceneAfterWorkPage() {
             <div className="border border-sand-200 p-6">
               <h3 className="font-medium text-stone-800 mb-2 tracking-wide">当日予約の入れ方</h3>
               <p>
-                ホットペッパービューティーまたは公式WEB予約（B-merit）にアクセスし、希望の日時・コースを選んで予約完了です。24時間いつでも空き確認・予約ができるので、仕事中でも昼休みに手軽に予約できます。
+                ホットペッパービューティーまたは公式WEB予約にアクセスし、希望の日時・コースを選んで予約完了です。24時間いつでも空き確認・予約ができるので、仕事中でも昼休みに手軽に予約できます。
               </p>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -39,7 +39,7 @@ const faqSchema = {
       name: '本当に当日でも予約できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、当日予約に対応しています。ホットペッパービューティーまたは公式WEB予約（B-merit）から24時間いつでも空き状況をご確認いただき、当日のご予約が可能です。ただし、混雑状況によっては空きがない場合もありますので、なるべくお早めにご確認ください。',
+        text: 'はい、当日予約に対応しています。ホットペッパービューティーまたは公式WEB予約から24時間いつでも空き状況をご確認いただき、当日のご予約が可能です。ただし、混雑状況によっては空きがない場合もありますので、なるべくお早めにご確認ください。',
       },
     },
     {
@@ -63,7 +63,7 @@ const faqSchema = {
       name: '当日予約する方法を教えてください。',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'ホットペッパービューティーまたは公式WEB予約（B-merit）にアクセスし、希望の日時・コースを選んで予約を完了してください。ホットペッパービューティーでは当日のクーポンも使用可能です。鍼灸・美容鍼をご希望の方は公式WEB予約（B-merit）からお申し込みください。',
+        text: 'ホットペッパービューティーまたは公式WEB予約にアクセスし、希望の日時・コースを選んで予約を完了してください。ホットペッパービューティーでは当日のクーポンも使用可能です。鍼灸・美容鍼をご希望の方は公式WEB予約からお申し込みください。',
       },
     },
     {
@@ -186,7 +186,7 @@ export default function SceneSameDayPage() {
               「君津 マッサージ 近く」「君津 マッサージ すぐ予約」でこのページを見つけていただいた方、ようこそ。MARISAはそのままネット予約が可能です。
             </p>
             <p>
-              ホットペッパービューティーまたは公式WEB予約（B-merit）から24時間いつでも空き確認・当日予約ができます。Googleで検索した流れでそのままご予約ページへお進みください。
+              ホットペッパービューティーまたは公式WEB予約から24時間いつでも空き確認・当日予約ができます。Googleで検索した流れでそのままご予約ページへお進みください。
             </p>
             <p>
               空き状況はリアルタイムで更新されています。「今日の夜、君津で近くのマッサージに行きたい」と思ったら、そのまま予約できる環境を整えています。夜0時まで営業・最終受付23時・無料駐車場完備です。
@@ -208,8 +208,8 @@ export default function SceneSameDayPage() {
               },
               {
                 step: '02',
-                title: '公式WEB予約・B-merit（鍼灸・美容鍼を含む全メニュー）',
-                body: '鍼灸・美容鍼は公式WEB予約（B-merit）からのみご予約いただけます。もみほぐし等も公式予約から予約可能です。24時間受付・最短当日予約可能。',
+                title: '公式WEB予約（鍼灸・美容鍼を含む全メニュー）',
+                body: '鍼灸・美容鍼は公式WEB予約からのみご予約いただけます。もみほぐし等も公式予約から予約可能です。24時間受付・最短当日予約可能。',
               },
               {
                 step: '03',
@@ -334,10 +334,10 @@ export default function SceneSameDayPage() {
             </div>
             <div className="border border-sand-200 bg-cream-50 p-6">
               <h3 className="font-medium text-stone-800 mb-3 tracking-wide">
-                公式WEB予約・B-merit（鍼灸・美容鍼を含む全メニュー）
+                公式WEB予約（鍼灸・美容鍼を含む全メニュー）
               </h3>
               <p>
-                鍼灸・美容鍼は公式WEB予約（B-merit）からのみご予約いただけます。もみほぐし等も公式予約から予約可能です。24時間受付・最短当日予約可能。
+                鍼灸・美容鍼は公式WEB予約からのみご予約いただけます。もみほぐし等も公式予約から予約可能です。24時間受付・最短当日予約可能。
               </p>
             </div>
             {LINE_URL && (

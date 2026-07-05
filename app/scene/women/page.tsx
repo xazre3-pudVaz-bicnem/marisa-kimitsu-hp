@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -62,7 +62,7 @@ const faqSchema = {
       name: '美容鍼はホットペッパーから予約できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '美容鍼・鍼灸のご予約は公式予約サイト（B-merit）からのみ承っております。ホットペッパービューティーからは鍼灸・美容鍼の予約ができませんのでご注意ください。もみほぐし・ヘッドケア・足つぼ・セットコースはホットペッパービューティーからご予約いただけます。',
+        text: '美容鍼・鍼灸のご予約は公式予約サイトからのみ承っております。ホットペッパービューティーからは鍼灸・美容鍼の予約ができませんのでご注意ください。もみほぐし・ヘッドケア・足つぼ・セットコースはホットペッパービューティーからご予約いただけます。',
       },
     },
     {
@@ -300,7 +300,7 @@ export default function SceneWomenPage() {
                 <span className="text-xs text-greige-400">45分〜 / 公式サイトでご確認</span>
               </div>
               <p className="text-sm text-stone-700 leading-loose">
-                フェイスラインや肌の状態のケアをご希望の女性に選ばれているのが美容鍼です。資格を持つ鍼灸師スタッフが対応しています（金曜・土曜を中心に対応）。美容鍼・鍼灸のご予約はホットペッパービューティーには掲載しておらず、公式予約サイト（B-merit）からのみ承っています。
+                フェイスラインや肌の状態のケアをご希望の女性に選ばれているのが美容鍼です。資格を持つ鍼灸師スタッフが対応しています（金曜・土曜を中心に対応）。美容鍼・鍼灸のご予約はホットペッパービューティーには掲載しておらず、公式予約サイトからのみ承っています。
               </p>
               <div className="mt-3 flex flex-wrap gap-4">
                 <Link
@@ -322,7 +322,7 @@ export default function SceneWomenPage() {
           </div>
 
           <p className="mt-6 text-xs text-greige-400 leading-loose">
-            ※鍼灸・美容鍼はホットペッパービューティーには掲載しておりません。公式予約サイト（B-merit）からのみご予約いただけます。対応時間：金曜10:00〜22:00・土曜10:00〜14:00（その他は要相談）。
+            ※鍼灸・美容鍼はホットペッパービューティーには掲載しておりません。公式予約サイトからのみご予約いただけます。対応時間：金曜10:00〜22:00・土曜10:00〜14:00（その他は要相談）。
           </p>
         </div>
       </section>
@@ -444,7 +444,7 @@ export default function SceneWomenPage() {
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業・当日予約OK・無料駐車場完備。
             <br />
-            美容鍼・鍼灸のご予約は公式サイト（B-merit）からお願いいたします。
+            美容鍼・鍼灸のご予約は公式サイトからお願いいたします。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />

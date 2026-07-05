@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -54,7 +54,7 @@ const faqSchema = {
       name: '当日予約はできますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、当日予約に対応しています。ホットペッパービューティーから24時間いつでも空き状況をご確認の上ご予約いただけます。「すぐ予約」機能もございますので、お急ぎの際もご活用ください。鍼灸・美容鍼のご予約は公式サイト（B-merit）からお申し込みください。',
+        text: 'はい、当日予約に対応しています。ホットペッパービューティーから24時間いつでも空き状況をご確認の上ご予約いただけます。「すぐ予約」機能もございますので、お急ぎの際もご活用ください。鍼灸・美容鍼のご予約は公式サイトからお申し込みください。',
       },
     },
     {
@@ -62,7 +62,7 @@ const faqSchema = {
       name: '鍼灸メニューはホットペッパーから予約できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '鍼灸・美容鍼のご予約は公式予約サイト（B-merit）からのみ承っております。ホットペッパービューティーからは鍼灸・美容鍼の予約ができませんのでご注意ください。もみほぐし・ヘッドケア・足つぼ・セットコースはホットペッパービューティーからご予約いただけます。',
+        text: '鍼灸・美容鍼のご予約は公式予約サイトからのみ承っております。ホットペッパービューティーからは鍼灸・美容鍼の予約ができませんのでご注意ください。もみほぐし・ヘッドケア・足つぼ・セットコースはホットペッパービューティーからご予約いただけます。',
       },
     },
     {
@@ -163,7 +163,7 @@ const menus = [
     time: '45分〜',
     price: '要公式予約',
     href: BMERIT_URL,
-    desc: '顔まわりのケアをご希望の方へ。公式サイト（B-merit）からご予約ください',
+    desc: '顔まわりのケアをご希望の方へ。公式サイトからご予約ください',
     external: true,
   },
 ]
@@ -299,7 +299,7 @@ export default function AreaKamogawaPage() {
               もみほぐし45分¥3,500〜という手頃な料金設定も、遠方からお越しのお客様に喜ばれています。60分¥4,500〜、90分¥6,500〜と時間を選べますので、その日のスケジュールや体の状態に合わせてお選びください。
             </p>
             <p>
-              鍼灸・美容鍼のご予約は公式サイト（B-merit）からのみ承っています。ホットペッパービューティーからは鍼灸のご予約ができませんのでご注意ください。鍼灸の対応時間は金曜日10:00〜22:00、土曜日10:00〜14:00を中心としており、その他の曜日・時間帯についてはご相談ください。
+              鍼灸・美容鍼のご予約は公式サイトからのみ承っています。ホットペッパービューティーからは鍼灸のご予約ができませんのでご注意ください。鍼灸の対応時間は金曜日10:00〜22:00、土曜日10:00〜14:00を中心としており、その他の曜日・時間帯についてはご相談ください。
             </p>
           </div>
         </div>
@@ -328,13 +328,13 @@ export default function AreaKamogawaPage() {
                 </p>
                 <p className="text-xs text-stone-700 leading-relaxed">{m.desc}</p>
                 {m.external && (
-                  <p className="text-xs text-brown-400 mt-2">※公式サイト（B-merit）からご予約</p>
+                  <p className="text-xs text-brown-400 mt-2">※公式サイトからご予約</p>
                 )}
               </Link>
             ))}
           </div>
           <p className="mt-4 text-xs text-greige-400 leading-loose">
-            ※鍼灸・美容鍼はホットペッパービューティーには掲載しておりません。公式予約サイト（B-merit）からのみご予約いただけます。
+            ※鍼灸・美容鍼はホットペッパービューティーには掲載しておりません。公式予約サイトからのみご予約いただけます。
           </p>
         </div>
       </section>
@@ -416,7 +416,7 @@ export default function AreaKamogawaPage() {
           <p className="text-sm text-sand-300 leading-loose mb-10">
             夜0時まで営業・当日予約OK・無料駐車場完備。鴨川方面からのご来店もお気軽にどうぞ。
             <br />
-            鍼灸・美容鍼のご予約は公式サイト（B-merit）からお願いいたします。
+            鍼灸・美容鍼のご予約は公式サイトからお願いいたします。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={HPB_URL} label="ホットペッパーで予約する" variant="light" size="lg" />

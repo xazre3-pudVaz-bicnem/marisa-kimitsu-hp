@@ -75,7 +75,7 @@ const organizationSchema = {
   url: SITE_URL,
   telephone: PHONE,
   image: `${SITE_URL}/og-image.jpg`,
-  logo: { '@type': 'ImageObject', url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630 },
+  logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo.jpg`, width: 1279, height: 1279 },
   description:
     '千葉県君津市のもみほぐし・リラクゼーションサロン。肩こり・腰のつらさ・眼精疲労・足のだるさ・鍼灸・美容鍼に対応。夜0時まで営業・当日予約OK・無料駐車場あり。',
   address: {

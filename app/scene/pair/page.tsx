@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -44,7 +44,7 @@ const faqSchema = {
       name: 'ペア予約はどのようにすればいいですか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'それぞれがホットペッパービューティーまたは公式WEB予約（B-merit）から同じ日時で予約を入れてください。予約時の備考欄に「2名同時希望」と記入いただくと、スタッフが対応できるよう調整します。確実に同じ時間帯でご案内したい場合は、事前にお電話でのご確認もおすすめしています。',
+        text: 'それぞれがホットペッパービューティーまたは公式WEB予約から同じ日時で予約を入れてください。予約時の備考欄に「2名同時希望」と記入いただくと、スタッフが対応できるよう調整します。確実に同じ時間帯でご案内したい場合は、事前にお電話でのご確認もおすすめしています。',
       },
     },
     {
@@ -232,7 +232,7 @@ export default function ScenePairPage() {
                 1. それぞれWEB予約で同じ時間帯を選ぶ
               </h3>
               <p>
-                2名でのご利用の場合は、それぞれがホットペッパービューティーまたは公式WEB予約（B-merit）から同じ日時で予約を入れてください。予約時の備考欄に「2名同時希望」と記入いただくと、スタッフが対応できるよう調整します。
+                2名でのご利用の場合は、それぞれがホットペッパービューティーまたは公式WEB予約から同じ日時で予約を入れてください。予約時の備考欄に「2名同時希望」と記入いただくと、スタッフが対応できるよう調整します。
               </p>
             </div>
             <div className="border border-sand-200 p-6">

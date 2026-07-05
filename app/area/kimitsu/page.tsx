@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -95,7 +95,7 @@ const faqSchema = {
       name: '「君津 マッサージ 近く」で検索して当日予約できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、ホットペッパービューティーまたは公式WEB予約（B-merit）から当日予約が可能です。Googleで検索後にそのままネット予約いただけます。空き状況はリアルタイムで確認できますので、すぐに予約したい方にもご利用しやすい環境を整えています。',
+        text: 'はい、ホットペッパービューティーまたは公式WEB予約から当日予約が可能です。Googleで検索後にそのままネット予約いただけます。空き状況はリアルタイムで確認できますので、すぐに予約したい方にもご利用しやすい環境を整えています。',
       },
     },
     {
@@ -119,7 +119,7 @@ const faqSchema = {
       name: '当日予約はできますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、当日予約に対応しています。ホットペッパービューティーまたは公式WEB予約サイト（B-merit）から24時間いつでも空き状況をご確認いただき、当日のご予約が可能です。急な疲れや体のつらさを感じた日にもお気軽にどうぞ。',
+        text: 'はい、当日予約に対応しています。ホットペッパービューティーまたは公式WEB予約サイトから24時間いつでも空き状況をご確認いただき、当日のご予約が可能です。急な疲れや体のつらさを感じた日にもお気軽にどうぞ。',
       },
     },
     {
@@ -135,7 +135,7 @@ const faqSchema = {
       name: '鍼灸もできますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'はい、資格を持つ鍼灸師スタッフ（なお）が在籍しています（主に金・土曜日）。鍼灸メニューは公式WEB予約（B-merit）からのみ受け付けています。ホットペッパービューティーからは鍼灸の予約ができませんのでご注意ください。もみほぐし30分+鍼¥4,500〜、美顔鍼¥3,500〜（公式予約限定）。',
+        text: 'はい、資格を持つ鍼灸師スタッフ（なお）が在籍しています（主に金・土曜日）。鍼灸メニューは公式WEB予約からのみ受け付けています。ホットペッパービューティーからは鍼灸の予約ができませんのでご注意ください。もみほぐし30分+鍼¥4,500〜、美顔鍼¥3,500〜（公式予約限定）。',
       },
     },
     {
@@ -231,13 +231,13 @@ const menus = [
   {
     name: '鍼灸（公式予約限定）',
     href: '/menu/acupuncture',
-    desc: 'もみほぐし＋鍼のコース。資格を持つ鍼灸師スタッフが担当します。公式WEB予約（B-merit）からのみご予約いただけます。',
+    desc: 'もみほぐし＋鍼のコース。資格を持つ鍼灸師スタッフが担当します。公式WEB予約からのみご予約いただけます。',
     from: '¥4,500〜',
   },
   {
     name: '美容鍼（公式予約限定）',
     href: '/menu/beauty-acupuncture',
-    desc: '顔への鍼施術で肌の状態にアプローチ。公式WEB予約（B-merit）からのみご予約いただけます。',
+    desc: '顔への鍼施術で肌の状態にアプローチ。公式WEB予約からのみご予約いただけます。',
     from: '¥3,500〜',
   },
 ]
@@ -293,7 +293,7 @@ export default function AreaKimitsuPage() {
           <SectionHeader en="For Kimitsu" ja="君津で近くのマッサージを探している方へ" />
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <p>
-              「君津 マッサージ 近く」でGoogle検索して、このページをご覧いただいている方へ。そのまま当日予約が可能です。ホットペッパービューティーまたは公式WEB予約（B-merit）から24時間いつでも空き確認・ネット予約ができます。
+              「君津 マッサージ 近く」でGoogle検索して、このページをご覧いただいている方へ。そのまま当日予約が可能です。ホットペッパービューティーまたは公式WEB予約から24時間いつでも空き確認・ネット予約ができます。
             </p>
             <p>
               「仕事帰りに行けるマッサージがない」「駐車場があるお店を探している」「夜遅くまで対応してくれるところがいい」——君津市でマッサージ・もみほぐしを探すとき、こうした条件で絞り込んでいる方は多いはずです。
@@ -331,7 +331,7 @@ export default function AreaKimitsuPage() {
                 </p>
               </div>
               <div className="border border-sand-200 bg-cream-50 p-5">
-                <p className="text-xs font-medium text-brown-400 tracking-widest mb-2">公式WEB予約（B-merit）</p>
+                <p className="text-xs font-medium text-brown-400 tracking-widest mb-2">公式WEB予約</p>
                 <p className="text-sm text-stone-800 font-medium mb-2">全メニュー対応・鍼灸・美容鍼</p>
                 <p className="text-xs text-stone-700 leading-loose">
                   鍼灸・美容鍼はこちらからのみご予約可。24時間受付・最短当日予約OK。
@@ -433,7 +433,7 @@ export default function AreaKimitsuPage() {
           <SectionHeader
             en="Menu"
             ja="MARISAの対応メニュー一覧"
-            lead="お悩みや時間に合わせてお選びいただけます。鍼灸・美容鍼は公式WEB予約（B-merit）限定です。"
+            lead="お悩みや時間に合わせてお選びいただけます。鍼灸・美容鍼は公式WEB予約限定です。"
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {menus.map((m) => (
@@ -593,11 +593,11 @@ export default function AreaKimitsuPage() {
           <div className="mt-8 space-y-5 text-sm text-stone-700 leading-loose">
             <div className="border border-sand-200 bg-cream-50 p-6">
               <h3 className="font-medium text-stone-800 mb-3 tracking-wide">
-                公式WEB予約（B-merit）— もみほぐし・鍼灸・美容鍼
+                公式WEB予約— もみほぐし・鍼灸・美容鍼
               </h3>
               <p>
                 もみほぐし・ヘッドケア・足つぼ・セットコースに加え、鍼灸・美容鍼の予約はこちらから。24時間いつでも空き確認・予約が可能です。
-                <strong className="text-stone-800">鍼灸・美容鍼は公式WEB予約（B-merit）からのみ受け付けています。</strong>
+                <strong className="text-stone-800">鍼灸・美容鍼は公式WEB予約からのみ受け付けています。</strong>
               </p>
             </div>
             <div className="border border-sand-200 bg-cream-50 p-6">
@@ -769,7 +769,7 @@ export default function AreaKimitsuPage() {
           <p className="text-sm text-sand-300 leading-loose mb-10">
             君津市のリラクゼーションサロン MARISA。<br />
             夜0時まで営業・当日予約OK・無料駐車場完備。<br />
-            鍼灸・美容鍼は公式WEB予約（B-merit）からのみご予約いただけます。
+            鍼灸・美容鍼は公式WEB予約からのみご予約いただけます。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={BMERIT_URL} label="公式WEB予約（鍼灸対応）" variant="light" size="lg" />

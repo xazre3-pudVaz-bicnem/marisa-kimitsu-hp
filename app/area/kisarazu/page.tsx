@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Breadcrumb from '@/components/ui/Breadcrumb'
 import SectionHeader from '@/components/ui/SectionHeader'
@@ -56,7 +56,7 @@ const faqSchema = {
       name: '当日予約はできますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '当日予約にも対応しています。ホットペッパービューティーまたは公式WEB予約（B-merit）から24時間いつでも空き状況を確認してご予約いただけます。事前に予約いただくと確実にご案内できます。',
+        text: '当日予約にも対応しています。ホットペッパービューティーまたは公式WEB予約から24時間いつでも空き状況を確認してご予約いただけます。事前に予約いただくと確実にご案内できます。',
       },
     },
     {
@@ -64,7 +64,7 @@ const faqSchema = {
       name: '鍼灸はホットペッパーから予約できますか？',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '鍼灸・美容鍼は公式WEB予約（B-merit）からのみご予約いただけます。ホットペッパービューティーからは鍼灸のご予約はできませんのでご注意ください。もみほぐし・ヘッドケア・足つぼ・セットコースはホットペッパービューティーからもご予約いただけます。鍼灸の対応時間は金曜10:00〜22:00、土曜10:00〜14:00が中心です。',
+        text: '鍼灸・美容鍼は公式WEB予約からのみご予約いただけます。ホットペッパービューティーからは鍼灸のご予約はできませんのでご注意ください。もみほぐし・ヘッドケア・足つぼ・セットコースはホットペッパービューティーからもご予約いただけます。鍼灸の対応時間は金曜10:00〜22:00、土曜10:00〜14:00が中心です。',
       },
     },
     {
@@ -101,7 +101,7 @@ const features = [
   },
   {
     title: '当日予約にも対応',
-    body: 'ホットペッパービューティーまたは公式WEB予約（B-merit）から24時間いつでも空き確認・予約が可能です。「木更津での用事が早く終わった」「今日の帰りに寄りたい」という場合もお気軽にどうぞ。',
+    body: 'ホットペッパービューティーまたは公式WEB予約から24時間いつでも空き確認・予約が可能です。「木更津での用事が早く終わった」「今日の帰りに寄りたい」という場合もお気軽にどうぞ。',
   },
   {
     title: '無料駐車場完備',
@@ -146,13 +146,13 @@ const menus = [
     name: '鍼灸（公式予約限定）',
     href: '/menu/acupuncture',
     price: '¥4,500〜',
-    desc: 'もみほぐし＋鍼のコース。公式WEB予約（B-merit）からのみご予約いただけます。',
+    desc: 'もみほぐし＋鍼のコース。公式WEB予約からのみご予約いただけます。',
   },
   {
     name: '美容鍼（公式予約限定）',
     href: '/menu/beauty-acupuncture',
     price: '¥3,500〜',
-    desc: '美顔鍼施術。公式WEB予約（B-merit）からのみご予約いただけます。',
+    desc: '美顔鍼施術。公式WEB予約からのみご予約いただけます。',
   },
 ]
 
@@ -418,7 +418,7 @@ export default function AreaKisarazuPage() {
           <p className="text-sm text-sand-300 leading-loose mb-10">
             木更津から車で約15〜20分。<br />
             夜0時まで営業・当日予約OK・無料駐車場完備。<br />
-            鍼灸・美容鍼は公式WEB予約（B-merit）からのみご予約いただけます。
+            鍼灸・美容鍼は公式WEB予約からのみご予約いただけます。
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <ReserveButton href={BMERIT_URL} label="公式WEB予約（鍼灸対応）" variant="light" size="lg" />

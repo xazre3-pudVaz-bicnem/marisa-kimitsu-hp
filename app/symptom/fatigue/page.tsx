@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
@@ -419,7 +419,7 @@ export default function FatiguePage() {
             <div className="border border-sand-200 bg-cream-50 p-6">
               <p className="text-xs tracking-widest text-brown-400 mb-2">Acupuncturist</p>
               <h3 className="text-sm font-medium text-stone-800 mb-2">なお（鍼灸師）</h3>
-              <p className="text-sm text-stone-700 leading-loose">国家資格を持つ鍼灸師。もみほぐし＋鍼のセットメニューも担当します。金曜・土曜中心勤務。公式WEB予約（B-merit）でご予約ください。</p>
+              <p className="text-sm text-stone-700 leading-loose">国家資格を持つ鍼灸師。もみほぐし＋鍼のセットメニューも担当します。金曜・土曜中心勤務。公式WEB予約でご予約ください。</p>
             </div>
             <div className="border border-sand-200 bg-cream-50 p-6">
               <p className="text-xs tracking-widest text-brown-400 mb-2">Staff</p>

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import Breadcrumb from '@/components/ui/Breadcrumb'
@@ -146,7 +146,7 @@ const menuItems = [
     desc: '首・肩の気になる部位に鍼でピンポイントアプローチ。もみほぐしのほぐしと鍼のアプローチを組み合わせることで、深部の緊張にアプローチします。担当：なお（鍼灸師）。',
     price: 'もみほぐし30分+鍼 ¥4,500 / 45分+鍼 ¥5,400 / 70分+鍼 ¥6,000',
     href: '/menu/acupuncture',
-    note: '鍼灸メニューは公式WEB予約（B-merit）限定です。金曜10:00-22:00、土曜10:00-14:00が基本勤務時間です。',
+    note: '鍼灸メニューは公式WEB予約限定です。金曜10:00-22:00、土曜10:00-14:00が基本勤務時間です。',
   },
 ]
 
@@ -429,7 +429,7 @@ export default function NeckPage() {
             <div className="border border-sand-200 bg-cream-50 p-6">
               <p className="text-xs tracking-widest text-brown-400 mb-2">Acupuncturist</p>
               <h3 className="text-sm font-medium text-stone-800 mb-2">なお（鍼灸師）</h3>
-              <p className="text-sm text-stone-700 leading-loose">国家資格を持つ鍼灸師。首の鍼灸施術を担当します。金曜10:00-22:00、土曜10:00-14:00が基本勤務。公式WEB予約（B-merit）でご予約ください。</p>
+              <p className="text-sm text-stone-700 leading-loose">国家資格を持つ鍼灸師。首の鍼灸施術を担当します。金曜10:00-22:00、土曜10:00-14:00が基本勤務。公式WEB予約でご予約ください。</p>
             </div>
             <div className="border border-sand-200 bg-cream-50 p-6">
               <p className="text-xs tracking-widest text-brown-400 mb-2">Staff</p>
