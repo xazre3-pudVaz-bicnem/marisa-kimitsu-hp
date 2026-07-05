@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { NAV_ITEMS, HPB_URL, INSTAGRAM_URL, BMERIT_URL } from '@/lib/constants'
 
@@ -26,16 +25,13 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-5 lg:px-8 h-16 lg:h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center group">
-          <Image
-            src="/logo.jpg"
-            alt="もみほぐし・MARISA 君津店"
-            width={1279}
-            height={1279}
-            className="h-10 lg:h-12 w-auto object-contain transition-opacity group-hover:opacity-80"
-            style={{ width: 'auto' }}
-            priority
-          />
+        <Link href="/" className="flex flex-col leading-none group">
+          <span className="font-en text-xl lg:text-2xl font-light tracking-widest text-brown-500 group-hover:text-brown-400 transition-colors">
+            MARISA
+          </span>
+          <span className="text-[10px] tracking-widest text-greige-400 font-light">
+            もみほぐし・君津店
+          </span>
         </Link>
 
         {/* Desktop Nav */}
