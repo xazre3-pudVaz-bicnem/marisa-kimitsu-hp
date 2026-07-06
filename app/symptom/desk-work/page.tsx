@@ -96,8 +96,8 @@ const scenes = [
     desc: '毎日長時間PC作業が続く方。夕方になるほど肩や腰が重くなりやすく、仕事帰りにMARISAでリセットしてから帰宅するルーティンの方が増えています。',
   },
   {
-    title: '君津市内の工場・製造業のデスク部門',
-    desc: '君津市には大型工場が多く、管理・事務部門でデスクワークが続く方も多くいらっしゃいます。職場から近いMARISAで帰宅途中に立ち寄るご利用が人気です。',
+    title: '工場・製造業のデスク部門',
+    desc: '製造業や管理・事務部門でデスクワークが続く方も多くいらっしゃいます。帰宅途中に立ち寄るご利用が人気です。',
   },
   {
     title: '千葉・東京方面への通勤＋デスクワーク',
@@ -235,8 +235,8 @@ export default function DeskWorkPage() {
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Life Scenes"
-            ja="君津エリアでのデスクワーク疲れの場面"
-            lead="君津の日常生活の中で、デスクワーク疲れを感じやすいシーンをご紹介します。"
+            ja="デスクワーク疲れが起きやすい場面"
+            lead="日常生活の中で、デスクワーク疲れを感じやすいシーンをご紹介します。"
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
             {scenes.map((s) => (

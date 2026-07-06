@@ -33,14 +33,6 @@ const faqSchema = {
     },
     {
       '@type': 'Question',
-      name: '男性スタッフはいますか？',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'スタッフの構成はシフトにより異なります。ご希望がある場合はご予約時にお知らせください。できる限りご希望に沿えるよう対応いたします。',
-      },
-    },
-    {
-      '@type': 'Question',
       name: '男性に特に向いているメニューは何ですか？',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -96,7 +88,7 @@ export default function SceneMenPage() {
 
       <section className="py-16 lg:py-24 bg-cream-50">
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          <SectionHeader en="Why MARISA" ja="男性がMARISAを選ぶ理由" lead="こんな方が多くご来店されています" />
+          <SectionHeader en="Why MARISA" ja="男性が選ぶ理由" lead="こんな方が多くご来店されています" />
           <div className="mt-10 grid gap-5">
             {[
               {

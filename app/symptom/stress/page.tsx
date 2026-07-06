@@ -215,7 +215,7 @@ export default function StressPage() {
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Life Scenes"
-            ja="君津の日常でこんな場面でご利用いただいています"
+            ja="日常でこんな場面でご利用いただいています"
             lead="「体と心のリセットの場所」として活用されています。"
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">

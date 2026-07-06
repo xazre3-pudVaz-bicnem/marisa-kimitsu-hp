@@ -97,7 +97,7 @@ const causes = [
 
 const scenes = [
   {
-    title: '君津市内のデスクワーカー',
+    title: 'デスクワーカー',
     desc: 'PC作業が続く事務職・テレワーク勤務の方は、夕方になるほど頭が重くなりやすい傾向があります。仕事帰りのヘッドケアで頭まわりをリセットしてから帰宅するご利用が人気です。',
   },
   {
@@ -220,8 +220,8 @@ export default function HeadachePage() {
         <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <SectionHeader
             en="Life Scenes"
-            ja="君津エリアでの頭の重さを感じやすい場面"
-            lead="君津の日常生活の中で、頭まわりの重さを感じやすいシーンをご紹介します。"
+            ja="頭の重さを感じやすい場面"
+            lead="日常生活の中で、頭まわりの重さを感じやすいシーンをご紹介します。"
           />
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
             {scenes.map((s) => (
