@@ -323,7 +323,18 @@ export default function FootPage() {
               <ReserveButton href={BMERIT_URL} label="このコースで予約" size="sm" variant="outline" />
             </div>
           </div>
-          <p className="mt-6 text-xs text-greige-400 text-center">
+          <div className="mt-8 max-w-2xl mx-auto border border-amber-300 bg-amber-50 rounded-sm p-5 flex items-start gap-3">
+            <span className="text-amber-500 mt-0.5 shrink-0">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+              </svg>
+            </span>
+            <p className="text-sm text-stone-700 leading-loose">
+              <span className="font-medium text-stone-800">ご注意：</span>
+              強めをご希望の場合、ご希望の強さに添えない場合がございますので、あらかじめご了承ください。
+            </p>
+          </div>
+          <p className="mt-4 text-xs text-greige-400 text-center">
             ※ 表示価格は税込みです。
           </p>
           <div className="mt-8 text-center">
